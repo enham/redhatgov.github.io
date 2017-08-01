@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Lab 3 - Managing Floating IP Addresses | Red Hat | Public Sector</title>
+
+    
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly.min.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly-additions.min.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/highlight.js/styles/darkula.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/css/main.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/css/asciidoc.css" />
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery/dist/jquery.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/c3/c3.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/d3/d3.min.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/drmonty-datatables-colvis/js/dataTables.colVis.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables.net-colreorder/js/dataTables.colReorder.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/dist/js/patternfly.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-combobox/js/bootstrap-combobox.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/moment/min/moment.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/google-code-prettify/bin/prettify.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/highlight.js/lib/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body class="">
+    
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top " role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="http://redhatgov.io/img/brand.png" alt="Red Hat | Public Sector" />
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+          
+            <li>
+              <a href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/contact/">Contact</a>
+            </li>
+          
+        
+          
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Workshops <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                
+                  <li>
+                    <a href="/workshops/ansible_tower/">Ansible Tower Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/cloudforms41/">CloudForms Workshops</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_containers/">Container Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/containers_101/">Containers 101 Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/example/">Example Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/strangling_the_monolith/">Microservices Workshop - Strangling the Monolith</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/openshift_101_dcmetromap/">OpenShift 101 - DC Metro Map Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_openshift/">OpenShift Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/rhosp_101/">Red Hat OpenStack Platform 101</a>
+                  </li>
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="jumbotron jumbotron-page text-center">
+  <h1>Lab 3 - Managing Floating IP Addresses</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/rhosp_101">Return to Workshop</a>
+    </p>
+    
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/rhosp_101/3_managing_networks/">&larr; Previous: Lab 2 - Managing Neutron Networks</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/rhosp_101/5_managing_security_groups/">Next: Lab 4 - Managing Security Groups &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    
+
+<h1 id="floating-ip-vs-private-ip-addresses">Floating IP vs. Private IP Addresses</h1>
+
+<h2 id="private-ip-address">Private IP Address</h2>
+
+<p>A private IP address is assigned to an instance's network-interface by the DHCP server. The address is visible from within the instance by using a command like “ip a”. The address is typically part of a private network and is used for communication between instances in the same broadcast domain via virtual switch (L2 agent on each compute node). It can also be accessible from instances in other private networks via virtual router (L3 agent).</p>
+
+<h2 id="floating-ip-address">Floating IP Address</h2>
+
+<p>A floating IP address is a service provided by Neutron. It's not using any DHCP service or being set statically within the guest. As a matter of fact the guest's operating system has no idea that it was assigned a floating IP address. The delivery of packets to the interface with the assigned floating address is the responsibility of Neutron's L3 agent. Instances with an assigned floating IP address can be accessed from the public network by the floating IP.</p>
+
+<p>A floating IP address and a private IP address can be used at the same time on a single network-interface. The private IP address is likely to be used for accessing the instance by other instances in private networks while the floating IP address would be used for accessing the instance from public networks. How to configure floating IP range describes Floating IP range document.</p>
+
+
+
+
+  <div class="alert alert-info">
+    
+    <span class="pficon pficon-info"></span>
+    <p>A floating IP range was already created on the public-sub subnet for the public network in our workshop environment.</p>
+
+<p>The range is 192.168.1.70 to 192.168.1.199. Each student project has a quota of 10 Floating IP Addresses</p>
+
+  </div>
+
+
+
+<h1 id="let-s-go-allocate-some-floating-ip-addresses">Let's Go Allocate Some Floating IP Addresses</h1>
+
+<blockquote>
+<p>Navigate to Network -&gt; Floating IPs using the second level navigation tabs</p>
+</blockquote>
+
+
+<figure >
+    
+        <img src="../images/lab3-floating-ips-1.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 3 Figure 1: Floating IP Listing</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<blockquote>
+<p>Click <strong>Allocate IP to Project</strong> on the right hand side of the screen<br />
+Make sure <strong>public</strong> is selected for <strong>Pool</strong><br />
+Click <strong>Allocate IP</strong></p>
+</blockquote>
+
+
+<figure >
+    
+        <img src="../images/lab3-floating-ips-2.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 3 Figure 2: Allocate Floating IP to Project</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+
+
+
+  <div class="alert alert-success">
+    
+    <span class="pficon pficon-ok"></span>
+    <p>You should see a green box appear in the upper right corner of the screen that says something similar to &quot;Success: Allocated Floating IP 192.168.1.76.&quot;</p>
+
+<p>Note that you will get a different IP from the pool each time you go through this process.</p>
+
+<p>If you did not get an IP allocated, let the intstructor know now</p>
+
+  </div>
+
+
+
+
+<figure >
+    
+        <img src="../images/lab3-floating-ips-3.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 3 Figure 3: New Floating IP Allocated to Project</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<blockquote>
+<p>Go through the allocation process 2 more times so that you have a total of 3 floating IPs allocated to your project</p>
+</blockquote>
+
+
+<figure >
+    
+        <img src="../images/lab3-floating-ips-4.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 3 Figure 4: Floating IP List Showing 3 Allocated to Project</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<h1 id="summary">Summary</h1>
+
+<p>We have now learned how to allocate floating IP addresses to our project. We can now associate these to instances in our project which we will do in a later lab.</p>
+
+<p>In these labs, we are using Horizon to complete tasks. However, remember that there are three ways to interact with OpenStack.</p>
+
+<ul>
+<li>APIs<br /></li>
+<li>CLI<br /></li>
+<li>Horizon</li>
+</ul>
+
+<p>We could accomplish these same tasks via the other 2 methods as well. In fact in some cases, the CLI and APIs have more options available than Horizon.</p>
+
+<p>In our next lab, we will start working with security groups.</p>
+
+
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/rhosp_101/3_managing_networks/">&larr; Previous: Lab 2 - Managing Neutron Networks</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/rhosp_101/5_managing_security_groups/">Next: Lab 4 - Managing Security Groups &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/rhosp_101">Return to Workshop</a>
+    </p>
+  </div>
+</div>
+
+    <div id="page-footer" class="container">
+      <p class="text-center">
+        Copyright &copy; 2017 Red Hat, Inc.
+      </p>
+    </div>
+  </body>
+</html>
+

@@ -1,0 +1,1103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Red Hat | Public Sector</title>
+    <link>http://redhatgov.io/</link>
+    <description>Recent content on Red Hat | Public Sector</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://redhatgov.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>http://redhatgov.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/about/</guid>
+      <description>Open source is not only behind many of the technology industry&#39;s most significant innovations, but it is also pervasive across the U.S. government. For more than a decade, Red Hat has been working closely with federal government customers to help them embrace open source technologies.</description>
+    </item>
+    
+    <item>
+      <title>CloudForms Workshop Prerequisites</title>
+      <link>http://redhatgov.io/workshops/cloudforms41/prerequisites/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/cloudforms41/prerequisites/</guid>
+      <description>If we have provided a laptop or cloud environment to you for this workshop, the following steps are already set up for you. Please jump to Exercise 1.0  Install git We will use a few git commands directly in some of the advanced labs, please make sure git is installed on your system. You can download the latest version here.
+Create GitHub account Create a FREE GitHub account by going to this link and following their step-by-step instructions.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>http://redhatgov.io/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/contact/</guid>
+      <description>We are here to help you Are you curious about something? Do you have some kind of problem with our products?
+Please feel free to contact us, our customer service center is working for you 24 hours a day, 7 days a week.
+https://www.redhat.com/en/services/support
+If you find any issues with the content on this site, please file an issue on our GitHub project at https://github.com/RedHatGov/redhatgov.github.io/</description>
+    </item>
+    
+    <item>
+      <title>Content Ideas</title>
+      <link>http://redhatgov.io/workshops/example/ideas/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/example/ideas/</guid>
+      <description>Future Work One of the goals of this example workshop is to showcase all of the things that are possible when building a workshop. Initially, some work needs to be done to highlight what&#39;s already available. It&#39;s also expected that additional features will be added over time.
+This &amp;quot;lab&amp;quot; is a place to collect those ideas so that we don&#39;t forget to update this workshop as we have time.</description>
+    </item>
+    
+    <item>
+      <title>Create A New Workshop</title>
+      <link>http://redhatgov.io/workshops/example/create_a_new_workshop/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/example/create_a_new_workshop/</guid>
+      <description>Don&#39;t Recreate The Wheel Not only is this example workshop here to show you what&#39;s possible, but it&#39;s also expected to be the starting point and reference for any new workshop.
+The easiest way to get started is to copy this workshop into a new directory and add your own content.
+ Warning: There are a few things you&#39;ll need to change though, so pay close attention to each step below to save yourself frustration down the road.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.0 - A Guided Tour of CloudForms</title>
+      <link>http://redhatgov.io/workshops/cloudforms41/exercise1.0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/cloudforms41/exercise1.0/</guid>
+      <description>Welcome To CloudForms This lab provides a quick tour of the console to help you get familiar with the user interface along with some key terminology we will use in subsequent lab content. If you are already familiar with the basics of CloudForms you can skip this lab — after making sure you can login.
+Key Terms Before sinking our teeth into Cloud Forms it is important to understand some terminology.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.0 - Install Docker</title>
+      <link>http://redhatgov.io/workshops/containers_101/exercise1.0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/containers_101/exercise1.0/</guid>
+      <description>Install Docker Install Docker $ sudo -i # yum install -y docker   Start Docker To start the docker binary and have it managed by systemd we first need to enable it and tell systemd that we want it to run a boot time. Then to start the docker daemon right away we use the start command.
+ systemctl enable docker   systemctl start docker   systemctl status docker   Once docker starts successfully you should see a similar output as below.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.0 - Intro to Cockpit</title>
+      <link>http://redhatgov.io/workshops/security_containers/exercise1.0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_containers/exercise1.0/</guid>
+      <description>Cockpit A remote manager for GNU/Linux servers
+ Cockpit is a server manager that makes it easy to administer your GNU/Linux servers via a web browser.
+ Cockpit makes it easy for any sysadmin to perform simple tasks, such as administering storage, inspecting journals and starting and stopping services.
+ Jumping between the terminal and the web tool is no problem. A service started via Cockpit can be stopped via the terminal.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.0 - Linux Kernel Capabilities</title>
+      <link>http://redhatgov.io/workshops/security_openshift/exercise1.0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_openshift/exercise1.0/</guid>
+      <description>Before we get into OpenShift lets explore what Linux Kernel Capabilities are and some of the steps that OpenShift has taken to remove certain capabilities by default.
+   What are Linux Capabilities? According to the capabilities man page;
+ Capabilities are distinct units of privilege that can be independently enabled or disabled.
+ Capabilities were added to the kernel around 15 or so years ago to try to divide up the power of root.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.0 - Running Ad-hoc commands</title>
+      <link>http://redhatgov.io/workshops/ansible_tower/exercise1.0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/ansible_tower/exercise1.0/</guid>
+      <description>Section 1: Ad-hoc commands For our first exercise, we are going to run some ad-hoc commands to help you get a feel for how Ansible works. Ansible Ad-Hoc commands enable you to perform tasks on remote nodes without having to write a playbook. They are very useful when you simply need to do one or two things quickly and often, to many remote nodes.
+ Step 0: Define your inventory. Inventories are crucial to Ansible as they define remote machines on which you wish to run commands or your playbook(s).</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.1 - Explore Your First Infrastructure Provider</title>
+      <link>http://redhatgov.io/workshops/cloudforms41/exercise1.1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/cloudforms41/exercise1.1/</guid>
+      <description>What&#39;s An Infrastructure Provider? In Red Hat CloudForms, an infrastructure provider is a virtual infrastructure environment that you can add to a Red Hat CloudForms appliance to manage and interact with the resources in that environment.
+In other words, a infrastructure provider is a management platform for managing virtual machines from a single type of hypervisor. Infrastructure providers supported by CloudForms are Red Hat Enterprise Virtualization Management (RHEV-M), VMware vCenter and Microsoft System Center Virtual Machine Manager (SCVMM).</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.1 - Pulling Docker Images</title>
+      <link>http://redhatgov.io/workshops/containers_101/exercise1.1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/containers_101/exercise1.1/</guid>
+      <description>Pull Images Docker pull command docker pull registry.access.redhat.com/rhel7/rhel   An image is identified by a repository name (registry.access.redhat.com), a namespace name (rhel7) and the image name (rhel). You could also add a tag (which defaults to :latest if not entered). The repository name rhel, when passed to the docker pull command without the name of a registry preceding it, is ambiguous and could result in the retrieval of an image that originates from an untrusted registry.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.1 - Reproducible and Trustworthy Dockerfiles</title>
+      <link>http://redhatgov.io/workshops/security_containers/exercise1.1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_containers/exercise1.1/</guid>
+      <description>Now that you&amp;#8217;ve gotten a sense of how Cockpit works, we are going to start digging in at the commandline on Container security. You can use either the Terminal in Cockpit from your browser, a SSH terminal or Terminal client like PuTTy. The choice is yours.
+   Best Practices Step 1: Always specify a tag in FROM instructions. FROM redis is bad, because it pulls the latest tag, which changes over time and can be expected to move with major version changes.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.1 - SELinux</title>
+      <link>http://redhatgov.io/workshops/security_openshift/exercise1.1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_openshift/exercise1.1/</guid>
+      <description>SELinux is primarily a labeling system that assigns a label (name) to every process and system object. This allows every aspect of kernel operations to be first labeled, second classified, and then ultimately enforced by a set of rules that the provider maintains.
+ BENEFITS OF RUNNING SELINUX
+   All processes and files are labeled with a type. A type defines a domain for processes, and a type for files.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.1 - Writing Your First playbook</title>
+      <link>http://redhatgov.io/workshops/ansible_tower/exercise1.1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/ansible_tower/exercise1.1/</guid>
+      <description>Now that you&amp;#8217;ve gotten a sense of how ansible works, we are going to write our first ansible playbook. The playbook is where you can take some of those ad-hoc commands you just ran and put them into a repeatable set of plays and tasks.
+ A playbook can have multiple plays and a play can have one or multiple tasks. The goal of a play is to map a group of hosts.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.10 - Explore Catalog Configuration</title>
+      <link>http://redhatgov.io/workshops/cloudforms41/exercise1.10/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/cloudforms41/exercise1.10/</guid>
+      <description>Log in to CloudForms using the admin account (if not done already).  Explore Catalog Configuration  Select Services → Catalogs.
+  Services Catalog
+ Select the Catalog Items accordion.
+  Services Catalog Items
+ Select All Catalog Items → VMware Operations → Deploy Ticket Monster on VMware
+  Services Catalog Ticket Monster
+Explore the Details and Selected Resources tabs.
+  In a live environment, this tab displays details about the item the user is ordering.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.11 - Explore Chargeback</title>
+      <link>http://redhatgov.io/workshops/cloudforms41/exercise1.11/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/cloudforms41/exercise1.11/</guid>
+      <description>What Is Chargeback? In Red Hat CloudForms, the chargeback feature of CloudForms Management Engine (CFME) allows you to calculate monetary virtual machine charges based on owner or company tag.
+Explore Chargeback  Select Cloud Intel → Chargeback.
+  Chargeback
+Explore Reports  Select the Reports accordion.
+  Chargeback Reports
+ Select Saved Chargeback Reports → Chargeback (Admin)
+  Chargeback (Admin)
+Select any of the reports shown and note how each instance is charged by resources consumed.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.12 - Explore Utilization</title>
+      <link>http://redhatgov.io/workshops/cloudforms41/exercise1.12/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/cloudforms41/exercise1.12/</guid>
+      <description>Explore Utilization  Select Optimize → Utilization.
+  Utilization
+ Select Region 10 → Cloud/Infrastructure Providers → RHV-M.
+  Region 10 RHV-M Utilization
+On the Summary tab, review the daily utilization chart.
+Under the chart, review the CPU and Memory availability and utilization trends.
+Finer Utilization Details  Select the Details tab and review the CPU and Memory trend charts.
+  Region 10 RHV-M Utilization Details</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.13 - Explore Planning</title>
+      <link>http://redhatgov.io/workshops/cloudforms41/exercise1.13/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/cloudforms41/exercise1.13/</guid>
+      <description>Explore Planning  Select Optimize → Planning.
+  Optimize Planning
+ Under Reference VM Selection, select All VMs.
+  Reference VM Selection
+Choose the CFME027 VM.
+Under VM Options, set the Source to Usage.
+Under Target Options/Limits, set Show to Hosts.
+ Click Submit.
+  Reference VM Selection Submit
+Examine the result on the right which shows all eligible hosts that could host this type of VM.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.14 - Examine Policies</title>
+      <link>http://redhatgov.io/workshops/cloudforms41/exercise1.14/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/cloudforms41/exercise1.14/</guid>
+      <description>What Are Policies? In Red Hat CloudForms, Policy profiles are groupings of policies that you can apply to entities within CloudForms. Compliance policies check for a certain state in a host or VM. Control policies control a host or VM depending on certain criteria.
+Examine Policies  Select Control → Explorer.
+  Control Explorer
+ Select the Policy Profiles accordion.
+  Policy Profile Accordion
+ Select All Policy Profiles → Linux Compliance Check → VM and Instance Compliance: Shell-Shock Vulnerability → Vulnerable bash Package (ShellShock).</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.15 - Explore Network Topology</title>
+      <link>http://redhatgov.io/workshops/cloudforms41/exercise1.15/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/cloudforms41/exercise1.15/</guid>
+      <description> Explore Network Topology  Select Networks → Topology.
+  Network Topology
+A topology view of the network appears.
+Explore the filtering features by activating and deactivating each of the following items on the map:
+ Cloud Subnets VMs Security Groups Floating IPs Cloud Networks Network Routers Cloud Tenants Tags  </description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.16 - Explore Containers</title>
+      <link>http://redhatgov.io/workshops/cloudforms41/exercise1.16/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/cloudforms41/exercise1.16/</guid>
+      <description>What Are Containers? A container is an application sandbox. Your software wrapped in a complete filesystem containing everything it needs to run.
+ Traditional OS vs. Containers
+Explore Containers  Go to Compute → Containers.
+  Container Providers
+ Select a Container Provider.
+ This page displays quantitative details about your containers, such as the number of nodes, containers, registries, projects, pods, services, images, and routes, as well as graphs displaying the nodes and network utilization.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.17 - Introduction to the Automate Datastore</title>
+      <link>http://redhatgov.io/workshops/cloudforms41/exercise1.17/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/cloudforms41/exercise1.17/</guid>
+      <description>What Is CloudForms Automate? When we use the Automate capability of CloudForms, we write scripts in the Ruby language and use objects that the CloudForms Automation Engine makes available to us.
+Explore Automate  Go to Automate → Explorer.
+  Automate Navigation
+The first menu item that we see takes us to the Explorer. This is our visual interface into the Automate Datastore, and it contains the various kinds of Automate objects that we’ll use throughout this lab.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.18 - “Hello, World!” Automation Script</title>
+      <link>http://redhatgov.io/workshops/cloudforms41/exercise1.18/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/cloudforms41/exercise1.18/</guid>
+      <description>Let’s jump right in and start writing our first automation script. In time-honored fashion we’ll write “Hello, World!” to the Automate Engine logfile.
+Before we do anything, we need to ensure that the Automation Engine server role is selected on our CloudForms appliance. We do this from the Configure → Configuration menu, selecting the CloudForms server in the Settings accordion.
+ The Automation Engine server role is now enabled by default in CloudForms 4.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.2 - Deploy OpenShift</title>
+      <link>http://redhatgov.io/workshops/security_openshift/exercise1.2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_openshift/exercise1.2/</guid>
+      <description>OpenShift v3 is a layered system designed to expose underlying Docker-formatted container image and Kubernetes concepts as accurately as possible, with a focus on easy composition of applications by a developer. For example, install Ruby, push code, and add MySQL.
+   OpenShift Step 1: Use the oc command
+ These instances have been preconfigured with docker and the oc command. The oc command makes deploying OpenShift for development purposes incredibly easy.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.2 - Discovering Virtualization Host Systems</title>
+      <link>http://redhatgov.io/workshops/cloudforms41/exercise1.2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/cloudforms41/exercise1.2/</guid>
+      <description>What&#39;s An Infrastructure Host? In Red Hat CloudForms, hosts are hypervisors running on physical hardware providing virtual machines and infrastructure.
+The CloudForms Management Engine automatically adds hosts from discovered providers. However, you can also discover hosts directly if not using a provider. Discovering hosts is only supported for standalone VMware vSphere servers.
+Explore Infrastructure Hosts  Select Compute → Infrastructure → Hosts.
+  List Infrastructure Hosts
+A list of your private datacenter infrastructure hosts appears, such as VMware vSphere and Red Hat Enterprise Virtualization managed hosts (Red Hat Enterprise Linux or Red Hat Enterprise Virtualization Hypervisor).</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.2 - Docker `USER`</title>
+      <link>http://redhatgov.io/workshops/security_containers/exercise1.2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_containers/exercise1.2/</guid>
+      <description>Now that you&amp;#8217;ve gotten a sense of software provenance in Dockerfiles lets take a look at the USER in Dockerfiles.
+ By default docker containers run as root. A docker container running as root has full control of the host system. As docker matures, more secure default options may become available. For now, requiring root is dangerous for others and may not be available in all environments. Your image should use the USER instruction to specify a non-root user for containers to run as.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.2 - Running Your Playbook</title>
+      <link>http://redhatgov.io/workshops/ansible_tower/exercise1.2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/ansible_tower/exercise1.2/</guid>
+      <description>Section 1: Running the Playbook We are now going to run you&amp;#8217;re brand spankin&#39; new playbook on your two web nodes. To do this, you are going to use the ansible-playbook command.
+ Step 1: From your playbook directory ( ~/apache_basic ), run your playbook.
+ ansible-playbook --private-key=~/.ssh/workshopname-tower -i ../hosts install_apache.yml   However, before you go ahead and run that command, lets take a few moments to understand the options.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.2 - Working with Docker Images</title>
+      <link>http://redhatgov.io/workshops/containers_101/exercise1.2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/containers_101/exercise1.2/</guid>
+      <description>Run Docker When you execute a docker run command, you essentially spin up and create a new container from a Docker image. That container consists of the contents of the image, plus features based on any additional options you pass on the docker run command line.
+ The command you pass on the docker run command line sees the inside the container as its running environment so, by default, very little can be seen of the host system.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.3 - Discovering VM Systems</title>
+      <link>http://redhatgov.io/workshops/cloudforms41/exercise1.3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/cloudforms41/exercise1.3/</guid>
+      <description>What&#39;s An Infrastructure VM? In Red Hat CloudForms, infrastructure VMs are operating systems running under a hypervisor.
+Explore Infrastructure VMs  Select Compute → Infrastructure → Virtual Machines.
+  Infrastructure VMs
+A list of your private datacenter’s infrastructure virtual machines appears.
+Explore the Virtual Thumbnail for Infrastructure VMs The web interface uses virtual thumbnails to represent providers. Each thumbnail contains four quadrants by default, which display basic information about each provider.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.3 - Image Streams &amp; Secrets</title>
+      <link>http://redhatgov.io/workshops/security_openshift/exercise1.3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_openshift/exercise1.3/</guid>
+      <description>Image Stream Image streams can be used to automatically perform an action when new images are created. Builds and deployments can watch an image stream to receive notifications when new images are added and react by performing a build or deployment, respectively.
+ For example, if a deployment is using a certain image and a new version of that image is created, a deployment could be automatically performed.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.3 - Remove setuid/setgid Binaries</title>
+      <link>http://redhatgov.io/workshops/security_containers/exercise1.3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_containers/exercise1.3/</guid>
+      <description>There are two special permissions that can be set on executable files: Set User ID (setuid) and Set Group ID (sgid). These permissions allow the file being executed to be executed with the privileges of the owner or the group. For example, if a file was owned by the root user and has the setuid bit set, no matter who executed the file it would always run with root user privileges.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.3 - Using Variables, Loops, and Handlers</title>
+      <link>http://redhatgov.io/workshops/ansible_tower/exercise1.3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/ansible_tower/exercise1.3/</guid>
+      <description>Previous exercises showed you the basics of Ansible Core. In the next few exercises, we are going to teach some more advanced ansible skills that will add flexibility and power to your playbooks.
+ Ansible exists to make tasks simple and repeatable. We also know that not all systems are exactly alike and often require some slight change to the way an Ansible playbook is run. Enter variables.
+ Variables are how we deal with differences between your systems, allowing you to account for a change in port, IP address or directory.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.3 - Working with the Dockerfile</title>
+      <link>http://redhatgov.io/workshops/containers_101/exercise1.3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/containers_101/exercise1.3/</guid>
+      <description>Once you understand how images and containers can be created from the command line, you can try building containers in a more permanent way. Building container images from Dockerfile files is by far the preferred way to create Docker formatted containers, as compared to modifying running containers and committing them to images.
+ The procedure here involves creating a Dockerfile file that includes many of the features illustrated earlier:
+   Choosing a base image (i.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.4 - CGroups</title>
+      <link>http://redhatgov.io/workshops/security_containers/exercise1.4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_containers/exercise1.4/</guid>
+      <description>CGroups The Device Cgroup is primary in isolating and limiting containers to their own shares of CPU, memory, disk I/O, network, etc., other wise it will be denied.
+   Memory Limits Docker uses Cgroups to control and limit the amount of system resources a container can use. This will help to protect a system runing from potential application memory leaks or Denial of Service DoS attacks that can consume all available memory and take down a system.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.4 - Explore Reports</title>
+      <link>http://redhatgov.io/workshops/cloudforms41/exercise1.4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/cloudforms41/exercise1.4/</guid>
+      <description>What Are Reports? In Red Hat CloudForms, reports have been constructed to help you view the most commonly requested and significant data. From here, you can also create reports if you have appropriate access. CloudForms Management Engine provides a large group of default reports organized into categories. Each category has its own set of subfolders.
+Explore Reports  Select Cloud Intel → Reports.
+  Navigate Reports
+The Saved Reports accordion contains previously generated reports.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.4 - Running the apache-basic-playbook</title>
+      <link>http://redhatgov.io/workshops/ansible_tower/exercise1.4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/ansible_tower/exercise1.4/</guid>
+      <description>Congratulations! You just wrote a playbook that incorporates some key Ansible concepts that you use in most if not all of your future playbooks. Before you get too excited though, we should probably make sure it actually runs.
+ So, lets do that now.
+   Section 1 - Running your new apache playbook Step 1: Make sure you are in the right directory and create a host file.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.4 - Skopeo</title>
+      <link>http://redhatgov.io/workshops/security_openshift/exercise1.4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_openshift/exercise1.4/</guid>
+      <description>Skopeo is a command line utility for various operations on container images and image repositories.
+ Skopeo is able to inspect a repository on a Docker registry and fetch images layers. By inspect I mean it fetches the repository&amp;#8217;s manifest and it is able to show you a docker inspect-like json output about a whole repository or a tag.
+ This tool, in contrast to docker inspect, helps you gather useful information about a repository or a tag before pulling it (using disk space) - e.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.4 - Working with Docker Registry</title>
+      <link>http://redhatgov.io/workshops/containers_101/exercise1.4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/containers_101/exercise1.4/</guid>
+      <description>What it is The Registry is a stateless, highly scalable server side application that stores and lets you distribute Docker images. The Registry is open-source, under the permissive Apache license.
+ Why use it You should use the Registry if you want to:
+   tightly control where your images are being stored
+  fully own your images distribution pipeline
+  integrate image storage and distribution tightly into your in-house development workflow</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.5 - Atomic Scanner</title>
+      <link>http://redhatgov.io/workshops/security_openshift/exercise1.5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_openshift/exercise1.5/</guid>
+      <description>The atomic command-line tool provides a way to interact and manage Atomic Host systems and containers. It provides a high level, coherent entrypoint to the system and makes it easier to interact with special kinds of containers, such as super-privileged containers, and debugging tools.
+ The atomic command uses tools such as docker, ostree and skopeo to manage containers and container host systems. There are also a lot of features built into the atomic command that are not available in the docker command.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.5 - Examine Infrastructure Provisioning</title>
+      <link>http://redhatgov.io/workshops/cloudforms41/exercise1.5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/cloudforms41/exercise1.5/</guid>
+      <description>What&#39;s Infrastructure Provisioning? In Red Hat CloudForms, when a virtual machine or cloud instance is provisioned, it goes through multiple phases. First, the request must be made. The request includes ownership information, tags, virtual hardware requirements, the operating system, and any customization of the request. Second, the request must go through an approval phase, either automatic or manual. Finally, the request is executed.
+Execution consists of pre-processing and post-processing. Pre-processing acquires IP addresses for the user, creates VMDB instances, and creates the virtual machine based on information in the request.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.5 - Namespaces</title>
+      <link>http://redhatgov.io/workshops/security_containers/exercise1.5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_containers/exercise1.5/</guid>
+      <description>Namespaces Pid Namespace PID namespaces allow processes in different containers to have the same PID, so each container can have its own init (PID1) process that manages various system initialization tasks as well as containers life cycle. Also, each container has its unique /proc directory. Note that from within the container you can monitor only processes running inside this container. In other words, the container is only aware of its native processes and can not &#34;</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.5 - Roles: Making your playbooks reusable</title>
+      <link>http://redhatgov.io/workshops/ansible_tower/exercise1.5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/ansible_tower/exercise1.5/</guid>
+      <description>While it is possible to write a playbook in one file as we&amp;#8217;ve done throughout this workshop, eventually you’ll want to reuse files and start to organize things.
+ Ansible Roles is the way we do this. When you create a role, you deconstruct your playbook into parts and those parts sit in a directory structure. &#34;Wha?? You mean that seemingly useless best practice you mentioned in exercise 1.2?&#34;. Yep, that one.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.6 - Explore Cloud Providers</title>
+      <link>http://redhatgov.io/workshops/cloudforms41/exercise1.6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/cloudforms41/exercise1.6/</guid>
+      <description>What&#39;s A Cloud Provider? In Red Hat CloudForms, a cloud provider is a computing platform that manages instances and allows building of multi-tenant infrastructure services independent from underlying hypervisors.
+Explore Cloud Providers  Select Compute → Clouds → Providers.
+  Cloud Providers
+A list of your private and public cloud providers, such as OpenStack and Amazon EC2, appears.
+To add Amazon EC2 or Microsoft Azure as a provider, use either  (Configuration) and  (Discover) or  (Configuration) and  (Add).</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.6 - Read Only Containers</title>
+      <link>http://redhatgov.io/workshops/security_containers/exercise1.6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_containers/exercise1.6/</guid>
+      <description>Now that you&amp;#8217;ve gotten a sense of Linux Kernel Capabilities, let&amp;#8217;s move on to Readonly Containers.
+ Imagine a scenario where an application gets compromised. The first thing the bad guy wants to do is to write an exploit into the application, so that the next time the application starts up, it starts up with the exploit in place. If the container was read­only it would prevent leaving a backdoor in place and be forced to start the cycle from the beginning.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.6 - SCC &amp; Seccomp</title>
+      <link>http://redhatgov.io/workshops/security_openshift/exercise1.6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_openshift/exercise1.6/</guid>
+      <description>In addition to authorization policies that control what a user can do, OpenShift Container Platform provides security context constraints (SCC) that control the actions that a pod can perform and what it has the ability to access. Administrators can manage SCCs using the CLI.
+ SCCs are objects that define a set of conditions that a pod must run with in order to be accepted into the system. They allow an administrator to control the following:</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.7 - Explore Cloud Instances</title>
+      <link>http://redhatgov.io/workshops/cloudforms41/exercise1.7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/cloudforms41/exercise1.7/</guid>
+      <description>What Are Cloud Instances? In Red Hat CloudForms, a cloud instance is a virtual machines running under cloud infrastructure.
+Explore Cloud Instances  Select Compute → Clouds → Instances.
+  Cloud Instances
+A list of your public and private cloud instances appears.
+Explore the Virtual Thumbnail for Cloud Instances The web interface uses virtual thumbnails to represent providers. Each thumbnail contains four quadrants by default, which display basic information about each provider.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.7 - Red Hat Security API</title>
+      <link>http://redhatgov.io/workshops/security_openshift/exercise1.7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_openshift/exercise1.7/</guid>
+      <description>Red Hat Product Security is committed to providing tools and security data to help you better understand security threats. This data has been available on our Security Data page and will now also be available in a machine-consumable format with the Security Data API. This tool will allow customers to programmatically query the API for data that was previously exposed only through files on our Security Data page.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.7 - Seccomp</title>
+      <link>http://redhatgov.io/workshops/security_containers/exercise1.7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_containers/exercise1.7/</guid>
+      <description>Seccomp Secure Computing Mode (seccomp) is a kernel feature that allows you to filter system calls to the kernel from a container. The combination of restricted and allowed calls are arranged in profiles, and you can pass different profiles to different containers. Seccomp provides more fine-grained control than capabilities, giving an attacker a limited number of syscalls from the container.
+ The default seccomp profile for docker is a JSON file and can be viewed here: https://github.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.8 - Explore Group and User Access Controls</title>
+      <link>http://redhatgov.io/workshops/cloudforms41/exercise1.8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/cloudforms41/exercise1.8/</guid>
+      <description>Explore Access Control  Go to Settings → Configuration and select the Access Control accordion.
+  Configuration Dashboard
+ Access Control
+Add a role by modifying a copy of an existing role:
+ Select Roles → EvmRole-user.
+  EvmRole-user Role
+ Click  (Configuration), then click  (Copy).
+  EvmRole-user Copy Role
+ For Name, enter Consumer1-Role. On the right, expand Services → Catalogs Explorer → Service Catalogs.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.8 - SELinux</title>
+      <link>http://redhatgov.io/workshops/security_containers/exercise1.8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_containers/exercise1.8/</guid>
+      <description>Now that you&amp;#8217;ve gotten a sense of Read Only Containers, let&amp;#8217;s move on to SELinux.
+ In this section, we’ll cover the basics of SELinux and containers. SELinux policy prevents a lot of break out situations where the other security mechanisms fail. With SELinux on Docker, we write policy that says that the container process running as svirt_lxc_net_t can only read/write files with the svirt_sandbox_file_t label.
+   Step 1: Create the following directories.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.9 - Introduction to Catalogs</title>
+      <link>http://redhatgov.io/workshops/cloudforms41/exercise1.9/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/cloudforms41/exercise1.9/</guid>
+      <description>The following steps are initially run as a non-admin customer account.  Explore Catalog Configuration  Select Services → Catalogs.
+  Services Catalog
+ On the right, select the catalog item called Deploy Ticket Monster on VMware.
+  Ticket Monster
+ Click Order to order the service.
+ Enter values for DBName and App Server Name and click Submit.
+ Ticket Monster Submit
+ The request is submitted in a similar way to provisioning as admin, but with fewer choices.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.9 - Linux Kernel Capabilities</title>
+      <link>http://redhatgov.io/workshops/security_containers/exercise1.9/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_containers/exercise1.9/</guid>
+      <description>What are Linux Capabilities? According to the capabilities man page;
+ Capabilities are distinct units of privilege that can be independently enabled or disabled.
+ Capabilities were added to the kernel around 15 or so years ago to try to divide up the power of root. Originally the kernel allocated a 32-bit bitmask to define these capabilities. A few years ago it was expanded to 64. There are currently around 38 capabilities defined.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 2.0 - Installing Ansible Tower</title>
+      <link>http://redhatgov.io/workshops/ansible_tower/exercise2.0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/ansible_tower/exercise2.0/</guid>
+      <description>In this exercise, we are going to get Ansible Tower installed on your control node
+   Installing Ansible Tower Step 1: Change directories to /tmp
+ cd /tmp    Step 2: Download the latest Ansible Tower package
+ curl -O http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-latest.tar.gz    Step 3: Untar and unzip the package file
+ tar xvfz /tmp/ansible-tower-setup-latest.tar.gz    Step 4: Change directories into the ansible tower package</description>
+    </item>
+    
+    <item>
+      <title>Exercise 2.1 - Configuring Ansible Tower</title>
+      <link>http://redhatgov.io/workshops/ansible_tower/exercise2.1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/ansible_tower/exercise2.1/</guid>
+      <description>In this exercise, we are going to configure Tower so that we can run a playbook.
+   Configuring Ansible Tower There are a number of contructs in the Ansible Tower UI that enable multi-tenancy, notifications, scheduling, etc. However, we are only going to focus on a few of the key contructs that are required for this workshop today.
+   Credentials
+  Projects
+  Inventory</description>
+    </item>
+    
+    <item>
+      <title>Exercise 2.2 - Creating and Running a Job Template</title>
+      <link>http://redhatgov.io/workshops/ansible_tower/exercise2.2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/ansible_tower/exercise2.2/</guid>
+      <description>A job template is a definition and set of parameters for running an Ansible job. Job templates are useful to execute the same job many times.
+   Creating a Job Template Step 1: Select JOB TEMPLATES
+  Step 2: Click on ADD 
+  Step 3: Complete the form using the following values
+     NAME
+ Apache Basic Job Template
+   DESCRIPTION</description>
+    </item>
+    
+    <item>
+      <title>Fin.</title>
+      <link>http://redhatgov.io/workshops/openshift_101_dcmetromap/fin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/openshift_101_dcmetromap/fin/</guid>
+      <description>That&#39;s it! Hopefully, these labs provided you some idea of how to perform common tasks within the OpenShift environment. And hopefully, you have a deeper understanding of how containers and container orchestration works. Please feel free to continue to &amp;quot;kick the tires&amp;quot; in the demo environment we&#39;ve setup and explore both the web console and the oc command line client.
+Get even deeper While you&#39;re here, we can help you install the Container Development Kit (CDK) on your laptop.</description>
+    </item>
+    
+    <item>
+      <title>Fin.</title>
+      <link>http://redhatgov.io/workshops/rhosp_101/fin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/rhosp_101/fin/</guid>
+      <description>That&#39;s it! Hopefully, these labs provided you some idea of how to perform common tasks within the OpenStack environment. And hopefully, you have a deeper understanding of how Infrastructure-as-a-Service works. Please feel free to continue to &amp;quot;kick the tires&amp;quot; in the demo environment we&#39;ve setup and explore both the web console and the command line clients. These will remain running for a few days after the workshop.
+Get even deeper Here are some good resources to continue learning OpenStack:</description>
+    </item>
+    
+    <item>
+      <title>Getting Started</title>
+      <link>http://redhatgov.io/workshops/openshift/getting-started/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/openshift/getting-started/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo Shortcodes</title>
+      <link>http://redhatgov.io/workshops/example/hugo_shortcodes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/example/hugo_shortcodes/</guid>
+      <description>Hugo uses Markdown for its simple content format. However, there are a lot of things that Markdown doesn’t support well.
+We are unwilling to accept being constrained by our simple format. Also unacceptable is writing raw HTML in our Markdown every time we want to include unsupported content such as a video. To do so is in complete opposition to the intent of using a bare-bones format for our content and utilizing templates to apply styling for display.</description>
+    </item>
+    
+    <item>
+      <title>Introduction to Red Hat OpenStack Platform</title>
+      <link>http://redhatgov.io/workshops/rhosp_101/1_introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/rhosp_101/1_introduction/</guid>
+      <description>Red Hat OpenStack Platform Overview Red Hat OpenStack Platform is implemented as a collection of interacting services that control compute, storage, and networking resources. The following diagram provides a high-level overview of the OpenStack core services.
+ OpenStack Services Overview    Horizon - User interface built to give a graphical way to interact with OpenStack services Keystone - Identity management service for projects, users, groups, roles, endpoints, etc.</description>
+    </item>
+    
+    <item>
+      <title>Lab - Building and Deploying a Fast-Moving Monolith</title>
+      <link>http://redhatgov.io/workshops/strangling_the_monolith/lab1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/strangling_the_monolith/lab1/</guid>
+      <description>FAST-MOVING MONOLITH  Large organizations have a tremendous amount of resources invested in existing monolith applications Looking for a sane way to capture the benefits of containers and orchestration without having to complete rewrite OpenShift provides the platform for their existing investment with the benefit of a path forward for microservice based apps in the future  FAST-MOVING MONOLITH ADVANTAGES  Easier to develop since all dependencies are included Single code base for teams to work on No API backwards compatibility issues since all logic is packaged with the application Single deployable unit  Step 1  In this lab, the coolstore monolith will be built and deployed to OpenShift from your local workstation demonstrating a typical Java application developer workflow A sample pipeline is included which will be used to deploy across dev and prod environment   First, deploy the coolstore monolith dev project (don’t forget to include -b app-partner when you run git clone - this is the branch in use for this lab!</description>
+    </item>
+    
+    <item>
+      <title>Lab - Login &amp; Tour of Guacamole</title>
+      <link>http://redhatgov.io/workshops/strangling_the_monolith/login_tour_guac/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/strangling_the_monolith/login_tour_guac/</guid>
+      <description>Introduction to Guacamole CLI This lab provides a quick tour of the Guacamole CLI server to help you get familiar with lab environment along with some key terminology we will use in subsequent lab content.
+If you are already familiar with the basics of Guacamole you can skip this lab — after making sure you can login.
+Guacamole Environment Links Your instructor will assign you a Guacamole environment and login.</description>
+    </item>
+    
+    <item>
+      <title>Lab - Login &amp; Tour of OpenShift</title>
+      <link>http://redhatgov.io/workshops/strangling_the_monolith/login_tour_oc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/strangling_the_monolith/login_tour_oc/</guid>
+      <description>Welcome to OpenShift! This lab provides a quick tour of the console to help you get familiar with the user interface along with some key terminology we will use in subsequent lab content. If you are already familiar with the basics of OpenShift you can skip this lab - after making sure you can login.
+Guacamole Environment Links Your instructor will assign you an OpenShift environment and login.
+Please click &amp;quot;Return to Workshop&amp;quot; above to view the OpenShift Environment Links.</description>
+    </item>
+    
+    <item>
+      <title>Lab - Microservice Integration Patterns</title>
+      <link>http://redhatgov.io/workshops/strangling_the_monolith/lab3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/strangling_the_monolith/lab3/</guid>
+      <description>Microservice Integration Patterns  In previous labs, we created two new microservices with the intention of replacing functionality (“strangling”) the monolithic application. Currently no traffic is routed to them. If you were to re-route traffic from the monolith’s /services/products API to the new catalog service’s /services/catalog endpoint, you would be missing the inventory data. In this lab we will consider different options and architectures for integrating the microservices’ functionality into our app.</description>
+    </item>
+    
+    <item>
+      <title>Lab - Strangle Your Monolith</title>
+      <link>http://redhatgov.io/workshops/strangling_the_monolith/lab2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/strangling_the_monolith/lab2/</guid>
+      <description>Strangling the Monolith Design Pattern  Strangling - incrementally replacing functionality in app with something better (cheaper, faster, easier to maintain). As functionality is replaced, “dead” parts of monolith can be removed/retired. You can also wait for all functionality to be replaced before retiring anything! You can optionally include new functionality during strangulation to make it more attractive to business stakeholders.   https://paulhammant.com/2013/07/14/legacy-application-strangulation-case-studies/
+ Steps for Strangling the Monolith  1) Strangle Monolith</description>
+    </item>
+    
+    <item>
+      <title>Lab 1 - Login to Horizon</title>
+      <link>http://redhatgov.io/workshops/rhosp_101/2_login_to_horizon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/rhosp_101/2_login_to_horizon/</guid>
+      <description>Welcome to Red Hat OpenStack Platform (RHOSP)! This lab provides a quick tour of the Horizon dashboard to help you get familiar with the user interface. If you are already familiar with the basics of Horizon simply ensure you can login and have access to your student project.
+Accessing Horizon RHOSP provides a web dashboard that allows you to perform various tasks via a web browser. Let&#39;s get started by logging into Horizon and checking the status of the platform.</description>
+    </item>
+    
+    <item>
+      <title>Lab 1 - Welcome</title>
+      <link>http://redhatgov.io/workshops/openshift_101_dcmetromap/lab1-welcome/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/openshift_101_dcmetromap/lab1-welcome/</guid>
+      <description>Welcome to OpenShift! This lab provides a quick tour of the console to help you get familiar with the user interface along with some key terminology we will use in subsequent lab content. If you are already familiar with the basics of OpenShift simply ensure you can login and create the project.
+Key Terms We will be using the following terms throughout the workshop labs so here are some basic definitions you should be familiar with.</description>
+    </item>
+    
+    <item>
+      <title>Lab 2 - BYO Docker</title>
+      <link>http://redhatgov.io/workshops/openshift_101_dcmetromap/lab2-byodocker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/openshift_101_dcmetromap/lab2-byodocker/</guid>
+      <description>Bring your own docker It&#39;s easy to get started with OpenShift whether you&#39;re using our app templates or bringing your existing docker assets. In this quick lab we will deploy an application using an exisiting docker image. OpenShift will create an image stream for the image as well as deploy and manage containers based on that image. And we will dig into the details to show how all that works.</description>
+    </item>
+    
+    <item>
+      <title>Lab 2 - Managing Neutron Networks</title>
+      <link>http://redhatgov.io/workshops/rhosp_101/3_managing_networks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/rhosp_101/3_managing_networks/</guid>
+      <description>Neutron - Overlay Networking for OpenStack Neutron is an OpenStack project to provide &amp;quot;networking as a service&amp;quot; between interface devices (e.g., vNICs) managed by other Openstack services (e.g., nova).
+Starting in the Folsom release, Neutron is a core and supported part of the OpenStack platform.
+Examining Project Network Topology  Navigate to Network -&amp;gt; Network Topology using the second level navigation tabs.
+  Lab 2 Figure 1: Neutron Network Topology   There are two ways to view the project network layout.</description>
+    </item>
+    
+    <item>
+      <title>Lab 3 - Deploying an App with S2I</title>
+      <link>http://redhatgov.io/workshops/openshift_101_dcmetromap/lab3-s2i/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/openshift_101_dcmetromap/lab3-s2i/</guid>
+      <description>Source to Image (S2I) One of the useful components of OpenShift is its source-to-image capability. S2I is a framework that makes it easy to turn your source code into runnable images. The main advantage of using S2I for building reproducible docker images is the ease of use for developers. You&#39;ll see just how simple it can be in this lab.
+Let&#39;s build a node.js web server using S2I We can do this either via the command line or the web console.</description>
+    </item>
+    
+    <item>
+      <title>Lab 3 - Managing Floating IP Addresses</title>
+      <link>http://redhatgov.io/workshops/rhosp_101/4_managing_floating_ip_addresses/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/rhosp_101/4_managing_floating_ip_addresses/</guid>
+      <description>Floating IP vs. Private IP Addresses Private IP Address A private IP address is assigned to an instance&#39;s network-interface by the DHCP server. The address is visible from within the instance by using a command like “ip a”. The address is typically part of a private network and is used for communication between instances in the same broadcast domain via virtual switch (L2 agent on each compute node). It can also be accessible from instances in other private networks via virtual router (L3 agent).</description>
+    </item>
+    
+    <item>
+      <title>Lab 4 - Developing and Managing Your Application</title>
+      <link>http://redhatgov.io/workshops/openshift_101_dcmetromap/lab4-devmanage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/openshift_101_dcmetromap/lab4-devmanage/</guid>
+      <description>Developing and managing an application in OpenShift In this lab we will explore some of the common activities undertaken by developers working in OpenShift. You will become familiar with how to use environment variables, secrets, build configurations, and more. Let&#39;s look at some of the basic things a developer might care about for a deployed app.
+Setup From the previous lab you should have the DC Metro Maps web app running in OpenShift.</description>
+    </item>
+    
+    <item>
+      <title>Lab 4 - Managing Security Groups</title>
+      <link>http://redhatgov.io/workshops/rhosp_101/5_managing_security_groups/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/rhosp_101/5_managing_security_groups/</guid>
+      <description>Security Groups in OpenStack A security group is a named collection of network access rules that are used to limit the types of traffic that have access to instances. When you launch an instance, you can assign one or more security groups to it. If you do not create security groups, new instances are automatically assigned to the default security group, unless you explicitly specify a different security group.</description>
+    </item>
+    
+    <item>
+      <title>Lab 5 - Managing Images</title>
+      <link>http://redhatgov.io/workshops/rhosp_101/6_managing_images/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/rhosp_101/6_managing_images/</guid>
+      <description>Where Shall We Store Our Golden Images? Glance The Image service (glance) project provides a service where users can upload and discover data assets that are meant to be used with other services. This currently includes images and metadata definitions.
+Glance image services include discovering, registering, and retrieving virtual machine (VM) images. Glance has a RESTful API that allows querying of VM image metadata as well as retrieval of the actual image.</description>
+    </item>
+    
+    <item>
+      <title>Lab 5 - Webhooks and Rollbacks</title>
+      <link>http://redhatgov.io/workshops/openshift_101_dcmetromap/lab5-rollbacks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/openshift_101_dcmetromap/lab5-rollbacks/</guid>
+      <description>Build Triggers, Webhooks and Rollbacks - Oh My! Once you have an app deployed in OpenShift you can take advantage of some continuous capabilities that help to enable DevOps and automate your management process. We will cover some of those in this lab: Build triggers, webhooks, and rollbacks.
+A bit of configuration We are going to do some integration and coding with an external git repository. For this lab we are going to use github, if you don&#39;t already have an account, you can create one here.</description>
+    </item>
+    
+    <item>
+      <title>Lab 6 - Managing Instances</title>
+      <link>http://redhatgov.io/workshops/rhosp_101/7_managing_instances/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/rhosp_101/7_managing_instances/</guid>
+      <description>Now We are Ready to Launch an OpenStack Instance First, What is an Instance? Instances are virtual machines that run inside the OpenStack cloud. You can launch an instance from the following sources:
+ Images uploaded to the Image service
+ Image that you have copied to a persistent volume. The instance launches from the volume, which is provided by the cinder-volume API through iSCSI
+ Instance snapshot that you took  Let&#39;s Go Launch a New Instance  Navigate to Compute -&amp;gt; Instances using the second level navigation tabs</description>
+    </item>
+    
+    <item>
+      <title>Lab 6 - Replication and Recovery</title>
+      <link>http://redhatgov.io/workshops/openshift_101_dcmetromap/lab6-replicationrecovery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/openshift_101_dcmetromap/lab6-replicationrecovery/</guid>
+      <description>Things will go wrong, and that&#39;s why we have replication and recovery Things will go wrong with your software, or your hardware, or from something out of your control. But we can plan for that failure, and planning for it let&#39;s us minimize the impact. OpenShift supports this via what we call replication and recovery.
+Replication Let&#39;s walk through a simple example of how the replication controller can keep your deployment at a desired state.</description>
+    </item>
+    
+    <item>
+      <title>Lab 7 - Labels</title>
+      <link>http://redhatgov.io/workshops/openshift_101_dcmetromap/lab7-labels/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/openshift_101_dcmetromap/lab7-labels/</guid>
+      <description>Labels This is a pretty simple lab, we are going to explore labels. You can use labels to organize, group, or select API objects.
+For example, pods are &amp;quot;tagged&amp;quot; with labels, and then services use label selectors to identify the pods they proxy to. This makes it possible for services to reference groups of pods, even treating pods with potentially different docker containers as related entities.
+Labels on a pod In a previous lab we added our web app using a S2I template.</description>
+    </item>
+    
+    <item>
+      <title>Lab 7 - Using the OpenStack CLI(s)</title>
+      <link>http://redhatgov.io/workshops/rhosp_101/8_using_the_cli/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/rhosp_101/8_using_the_cli/</guid>
+      <description>Okay. UIs Are Cool and All, But Can&#39;t I Just Use the CLI? Absolutely! There are 3 ways to interact with OpenStack.
+ APIs
+ CLIs
+ Horizon  In this lab, we are going to walk through some of the activities that we did in the previous labs via the CLIs.
+ When you see a CLI command starting with openstack, the command is part of the Unified CLI.</description>
+    </item>
+    
+    <item>
+      <title>Lab 8 - CI / CD Pipeline</title>
+      <link>http://redhatgov.io/workshops/openshift_101_dcmetromap/lab8-cicd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/openshift_101_dcmetromap/lab8-cicd/</guid>
+      <description>CI/CD Defined In modern software projects many teams utilize the concept of Continuous Integration (CI) and Continuous Delivery (CD). By setting up a tool chain that continuously builds, tests, and stages software releases a team can ensure that their product can be reliably released at any time. OpenShift can be an enabler in the creation and management of this tool chain.
+In this lab we walk through creating a simple example of a CI/CD pipeline utlizing Jenkins, all running on top of OpenShift!</description>
+    </item>
+    
+    <item>
+      <title>Lab 8 - Using Heat to Describe Stacks</title>
+      <link>http://redhatgov.io/workshops/rhosp_101/9_heat/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/rhosp_101/9_heat/</guid>
+      <description>We Have Done a Ton of Stuff, But All Manually. How Do We Orchestrate? In OpenStack, the answer to that is Heat.
+Heat is the main project in the OpenStack Orchestration program. It implements an orchestration engine to launch multiple composite cloud applications based on templates in the form of text files that can be treated like code. A native Heat template format is evolving, but Heat also endeavours to provide compatibility with the AWS CloudFormation template format, so that many existing CloudFormation templates can be launched on OpenStack.</description>
+    </item>
+    
+    <item>
+      <title>Lab 9 - Blue | Green Deployment</title>
+      <link>http://redhatgov.io/workshops/openshift_101_dcmetromap/lab9-bluegreen/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/openshift_101_dcmetromap/lab9-bluegreen/</guid>
+      <description>Blue/Green deployments When implementing continuous delivery for your software one very useful technique is called Blue/Green deployments. It addresses the desire to minimize downtime during the release of a new version of an application to production. Essentially, it involves running two production versions of your app side-by-side and then switching the routing from the last stable version to the new version once it is verified. Using OpenShift, this can be very seamless because using containers we can easily and rapidly deploy a duplicate infrastructure to support alternate versions and modify routes as a service.</description>
+    </item>
+    
+    <item>
+      <title>Lab 9 - Managing Block and Object Storage</title>
+      <link>http://redhatgov.io/workshops/rhosp_101/10_storage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/rhosp_101/10_storage/</guid>
+      <description>Working With Block and Object Storage in OpenStack Block Storage is Handled by Cinder The OpenStack Block Storage service works through the interaction of a series of daemon processes named cinder-* that reside persistently on the host machine or machines. You can run all the binaries from a single node, or spread across multiple nodes. You can also run them on the same node as other OpenStack services.
+To administer the OpenStack Block Storage service, it is helpful to understand a number of concepts.</description>
+    </item>
+    
+    <item>
+      <title>Prerequisites</title>
+      <link>http://redhatgov.io/workshops/example/prerequisites/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/example/prerequisites/</guid>
+      <description>Getting Started This entire site, including the workshop content, is built using a tool named Hugo. Hugo is known as a &amp;quot;static site generator&amp;quot; where the content you build is pre-compiled before being served by a web server.
+The Good News The good news is that you don&#39;t have to worry about how Hugo works, how to configure it, or how everything gets deployed.
+All of that is being handled for you and you can focus on the content of your workshop.</description>
+    </item>
+    
+    <item>
+      <title>Prerequisites</title>
+      <link>http://redhatgov.io/workshops/strangling_the_monolith/prerequisites/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/strangling_the_monolith/prerequisites/</guid>
+      <description>If we provided you a laptop or cloud environment. We already set all this up for you — feel free to skip everything below!
+ Install oc Click here for instructions on how to install the OpenShift Container Platform CLI.
+Install git Click here for instructions on how to install Git on your workstation.
+Create GitHub account Click here for instructions on how to setup an account.</description>
+    </item>
+    
+    <item>
+      <title>Setup</title>
+      <link>http://redhatgov.io/workshops/ansible_tower/setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/ansible_tower/setup/</guid>
+      <description>Setup  Today&amp;#8217;s workshop infrastructure is being run in Amazon EC2.
+  Each student will have two instances to use.
+   Tower https://workshopname.tower.0.redhatgov.io:8888/wetty/ssh/ec2-user    Node 1 http://workshopname.0.redhatgov.io     Each of you should have received an email. It has the following information on it.
+   If you didn&amp;#8217;t get one of these emails, let us know so we can give you the information about your lab environment.</description>
+    </item>
+    
+    <item>
+      <title>Setup</title>
+      <link>http://redhatgov.io/workshops/containers_101/setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/containers_101/setup/</guid>
+      <description>Today&amp;#8217;s workshop infrastructure is being run in Amazon EC2. Each student will have one instances to use. Each of you should have received an email. It has the following information on it.
+  Web based ssh access URL for your EC2 instances.
+   workshopname.&amp;lt;student#&amp;gt;.redhatgov.io:8888/wetty/ssh/ec2-user   Where &amp;lt;student#&amp;gt; is the number that has been assigned to you by the instructor.
+ If you didn&amp;#8217;t get one of these emails, let us know so we can give you the information about your lab environment.</description>
+    </item>
+    
+    <item>
+      <title>Setup</title>
+      <link>http://redhatgov.io/workshops/security_containers/setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_containers/setup/</guid>
+      <description>Today&amp;#8217;s workshop infrastructure is being run in Amazon EC2. Each student will have a single instance to use. Each of you should have received an email. It has the following information on it. Your student number will be substituted where you see this &amp;lt; student# &amp;gt;. Example: if you are student 21: http://workshopname.21.redhatgov.io
+   Web URL for each of your EC2 instances.
+  Username and password</description>
+    </item>
+    
+    <item>
+      <title>Setup</title>
+      <link>http://redhatgov.io/workshops/security_openshift/setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_openshift/setup/</guid>
+      <description>Today&amp;#8217;s workshop infrastructure is being run in Amazon EC2. Each student will have a single instance to use. Each of you should have received an email. It has the following information on it. Your student number will be substituted where you see this &amp;lt; student# &amp;gt;. Example: if you are student 21: http://dc17.21.redhatgov.io
+   EC2 SSH Key
+  Web URL for each of your EC2 instances.</description>
+    </item>
+    
+    <item>
+      <title>Verify Prerequisites</title>
+      <link>http://redhatgov.io/workshops/openshift_101_dcmetromap/prerequisites/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/openshift_101_dcmetromap/prerequisites/</guid>
+      <description>Install the command line tools for your operating system  If we provided you a laptop for this workshop. We already set all this up for you - so you can skip below.
+ The officially supported instructions for installing the oc client via Red Hat are located here.
+TL;DR:
+ Download the enterprise oc client from Red Hat and add to your PATH (Requires Login).
+ Download the upstream oc client from OpenShift Origin.</description>
+    </item>
+    
+    <item>
+      <title>Workshop Content</title>
+      <link>http://redhatgov.io/workshops/example/workshop_content/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/example/workshop_content/</guid>
+      <description>Setting Expectations For Your Audience  Clearly tell your audience what the lab is, what things they will be doing, and what kind of skills are required to be successful at your workshop.
+ Examples of expectation setting:
+ &#39;This is a hands-on workshop.&#39; &#39;You should be comfortable with the command line.&#39; &#39;You should be comfortable being a Java developer.&#39; &#39;You understand classes and how to create them.&#39; &#39;You can write, understand and create html/jsp/servlets.</description>
+    </item>
+    
+    <item>
+      <title>Workshop is Done</title>
+      <link>http://redhatgov.io/workshops/cloudforms41/wrapup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/cloudforms41/wrapup/</guid>
+      <description>That&#39;s it! Hopefully, these labs provided you some idea of how to perform common tasks within the CloudForms environment. And hopefully, you have a deeper understanding of how CloudForms simplifies IT, providing unified management and operations in a hybrid environment.
+As your IT infrastructure progresses from traditional virtualization toward an Infrastructure-as-a-Service (IaaS) model, CloudForms evolves, protecting your investments and providing consistent user experience and functionality.
+Please feel free to continue to &amp;quot;kick the tires&amp;quot; in the demo environment we&#39;ve setup and explore the web console.</description>
+    </item>
+    
+    <item>
+      <title>Wrap Up</title>
+      <link>http://redhatgov.io/workshops/security_containers/wrapup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_containers/wrapup/</guid>
+      <description>That wraps up what we have planned for today. We hope you&amp;#8217;ve learned something valuable about Container Security that you can apply in your daily role.
+ What do you think? How can we help you understand Container Security better?
+ Before you leave, check out the Resources page that is part of this guide. There you can find a ton of links that will further your Container education.
+ This Participant Guide will remain active for the next two weeks.</description>
+    </item>
+    
+    <item>
+      <title>Wrap Up</title>
+      <link>http://redhatgov.io/workshops/security_openshift/wrapup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_openshift/wrapup/</guid>
+      <description>That wraps up what we have planned for today. We hope you&amp;#8217;ve learned something valuable about OpenShift Security that you can apply in your daily role.
+ What do you think? How can we help you understand OpenShift Security better?
+ Before you leave, check out the Resources page that is part of this guide. There you can find a ton of links that will further your OpenShift education.
+ This Participant Guide will remain active for the next two weeks.</description>
+    </item>
+    
+    <item>
+      <title>Wrapup</title>
+      <link>http://redhatgov.io/workshops/ansible_tower/wrapup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/ansible_tower/wrapup/</guid>
+      <description>That wraps up what we have planned for today. We hope you&amp;#8217;ve learned something valuable
+about Ansible and Ansible Tower that you can apply in your daily role.
+ What do you think? How can we help you understand Ansible Tower better?
+ Before you leave, check out the Resources page that is part of this guide. There you can
+find a ton of links that will further your Ansible education.</description>
+    </item>
+    
+    <item>
+      <title>Wrapup</title>
+      <link>http://redhatgov.io/workshops/containers_101/wrapup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/containers_101/wrapup/</guid>
+      <description>Wrap Up, Q&amp;amp;A, and Free Style That wraps up what we have planned for today.
+ What do you think? How can we help you understand Containers better?
+ For more indepth overview and examples for working with containers and RHEL check out this link
+ Thank you for your time and participation!
+   </description>
+    </item>
+    
+  </channel>
+</rss>

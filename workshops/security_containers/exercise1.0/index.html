@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Exercise 1.0 - Intro to Cockpit | Red Hat | Public Sector</title>
+
+    
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly.min.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly-additions.min.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/highlight.js/styles/darkula.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/css/main.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/css/asciidoc.css" />
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery/dist/jquery.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/c3/c3.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/d3/d3.min.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/drmonty-datatables-colvis/js/dataTables.colVis.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables.net-colreorder/js/dataTables.colReorder.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/dist/js/patternfly.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-combobox/js/bootstrap-combobox.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/moment/min/moment.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/google-code-prettify/bin/prettify.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/highlight.js/lib/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body class="">
+    
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top " role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="http://redhatgov.io/img/brand.png" alt="Red Hat | Public Sector" />
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+          
+            <li>
+              <a href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/contact/">Contact</a>
+            </li>
+          
+        
+          
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Workshops <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                
+                  <li>
+                    <a href="/workshops/ansible_tower/">Ansible Tower Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/cloudforms41/">CloudForms Workshops</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_containers/">Container Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/containers_101/">Containers 101 Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/example/">Example Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/strangling_the_monolith/">Microservices Workshop - Strangling the Monolith</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/openshift_101_dcmetromap/">OpenShift 101 - DC Metro Map Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_openshift/">OpenShift Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/rhosp_101/">Red Hat OpenStack Platform 101</a>
+                  </li>
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="jumbotron jumbotron-page text-center">
+  <h1>Exercise 1.0 - Intro to Cockpit</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/security_containers">Return to Workshop</a>
+    </p>
+    
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/security_containers/setup/">&larr; Previous: Setup</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/security_containers/exercise1.1/">Next: Exercise 1.1 - Reproducible and Trustworthy Dockerfiles &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <div id="preamble">
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="/workshops/security_containers/images/cockpit.png" alt="cockpit">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cockpit">Cockpit</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A remote manager for GNU/Linux servers</p>
+</div>
+<div class="paragraph">
+<p><a href="http://cockpit-project.org/">Cockpit</a> is a server manager that makes it easy to
+administer your GNU/Linux servers via a web browser.</p>
+</div>
+<div class="paragraph">
+<p>Cockpit makes it easy for any sysadmin to perform simple tasks, such as
+administering storage, inspecting journals and starting and stopping services.</p>
+</div>
+<div class="paragraph">
+<p>Jumping between the terminal and the web tool is no problem. A service started
+via Cockpit can be stopped via the terminal. Likewise, if an error occurs in
+the terminal, it can be seen in the Cockpit journal interface.</p>
+</div>
+<div class="paragraph">
+<p>You can monitor and administer several servers at the same time. Just add them
+with a single click and your machines will look after its buddies.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cockpit_and_docker">Cockpit and Docker</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cockpit also makes it easy to monitor and administer Docker containers running
+on Cockpit-managed servers such as Project Atomic hosts.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Monitor resources consumed by containers</p>
+</li>
+<li>
+<p>Adjust resources available to containers</p>
+</li>
+<li>
+<p>Resource limits enforced by the CGroup subsystem in the Linux kernel</p>
+</li>
+<li>
+<p>Adjust CPU shares</p>
+</li>
+<li>
+<p>Assign memory limits</p>
+</li>
+<li>
+<p>More CGroup policy controls to come</p>
+</li>
+<li>
+<p>Stop, Start, Delete and Commit container instances</p>
+</li>
+<li>
+<p>Run and Delete container images</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cockpit_2">Cockpit</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_step_0">Step 0:</h3>
+<div class="imageblock">
+<div class="content">
+<img src="/workshops/security_containers/images/login.png" alt="Login to Cockpit">
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Login to Cockpit</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">Username: cockpit
+
+Password: redhat!@#</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_1">Step 1:</h3>
+<div class="paragraph">
+<p><strong>System:</strong> Shows information about the system that Cockpit is running on. This
+includes CPU usage, memory usage, disk I/O, and network traffic, as well as
+hardware and operating system details.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">Click:  Show Fingerprints | System Time | Power Options | Performance Profile</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/workshops/security_containers/images/overview.png" alt="System">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_2">Step 2:</h3>
+<div class="paragraph">
+<p><strong>Services:</strong> Shows the systemd services running on the Cockpit server. You can
+see which are active/enabled or inactive. You can also see other systemd
+features: Targets, sockets, timers, and paths.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">Click:  Targets | System Services | Sockets | Timers | Paths</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/workshops/security_containers/images/services.png" alt="Services">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_3">Step 3:</h3>
+<div class="paragraph">
+<p><strong>Containers:</strong> Lists all images available on the system, all running and
+non-running containers, combined CPU &amp; memory usage graphs, and a storage
+usage bar.</p>
+</div>
+<div class="listingblock">
+<div class="title">Click to Launch a image</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">Click: Get new image</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/workshops/security_containers/images/containers1.png" alt="Containers">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_4">Step 4:</h3>
+<div class="paragraph">
+<p>Search &amp; Download for Fedora</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">Search: fedora -&gt; download</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/workshops/security_containers/images/search.png" alt="Search for Fedora">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_5">Step 5:</h3>
+<div class="paragraph">
+<p>Run the Fedora image</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">Click: Run</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/workshops/security_containers/images/run.png" alt="Run the Fedora image">
+</div>
+</div>
+<div class="paragraph">
+<p>Add a command to run the image. Sleep is generic enough command.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">Command: sleep 999</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/workshops/security_containers/images/run-image.png" alt="Run with options">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_6">Step 6:</h3>
+<div class="paragraph">
+<p>Click on the newly created container and see all of the metadata about the
+container. Shows the state, the command executed, the container&#8217;s and image&#8217;s
+IDs, a timestamp, as well as the container&#8217;s own terminal:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/workshops/security_containers/images/detail.png" alt="Image Detail">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_7">Step 7:</h3>
+<div class="paragraph">
+<p><strong>Tools:</strong> (Terminal)<br>
+<strong>Subscriptions:</strong> Displays what Red Hat products are installed and subscribed.<br>
+<strong>Accounts:</strong> Shows which administrative (root) and other users have accounts on
+the system.<br>
+<strong>Diagnostic report:</strong> Collects system configuration and diagnostics information
+and prepares a report in an XZ format.<br>
+<strong>Terminal:</strong> Opens a Terminal (command line) session to the Cockpit system.
+From there, you can run any commands available to the user you are logged in
+as. For example, as cockpit, you could run docker commands.<br></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">Command:  sudo docker ps -a</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/workshops/security_containers/images/terminal.png" alt="Terminal">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_8">Step 8:</h3>
+<div class="paragraph">
+<p>When your done taking a look around go ahead and stop &amp; delete the container.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">Click:  Stop  -&gt;  Delete</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/workshops/security_containers/images/delete.png" alt="Stop &amp; Delete">
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/security_containers/setup/">&larr; Previous: Setup</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/security_containers/exercise1.1/">Next: Exercise 1.1 - Reproducible and Trustworthy Dockerfiles &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/security_containers">Return to Workshop</a>
+    </p>
+  </div>
+</div>
+
+    <div id="page-footer" class="container">
+      <p class="text-center">
+        Copyright &copy; 2017 Red Hat, Inc.
+      </p>
+    </div>
+  </body>
+</html>
+

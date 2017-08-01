@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Exercise 1.1 - Writing Your First playbook | Red Hat | Public Sector</title>
+
+    
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly.min.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly-additions.min.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/highlight.js/styles/darkula.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/css/main.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/css/asciidoc.css" />
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery/dist/jquery.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/c3/c3.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/d3/d3.min.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/drmonty-datatables-colvis/js/dataTables.colVis.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables.net-colreorder/js/dataTables.colReorder.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/dist/js/patternfly.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-combobox/js/bootstrap-combobox.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/moment/min/moment.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/google-code-prettify/bin/prettify.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/highlight.js/lib/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body class="">
+    
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top " role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="http://redhatgov.io/img/brand.png" alt="Red Hat | Public Sector" />
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+          
+            <li>
+              <a href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/contact/">Contact</a>
+            </li>
+          
+        
+          
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Workshops <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                
+                  <li>
+                    <a href="/workshops/ansible_tower/">Ansible Tower Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/cloudforms41/">CloudForms Workshops</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_containers/">Container Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/containers_101/">Containers 101 Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/example/">Example Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/strangling_the_monolith/">Microservices Workshop - Strangling the Monolith</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/openshift_101_dcmetromap/">OpenShift 101 - DC Metro Map Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_openshift/">OpenShift Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/rhosp_101/">Red Hat OpenStack Platform 101</a>
+                  </li>
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="jumbotron jumbotron-page text-center">
+  <h1>Exercise 1.1 - Writing Your First playbook</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/ansible_tower">Return to Workshop</a>
+    </p>
+    
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/ansible_tower/exercise1.0/">&larr; Previous: Exercise 1.0 - Running Ad-hoc commands</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/ansible_tower/exercise1.2/">Next: Exercise 1.2 - Running Your Playbook &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now that you&#8217;ve gotten a sense of how ansible works, we are going to write our first
+ansible <strong>playbook</strong>.  The playbook is where you can take some of those ad-hoc commands you just ran
+and put them into a repeatable set of <strong>plays</strong> and <strong>tasks</strong>.</p>
+</div>
+<div class="paragraph">
+<p>A playbook can have multiple plays and a play
+can have one or multiple tasks.  The goal of a <strong>play</strong> is to map a group of hosts.  The goal of a <strong>task</strong> is to implement modules against those hosts.</p>
+</div>
+<div class="paragraph">
+<p>For our first playbook, we are only going to write one play and two tasks.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_section_1_creating_a_directory_structure_and_files_for_your_playbook">Section 1: Creating a Directory Structure and Files for your Playbook</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There is a <a href="http://docs.ansible.com/ansible/playbooks_best_practices.html">best practice</a> on the preferred directory structures for playbooks.  We strongly encourage
+you to read and understand these practices as you develop your Ansible ninja skills.  That said,
+our playbook today is very basic and creating a complex structure will just confuse things.</p>
+</div>
+<div class="paragraph">
+<p>Instead, we are going to create a very simple directory structure for our playbook, and add just a couple of files to it.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1:</strong> Create a directory called <strong>apache_basic</strong> in your home directory and change directories into it</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">mkdir ~/apache_basic
+cd ~/apache_basic</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Step 2:</strong> Use <code>vi</code> or <code>vim</code> to open a file called <code>install_apache.yml</code></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_section_2_defining_your_play">Section 2: Defining Your Play</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now that you are editing <code>install_apache.yml</code>, let&#8217;s begin by defining the play and then understanding what each line accomplishes</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">---
+- hosts: web
+  name: Install the apache web service
+  become: yes</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>---</code> Defines the beginning of YAML</p>
+</li>
+<li>
+<p><code>hosts: web</code> Defines the host group in your inventory on which this play will run against</p>
+</li>
+<li>
+<p><code>name: Install the apache web service</code> This describes our play</p>
+</li>
+<li>
+<p><code>become: yes</code> Enables user privilege escalation.  The default is sudo, but su, pbrun, and <a href="http://docs.ansible.com/ansible/become.html#new-command-line-options">several others</a> are also supported.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_section_3_adding_tasks_to_your_play">Section 3: Adding Tasks to Your Play</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now that we&#8217;ve defined your play, let&#8217;s add some tasks to get some things done.  Align (vertically) the <strong>t</strong> in <code>task</code> with the <strong>b</strong> <code>become</code>. <br>
+Yes, it does actually matter.  In fact, you should make sure all of your playbook statements are aligned in the way shown here.<br>
+If you want to see the entire playbook for reference, skip to the bottom of this exercise.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">tasks:
+ - name: install apache
+   yum:
+     name: httpd
+     state: present
+
+ - name: start httpd
+   service:
+     name: httpd
+     state: started</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>tasks:</code> This denotes that one or more tasks are about to be defined</p>
+</li>
+<li>
+<p><code>- name:</code> Each task requires a name which will print to standard output when you run your playbook.
+Therefore, give your tasks a name that is short, sweet, and to the point</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-text" data-lang="text">yum:
+  name: httpd
+  state: present</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>These three lines are calling the Ansible module <strong>yum</strong> to install httpd.
+<a href="http://docs.ansible.com/ansible/yum_module.html">Click here</a> to see all options for the yum module.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-text" data-lang="text">service:
+  name: httpd
+  state: started</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The next few lines are using the ansible module <strong>service</strong> to start the httpd service.  The service module
+is the preferred way of controlling services on remote hosts.  <a href="http://docs.ansible.com/ansible/service_module.html">Click here</a> to learn more
+about the <strong>service</strong> module.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_section_4_saving_your_playbook">Section 4: Saving your Playbook</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now that you&#8217;ve completed writing your playbook, it would be a shame not to keep it.</p>
+</div>
+<div class="paragraph">
+<p>Use the <code>write/quit</code> method in <code>vi</code> or <code>vim</code> to save your playbook, i.e. <code>Esc :wq!</code></p>
+</div>
+<div class="paragraph">
+<p>And that should do it.  You should now have a fully written playbook called <code>install_apache.yml</code>.
+You are ready to automate!</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Ansible (well, YAML really) can be a bit particular about formatting especially around indentation/spacing.  When you all get back to the office,
+read up on this <a href="http://docs.ansible.com/ansible/YAMLSyntax.html">YAML Syntax</a> a bit more and it will save you some headaches later.  In the meantime, your completed playbook should look
+like this.  Take note of the spacing and alignment.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">---
+- hosts: web
+  name: Install the apache web service
+  become: yes
+
+  tasks:
+    - name: install apache
+      yum:
+        name: httpd
+        state: present
+
+    - name: start httpd
+      service:
+        name: httpd
+        state: started</code></pre>
+</div>
+</div>
+</div>
+</div>
+
+
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/ansible_tower/exercise1.0/">&larr; Previous: Exercise 1.0 - Running Ad-hoc commands</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/ansible_tower/exercise1.2/">Next: Exercise 1.2 - Running Your Playbook &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/ansible_tower">Return to Workshop</a>
+    </p>
+  </div>
+</div>
+
+    <div id="page-footer" class="container">
+      <p class="text-center">
+        Copyright &copy; 2017 Red Hat, Inc.
+      </p>
+    </div>
+  </body>
+</html>
+

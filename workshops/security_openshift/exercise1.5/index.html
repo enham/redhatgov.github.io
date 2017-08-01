@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Exercise 1.5 - Atomic Scanner | Red Hat | Public Sector</title>
+
+    
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly.min.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly-additions.min.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/highlight.js/styles/darkula.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/css/main.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/css/asciidoc.css" />
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery/dist/jquery.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/c3/c3.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/d3/d3.min.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/drmonty-datatables-colvis/js/dataTables.colVis.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables.net-colreorder/js/dataTables.colReorder.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/dist/js/patternfly.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-combobox/js/bootstrap-combobox.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/moment/min/moment.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/google-code-prettify/bin/prettify.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/highlight.js/lib/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body class="">
+    
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top " role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="http://redhatgov.io/img/brand.png" alt="Red Hat | Public Sector" />
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+          
+            <li>
+              <a href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/contact/">Contact</a>
+            </li>
+          
+        
+          
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Workshops <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                
+                  <li>
+                    <a href="/workshops/ansible_tower/">Ansible Tower Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/cloudforms41/">CloudForms Workshops</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_containers/">Container Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/containers_101/">Containers 101 Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/example/">Example Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/strangling_the_monolith/">Microservices Workshop - Strangling the Monolith</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/openshift_101_dcmetromap/">OpenShift 101 - DC Metro Map Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_openshift/">OpenShift Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/rhosp_101/">Red Hat OpenStack Platform 101</a>
+                  </li>
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="jumbotron jumbotron-page text-center">
+  <h1>Exercise 1.5 - Atomic Scanner</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/security_openshift">Return to Workshop</a>
+    </p>
+    
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/security_openshift/exercise1.4/">&larr; Previous: Exercise 1.4 - Skopeo</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/security_openshift/exercise1.6/">Next: Exercise 1.6 - SCC &amp; Seccomp &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <div id="preamble">
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="/workshops/security_openshift/images/atomic-scan.png" alt="atomic scan">
+</div>
+</div>
+<div class="paragraph">
+<p>The atomic command-line tool provides a way to interact and manage Atomic Host
+systems and containers. It provides a high level, coherent entrypoint to the
+system and makes it easier to interact with special kinds of containers, such
+as super-privileged containers, and debugging tools.</p>
+</div>
+<div class="paragraph">
+<p>The atomic command uses tools such as <code>docker</code>, <code>ostree</code> and <code>skopeo</code> to manage
+containers and container host systems. There are also a lot of features built
+into the atomic command that are not available in the docker command. These
+features allow you to use special commands for image signing, image
+verification, the ability to install a container - mounting file systems and
+opening privileges.</p>
+</div>
+<div class="paragraph">
+<p>Before containers are run, it makes good sense to be able to scan container
+images for known vulnerabilities and configuration problems. A number of
+container scanning tools are beginning to appear including RHEL’s  <code>atomic
+scan</code> command.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_atomic_scan">Atomic Scan</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This lab will get you familiar with the <code>atomic scan</code> command and also how to
+extend <code>atomic scan</code> with a custom scanner.</p>
+</div>
+<div class="sect2">
+<h3 id="_step_1">Step 1:</h3>
+<div class="paragraph">
+<p><strong>Pull some images</strong></p>
+</div>
+<div class="listingblock">
+<div class="title">Pull a RHEL 7.1 &amp; 7.3 image</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo docker pull registry.access.redhat.com/rhel7.1
+
+sudo docker pull registry.access.redhat.com/rhel7.3</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s see what types of scanners are available</p>
+</div>
+<div class="listingblock">
+<div class="title">List scanners</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo atomic scan --list</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>First lets take a look at RHEL7.1</p>
+</div>
+<div class="listingblock">
+<div class="title">Atomic default scan OpenSCAP</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo atomic scan registry.access.redhat.com/rhel7.1</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Atomic Compliance scan</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo atomic scan --scan_type standards_compliance
+registry.access.redhat.com/rhel7.1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now let&#8217;s take a look at RHEL7.3 (latest)</p>
+</div>
+<div class="listingblock">
+<div class="title">Atomic default scan OpenSCAP</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo atomic scan registry.access.redhat.com/rhel7.3</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Atomic Compliance scan</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo atomic scan --scan_type standards_compliance
+registry.access.redhat.com/rhel7.3</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You will notice that over time vulnerabilities are found in OS and
+applications. So you can see that security is more of a race against time to
+find and patch vulnerabilities before an attacker can exploit them. This is
+where containers can really help to enhance security by being able to make a
+security fix to a base image and have OpenShift deploy that image to all
+containers that are running outdated versions.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_2">Step 2:</h3>
+<div class="paragraph">
+<p><strong>Writing a Custom Scanner</strong></p>
+</div>
+<div class="paragraph">
+<p>The atomic scanner was designed with a pluggable architecture to allow
+developers to write custom scanners using any programming language supported by
+RHEL. Adding a scanner plugin involves the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Make atomic aware of your plug­in.</p>
+</li>
+<li>
+<p>Ensure the plugin obtains the proper input from the / scanin directory.</p>
+</li>
+<li>
+<p>Ensure the plugin writes the results to the  /scanout directory.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">cd  into <code>/home/ec2-user/workshopfiles</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd /home/ec2-user/workshopfiles</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">build the <code>Dockerfile</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo docker build --rm=true --force-rm=true --tag=example_plugin .</code></pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+Notice <code>.</code> it means in the current directory.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">see the newly built container</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo docker images
+
+...
+
+REPOSITORY          TAG          IMAGE ID         CREATED             SIZE
+example_plugin      latest       008f60125ce5     16 seconds ago      192.5 MB</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">install the new plugin</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo atomic install --name example_plugin example_plugin</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">view the new scanner as a operation</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo atomic scan --list</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now lets try the get rpms scan</p>
+</div>
+<div class="listingblock">
+<div class="title">rpm-list</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo atomic scan --scanner example_plugin --scan_type=rpm-list
+registry.access.redhat.com/rhel7.3</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_additional_fun">Additional Fun</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Have a look at the files in the <code>/home/ec2-user/workshopfiles</code> directory. They
+contain the files that make up your new <code>example_scanner</code>. The meat of the
+scanner is the <code>list_rpms.py</code> Python file. This is a similar architecture to
+writing
+<a href="http://docs.ansible.com/ansible/dev_guide/developing_modules.html">Ansible
+Module</a>, by that as long as you adhere to the api you can write the plugin in
+any language you like. Basically returning proper json that is defined in
+<code>example_plugin</code>. Let see that now;</p>
+</div>
+<div class="listingblock">
+<div class="title">example_plugin</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">type: scanner
+scanner_name: example_plugin
+image_name: example_plugin
+default_scan: rpm-list
+custom_args: ['-v', '/tmp/foobar:/foobar']
+scans: [
+ { name: rpm-list,
+   args: ['python', 'list_rpms.py', 'list-rpms'],
+   description: "List all RPMS",
+ },
+ { name: get-os,
+   args: ['python', 'list_rpms.py', 'get-os'],
+   description: "Get the OS of the object",
+ }
+]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>So you can see that as long as you package up the scanner code in the container
+and adhere to the api it should be easy to add your own custom scanner.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://developers.redhat.com/blog/2016/05/20/creating-a-custom-atomic-scan-plug-in/#more-421256">Creating
+a custom atomic scan plugin</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux_atomic_host/7/html/cli_reference/atomic_commands">Atomic
+Scan Commands</a></p>
+</div>
+</div>
+</div>
+
+
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/security_openshift/exercise1.4/">&larr; Previous: Exercise 1.4 - Skopeo</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/security_openshift/exercise1.6/">Next: Exercise 1.6 - SCC &amp; Seccomp &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/security_openshift">Return to Workshop</a>
+    </p>
+  </div>
+</div>
+
+    <div id="page-footer" class="container">
+      <p class="text-center">
+        Copyright &copy; 2017 Red Hat, Inc.
+      </p>
+    </div>
+  </body>
+</html>
+

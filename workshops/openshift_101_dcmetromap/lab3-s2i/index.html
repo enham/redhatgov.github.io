@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Lab 3 - Deploying an App with S2I | Red Hat | Public Sector</title>
+
+    
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly.min.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly-additions.min.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/highlight.js/styles/darkula.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/css/main.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/css/asciidoc.css" />
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery/dist/jquery.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/c3/c3.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/d3/d3.min.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/drmonty-datatables-colvis/js/dataTables.colVis.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables.net-colreorder/js/dataTables.colReorder.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/dist/js/patternfly.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-combobox/js/bootstrap-combobox.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/moment/min/moment.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/google-code-prettify/bin/prettify.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/highlight.js/lib/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body class="">
+    
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top " role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="http://redhatgov.io/img/brand.png" alt="Red Hat | Public Sector" />
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+          
+            <li>
+              <a href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/contact/">Contact</a>
+            </li>
+          
+        
+          
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Workshops <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                
+                  <li>
+                    <a href="/workshops/ansible_tower/">Ansible Tower Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/cloudforms41/">CloudForms Workshops</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_containers/">Container Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/containers_101/">Containers 101 Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/example/">Example Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/strangling_the_monolith/">Microservices Workshop - Strangling the Monolith</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/openshift_101_dcmetromap/">OpenShift 101 - DC Metro Map Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_openshift/">OpenShift Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/rhosp_101/">Red Hat OpenStack Platform 101</a>
+                  </li>
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="jumbotron jumbotron-page text-center">
+  <h1>Lab 3 - Deploying an App with S2I</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/openshift_101_dcmetromap">Return to Workshop</a>
+    </p>
+    
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/openshift_101_dcmetromap/lab2-byodocker/">&larr; Previous: Lab 2 - BYO Docker</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/openshift_101_dcmetromap/lab4-devmanage/">Next: Lab 4 - Developing and Managing Your Application &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    
+
+<h1 id="source-to-image-s2i">Source to Image (S2I)</h1>
+
+<p>One of the useful components of OpenShift is its source-to-image capability.  S2I is a framework that makes it easy to turn your source code into runnable images.  The main advantage of using S2I for building reproducible docker images is the ease of use for developers.  You'll see just how simple it can be in this lab.</p>
+
+<h2 id="let-s-build-a-node-js-web-server-using-s2i">Let's build a node.js web server using S2I</h2>
+
+<p>We can do this either via the command line or the web console.  You decide which you'd rather do and follow the steps below.</p>
+
+<div class="panel-group">
+  
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#collapse2ea02fc3cd5ff279e6075fd82c092155" class="collapsed">
+        CLI Steps
+      </a>
+    </h4>
+  </div>
+  <div id="collapse2ea02fc3cd5ff279e6075fd82c092155" class="panel-collapse collapse">
+    <div class="panel-body">
+       <blockquote>
+<i class="fa fa-terminal"></i> Goto the terminal and type the following:
+</blockquote>
+
+<pre><code class="language-bash">$ oc new-app --name=dc-metro-map https://github.com/RedHatGov/openshift-workshops.git --context-dir=dc-metro-map
+$ oc expose service dc-metro-map
+</code></pre>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  <div class="alert alert-info">
+    
+    <span class="pficon pficon-info"></span>
+    <p>When using the CLI, OpenShift automatically detects the source code type and select the nodejs builder image.</p>
+
+  </div>
+
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#collapse00a414ac2736658e5a304d442918b7f6" class="collapsed">
+        Web Console Steps
+      </a>
+    </h4>
+  </div>
+  <div id="collapse00a414ac2736658e5a304d442918b7f6" class="panel-collapse collapse">
+    <div class="panel-body">
+       <blockquote>
+Click "Add to Project"
+</blockquote>
+<img src="../images/ocp-addToProjectButton.png" width="200"><br/>
+
+<blockquote>
+Click "Browse Catalog" and filter for nodejs. Select Node.js version 0.10 from the Version drop down menu and then click "Select"
+</blockquote>
+<img src="../images/ocp-lab-s2i-filternode.png" width="900"><br/>
+
+<blockquote>
+Fill out the boxes to look as follows:
+</blockquote>
+<img src="../images/ocp-lab-s2i-nodejs.png" width="900"><br/>
+<p>
+Notes: You will need to click to expand the "advanced options"<br/>
+The github repository URL is: https://github.com/RedHatGov/openshift-workshops.git<br/>
+The github context-dir is: dc-metro-map<br/>
+</p>
+
+<blockquote>
+Scroll to the bottom and click "Create"
+</blockquote>
+
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+<h2 id="check-out-the-build-details">Check out the build details</h2>
+
+<p>We can see the details of what the S2I builder did.  This can be helpful to diagnose issues if builds are failing.</p>
+
+<p><i class="fa fa-magic fa-2x"></i> TIP: For a node.js app, running &quot;npm shrinkwrap&quot; is a good practice to perform on your branch before releasing changes that you plan to build/deploy as an image with S2I</p>
+
+<p><div class="panel-group">
+  
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#collapse3f8b8bb6001f4b7f4ff06a84c3f192d5" class="collapsed">
+        CLI Steps
+      </a>
+    </h4>
+  </div>
+  <div id="collapse3f8b8bb6001f4b7f4ff06a84c3f192d5" class="panel-collapse collapse">
+    <div class="panel-body">
+       <blockquote>
+<i class="fa fa-terminal"></i> Goto the terminal and type the following:
+</blockquote>
+
+<pre><code class="language-bash">$ oc get builds
+</code></pre>
+
+<blockquote>
+Note the name of your build from the above command output and use it to see the logs with:
+</blockquote>
+
+<pre><code class="language-bash">$ oc logs builds/[BUILD_NAME]
+</code></pre>
+
+<p>The console will print out the full log for your build.  Note, you could pipe this to more or less for easier viewing in the CLI.</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#collapse55198cad418bffbbe2f43204898e18d8" class="collapsed">
+        Web Console Steps
+      </a>
+    </h4>
+  </div>
+  <div id="collapse55198cad418bffbbe2f43204898e18d8" class="panel-collapse collapse">
+    <div class="panel-body">
+       <p><blockquote>
+Click on &quot;Builds&quot; and then click on &quot;Builds&quot;
+</blockquote>
+<img src="../images/ocp-lab-s2i-builds.png" width="300"><br/></p>
+
+<p><blockquote>
+Click on the &quot;dc-metro-map&quot; link
+</blockquote>
+<img src="../images/ocp-lab-s2i-metromapbuild.png" width="900"><br/></p>
+
+<p><blockquote>
+Click on the &quot;View Log&quot; tab to see the details of your latest build
+</blockquote>
+<img src="../images/ocp-lab-s2i-viewLog.png" width="900"><br/></p>
+
+<p>You should see a log output similar to the one below:<br>
+<img src="../images/ocp-lab-s2i-logs.png" width="900"><br/></p>
+
+    </div>
+  </div>
+</div>
+
+
+</div>
+</p>
+
+<h2 id="see-the-app-in-action">See the app in action</h2>
+
+<p>Let's see this app in action!</p>
+
+<div class="panel-group">
+  
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#collapse3d4e000644caa2d41dfe15250b10bb85" class="collapsed">
+        CLI Steps
+      </a>
+    </h4>
+  </div>
+  <div id="collapse3d4e000644caa2d41dfe15250b10bb85" class="panel-collapse collapse">
+    <div class="panel-body">
+       <blockquote>
+<i class="fa fa-terminal"></i> Goto the terminal and type the following:
+</blockquote>
+
+<pre><code class="language-bash">$ oc get routes
+</code></pre>
+
+<blockquote>
+Copy the HOST/PORT and paste into your favorite web browser:
+</blockquote>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#collapse8e1016c95391ee602cb547cddce9f9af" class="collapsed">
+        Web Console Steps
+      </a>
+    </h4>
+  </div>
+  <div id="collapse8e1016c95391ee602cb547cddce9f9af" class="panel-collapse collapse">
+    <div class="panel-body">
+       <p><blockquote>
+Click on Overview
+</blockquote>
+<img src="../images/ocp-lab-s2i-overview.png" width="200"><br/></p>
+
+<p><blockquote>
+Click the URL that is listed in the dc-metro-map header
+</blockquote>
+<img src="../images/ocp-lab-s2i-dcmetromapsvc.png" width="900"><br/></p>
+
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+<p>The app should look like this in your web browser:</p>
+
+<p><img src="../images/ocp-lab-s2i-apprunning.png" width="900"><br/></p>
+
+<p>Clicking the checkboxes will toggle on/off the individual metro stations on each colored line.  A numbered icon indicates there is more than one metro station in that area and they have been consolidated - click the number or zoom in to see more.</p>
+
+<h1 id="summary">Summary</h1>
+
+<p>In this lab we deployed a sample application using source to image.  This process built our code and wrapped that in a docker image.  It then deployed the image into our OpenShift platform in a pod and exposed a route to allow outside web traffic to access our application.  In the next lab we will look at some details of this app's deployment and make some changes to see how OpenShift can help to automate our development processes. More information about creating new applications can be found <a href="https://docs.openshift.com/container-platform/3.4/dev_guide/application_lifecycle/new_app.html">here</a>.</p>
+
+
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/openshift_101_dcmetromap/lab2-byodocker/">&larr; Previous: Lab 2 - BYO Docker</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/openshift_101_dcmetromap/lab4-devmanage/">Next: Lab 4 - Developing and Managing Your Application &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/openshift_101_dcmetromap">Return to Workshop</a>
+    </p>
+  </div>
+</div>
+
+    <div id="page-footer" class="container">
+      <p class="text-center">
+        Copyright &copy; 2017 Red Hat, Inc.
+      </p>
+    </div>
+  </body>
+</html>
+

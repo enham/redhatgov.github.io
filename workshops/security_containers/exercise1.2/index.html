@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Exercise 1.2 - Docker `USER` | Red Hat | Public Sector</title>
+
+    
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly.min.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly-additions.min.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/highlight.js/styles/darkula.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/css/main.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/css/asciidoc.css" />
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery/dist/jquery.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/c3/c3.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/d3/d3.min.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/drmonty-datatables-colvis/js/dataTables.colVis.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables.net-colreorder/js/dataTables.colReorder.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/dist/js/patternfly.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-combobox/js/bootstrap-combobox.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/moment/min/moment.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/google-code-prettify/bin/prettify.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/highlight.js/lib/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body class="">
+    
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top " role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="http://redhatgov.io/img/brand.png" alt="Red Hat | Public Sector" />
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+          
+            <li>
+              <a href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/contact/">Contact</a>
+            </li>
+          
+        
+          
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Workshops <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                
+                  <li>
+                    <a href="/workshops/ansible_tower/">Ansible Tower Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/cloudforms41/">CloudForms Workshops</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_containers/">Container Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/containers_101/">Containers 101 Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/example/">Example Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/strangling_the_monolith/">Microservices Workshop - Strangling the Monolith</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/openshift_101_dcmetromap/">OpenShift 101 - DC Metro Map Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_openshift/">OpenShift Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/rhosp_101/">Red Hat OpenStack Platform 101</a>
+                  </li>
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="jumbotron jumbotron-page text-center">
+  <h1>Exercise 1.2 - Docker `USER`</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/security_containers">Return to Workshop</a>
+    </p>
+    
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/security_containers/exercise1.1/">&larr; Previous: Exercise 1.1 - Reproducible and Trustworthy Dockerfiles</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/security_containers/exercise1.3/">Next: Exercise 1.3 - Remove setuid/setgid Binaries &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <div id="preamble">
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="/workshops/security_containers/images/term.png" alt="term">
+</div>
+</div>
+<div class="paragraph">
+<p>Now that you&#8217;ve gotten a sense of software provenance in Dockerfiles lets take
+a look at the <code>USER</code> in <code>Dockerfiles</code>.</p>
+</div>
+<div class="paragraph">
+<p>By default docker containers run as root. A docker container running as root
+has full control of the host system. As docker matures, more secure default
+options may become available. For now, requiring root is dangerous for others
+and may not be available in all environments. Your image should use the <code>USER</code>
+instruction to specify a <strong>non-root</strong> user for containers to run as. If your
+software does not create its own user, you can create a user and group in
+the Dockerfile.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_user_in_dockerfiles">User in Dockerfiles</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_step_1">Step 1:</h3>
+<div class="paragraph">
+<p><strong>Reusing an Image with a Non-root User</strong></p>
+</div>
+<div class="paragraph">
+<p>The default user in a Dockerfile is the user of the parent image. For example,
+if your image is derived from an image that uses a non-root user  example:
+<code>swuser</code>, then <code>RUN</code> commands in your <code>Dockerfile</code> will run as <code>swuser</code>.</p>
+</div>
+<div class="paragraph">
+<p>If you need to run as root, you should change the user to root at the
+beginning of your Dockerfile then change back to the correct user with another
+<code>USER</code> instruction:</p>
+</div>
+<div class="listingblock">
+<div class="title">Example Dockerfile</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">FROM fedora:25
+
+RUN groupadd -r swuser -g 433 &amp;&amp; \
+    useradd -u 431 -r -g swuser -s /sbin/nologin -c "Docker image user" swuser
+
+USER root <i class="conum" data-value="1"></i><b>(1)</b>
+
+RUN dnf install -y vim
+
+USER swuser <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Switch to the root user to perform actions that need elevated permissions
+such as installing software via yum/dnf.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Then switch back to a lower permissions user to run the image.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Now we can test this out by building the following <code>Dockerfile</code></p>
+</div>
+<div class="listingblock">
+<div class="title">Dockerfile</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">FROM fedora:25
+
+RUN groupadd -r swuser -g 433 &amp;&amp; \
+    useradd -u 431 -r -g swuser -s /sbin/nologin -c "Docker image user" swuser
+
+USER root
+
+RUN dnf install -y vim
+
+USER swuser</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_2">Step 2:</h3>
+<div class="paragraph">
+<p>Build the <code>Dockerfile</code></p>
+</div>
+<div class="listingblock">
+<div class="title">Make new directory &amp; Build Dockerfile</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">mkdir user-test
+
+cd user-test
+
+vim Dockerfile</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Copy the <code>Dockerfile</code> above. Press <code>i</code> for Insert, then cut and paste
+<code>control + v</code>, then escape and write the file <code>esc</code>, <code>:wq</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Now build the image</p>
+</div>
+<div class="listingblock">
+<div class="title">build the image</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo docker build -t user-test:1 .</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now run and test the image to see who the container is running as. What do you see?</p>
+</div>
+<div class="listingblock">
+<div class="title">run the image</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo docker run --rm -it user-test:1 whoami</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For more information on Containers and correct users to use here are a few good articles.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://www.projectatomic.io/blog/2015/08/why-we-dont-let-non-root-users-run-docker-in-centos-fedora-or-rhel/">Why we don&#8217;t let non-root users run Docker in CentOS, Fedora, or RHEL</a></p>
+</li>
+<li>
+<p><a href="http://www.projectatomic.io/docs/docker-image-author-guidance/">Guidance for Docker Image Authors</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/security_containers/exercise1.1/">&larr; Previous: Exercise 1.1 - Reproducible and Trustworthy Dockerfiles</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/security_containers/exercise1.3/">Next: Exercise 1.3 - Remove setuid/setgid Binaries &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/security_containers">Return to Workshop</a>
+    </p>
+  </div>
+</div>
+
+    <div id="page-footer" class="container">
+      <p class="text-center">
+        Copyright &copy; 2017 Red Hat, Inc.
+      </p>
+    </div>
+  </body>
+</html>
+

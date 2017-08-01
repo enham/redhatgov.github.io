@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Container Security Workshop on Red Hat | Public Sector</title>
+    <link>http://redhatgov.io/workshops/security_containers/</link>
+    <description>Recent content in Container Security Workshop on Red Hat | Public Sector</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://redhatgov.io/workshops/security_containers/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Exercise 1.0 - Intro to Cockpit</title>
+      <link>http://redhatgov.io/workshops/security_containers/exercise1.0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_containers/exercise1.0/</guid>
+      <description>Cockpit A remote manager for GNU/Linux servers
+ Cockpit is a server manager that makes it easy to administer your GNU/Linux servers via a web browser.
+ Cockpit makes it easy for any sysadmin to perform simple tasks, such as administering storage, inspecting journals and starting and stopping services.
+ Jumping between the terminal and the web tool is no problem. A service started via Cockpit can be stopped via the terminal.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.1 - Reproducible and Trustworthy Dockerfiles</title>
+      <link>http://redhatgov.io/workshops/security_containers/exercise1.1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_containers/exercise1.1/</guid>
+      <description>Now that you&amp;#8217;ve gotten a sense of how Cockpit works, we are going to start digging in at the commandline on Container security. You can use either the Terminal in Cockpit from your browser, a SSH terminal or Terminal client like PuTTy. The choice is yours.
+   Best Practices Step 1: Always specify a tag in FROM instructions. FROM redis is bad, because it pulls the latest tag, which changes over time and can be expected to move with major version changes.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.2 - Docker `USER`</title>
+      <link>http://redhatgov.io/workshops/security_containers/exercise1.2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_containers/exercise1.2/</guid>
+      <description>Now that you&amp;#8217;ve gotten a sense of software provenance in Dockerfiles lets take a look at the USER in Dockerfiles.
+ By default docker containers run as root. A docker container running as root has full control of the host system. As docker matures, more secure default options may become available. For now, requiring root is dangerous for others and may not be available in all environments. Your image should use the USER instruction to specify a non-root user for containers to run as.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.3 - Remove setuid/setgid Binaries</title>
+      <link>http://redhatgov.io/workshops/security_containers/exercise1.3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_containers/exercise1.3/</guid>
+      <description>There are two special permissions that can be set on executable files: Set User ID (setuid) and Set Group ID (sgid). These permissions allow the file being executed to be executed with the privileges of the owner or the group. For example, if a file was owned by the root user and has the setuid bit set, no matter who executed the file it would always run with root user privileges.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.4 - CGroups</title>
+      <link>http://redhatgov.io/workshops/security_containers/exercise1.4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_containers/exercise1.4/</guid>
+      <description>CGroups The Device Cgroup is primary in isolating and limiting containers to their own shares of CPU, memory, disk I/O, network, etc., other wise it will be denied.
+   Memory Limits Docker uses Cgroups to control and limit the amount of system resources a container can use. This will help to protect a system runing from potential application memory leaks or Denial of Service DoS attacks that can consume all available memory and take down a system.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.5 - Namespaces</title>
+      <link>http://redhatgov.io/workshops/security_containers/exercise1.5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_containers/exercise1.5/</guid>
+      <description>Namespaces Pid Namespace PID namespaces allow processes in different containers to have the same PID, so each container can have its own init (PID1) process that manages various system initialization tasks as well as containers life cycle. Also, each container has its unique /proc directory. Note that from within the container you can monitor only processes running inside this container. In other words, the container is only aware of its native processes and can not &#34;</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.6 - Read Only Containers</title>
+      <link>http://redhatgov.io/workshops/security_containers/exercise1.6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_containers/exercise1.6/</guid>
+      <description>Now that you&amp;#8217;ve gotten a sense of Linux Kernel Capabilities, let&amp;#8217;s move on to Readonly Containers.
+ Imagine a scenario where an application gets compromised. The first thing the bad guy wants to do is to write an exploit into the application, so that the next time the application starts up, it starts up with the exploit in place. If the container was read­only it would prevent leaving a backdoor in place and be forced to start the cycle from the beginning.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.7 - Seccomp</title>
+      <link>http://redhatgov.io/workshops/security_containers/exercise1.7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_containers/exercise1.7/</guid>
+      <description>Seccomp Secure Computing Mode (seccomp) is a kernel feature that allows you to filter system calls to the kernel from a container. The combination of restricted and allowed calls are arranged in profiles, and you can pass different profiles to different containers. Seccomp provides more fine-grained control than capabilities, giving an attacker a limited number of syscalls from the container.
+ The default seccomp profile for docker is a JSON file and can be viewed here: https://github.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.8 - SELinux</title>
+      <link>http://redhatgov.io/workshops/security_containers/exercise1.8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_containers/exercise1.8/</guid>
+      <description>Now that you&amp;#8217;ve gotten a sense of Read Only Containers, let&amp;#8217;s move on to SELinux.
+ In this section, we’ll cover the basics of SELinux and containers. SELinux policy prevents a lot of break out situations where the other security mechanisms fail. With SELinux on Docker, we write policy that says that the container process running as svirt_lxc_net_t can only read/write files with the svirt_sandbox_file_t label.
+   Step 1: Create the following directories.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.9 - Linux Kernel Capabilities</title>
+      <link>http://redhatgov.io/workshops/security_containers/exercise1.9/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_containers/exercise1.9/</guid>
+      <description>What are Linux Capabilities? According to the capabilities man page;
+ Capabilities are distinct units of privilege that can be independently enabled or disabled.
+ Capabilities were added to the kernel around 15 or so years ago to try to divide up the power of root. Originally the kernel allocated a 32-bit bitmask to define these capabilities. A few years ago it was expanded to 64. There are currently around 38 capabilities defined.</description>
+    </item>
+    
+    <item>
+      <title>Setup</title>
+      <link>http://redhatgov.io/workshops/security_containers/setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_containers/setup/</guid>
+      <description>Today&amp;#8217;s workshop infrastructure is being run in Amazon EC2. Each student will have a single instance to use. Each of you should have received an email. It has the following information on it. Your student number will be substituted where you see this &amp;lt; student# &amp;gt;. Example: if you are student 21: http://workshopname.21.redhatgov.io
+   Web URL for each of your EC2 instances.
+  Username and password</description>
+    </item>
+    
+    <item>
+      <title>Wrap Up</title>
+      <link>http://redhatgov.io/workshops/security_containers/wrapup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/security_containers/wrapup/</guid>
+      <description>That wraps up what we have planned for today. We hope you&amp;#8217;ve learned something valuable about Container Security that you can apply in your daily role.
+ What do you think? How can we help you understand Container Security better?
+ Before you leave, check out the Resources page that is part of this guide. There you can find a ton of links that will further your Container education.
+ This Participant Guide will remain active for the next two weeks.</description>
+    </item>
+    
+  </channel>
+</rss>

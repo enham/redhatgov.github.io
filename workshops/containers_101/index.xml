@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Containers 101 Workshop on Red Hat | Public Sector</title>
+    <link>http://redhatgov.io/workshops/containers_101/</link>
+    <description>Recent content in Containers 101 Workshop on Red Hat | Public Sector</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://redhatgov.io/workshops/containers_101/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Exercise 1.0 - Install Docker</title>
+      <link>http://redhatgov.io/workshops/containers_101/exercise1.0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/containers_101/exercise1.0/</guid>
+      <description>Install Docker Install Docker $ sudo -i # yum install -y docker   Start Docker To start the docker binary and have it managed by systemd we first need to enable it and tell systemd that we want it to run a boot time. Then to start the docker daemon right away we use the start command.
+ systemctl enable docker   systemctl start docker   systemctl status docker   Once docker starts successfully you should see a similar output as below.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.1 - Pulling Docker Images</title>
+      <link>http://redhatgov.io/workshops/containers_101/exercise1.1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/containers_101/exercise1.1/</guid>
+      <description>Pull Images Docker pull command docker pull registry.access.redhat.com/rhel7/rhel   An image is identified by a repository name (registry.access.redhat.com), a namespace name (rhel7) and the image name (rhel). You could also add a tag (which defaults to :latest if not entered). The repository name rhel, when passed to the docker pull command without the name of a registry preceding it, is ambiguous and could result in the retrieval of an image that originates from an untrusted registry.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.2 - Working with Docker Images</title>
+      <link>http://redhatgov.io/workshops/containers_101/exercise1.2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/containers_101/exercise1.2/</guid>
+      <description>Run Docker When you execute a docker run command, you essentially spin up and create a new container from a Docker image. That container consists of the contents of the image, plus features based on any additional options you pass on the docker run command line.
+ The command you pass on the docker run command line sees the inside the container as its running environment so, by default, very little can be seen of the host system.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.3 - Working with the Dockerfile</title>
+      <link>http://redhatgov.io/workshops/containers_101/exercise1.3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/containers_101/exercise1.3/</guid>
+      <description>Once you understand how images and containers can be created from the command line, you can try building containers in a more permanent way. Building container images from Dockerfile files is by far the preferred way to create Docker formatted containers, as compared to modifying running containers and committing them to images.
+ The procedure here involves creating a Dockerfile file that includes many of the features illustrated earlier:
+   Choosing a base image (i.</description>
+    </item>
+    
+    <item>
+      <title>Exercise 1.4 - Working with Docker Registry</title>
+      <link>http://redhatgov.io/workshops/containers_101/exercise1.4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/containers_101/exercise1.4/</guid>
+      <description>What it is The Registry is a stateless, highly scalable server side application that stores and lets you distribute Docker images. The Registry is open-source, under the permissive Apache license.
+ Why use it You should use the Registry if you want to:
+   tightly control where your images are being stored
+  fully own your images distribution pipeline
+  integrate image storage and distribution tightly into your in-house development workflow</description>
+    </item>
+    
+    <item>
+      <title>Setup</title>
+      <link>http://redhatgov.io/workshops/containers_101/setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/containers_101/setup/</guid>
+      <description>Today&amp;#8217;s workshop infrastructure is being run in Amazon EC2. Each student will have one instances to use. Each of you should have received an email. It has the following information on it.
+  Web based ssh access URL for your EC2 instances.
+   workshopname.&amp;lt;student#&amp;gt;.redhatgov.io:8888/wetty/ssh/ec2-user   Where &amp;lt;student#&amp;gt; is the number that has been assigned to you by the instructor.
+ If you didn&amp;#8217;t get one of these emails, let us know so we can give you the information about your lab environment.</description>
+    </item>
+    
+    <item>
+      <title>Wrapup</title>
+      <link>http://redhatgov.io/workshops/containers_101/wrapup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/containers_101/wrapup/</guid>
+      <description>Wrap Up, Q&amp;amp;A, and Free Style That wraps up what we have planned for today.
+ What do you think? How can we help you understand Containers better?
+ For more indepth overview and examples for working with containers and RHEL check out this link
+ Thank you for your time and participation!
+   </description>
+    </item>
+    
+  </channel>
+</rss>

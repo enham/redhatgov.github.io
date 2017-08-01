@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Exercise 1.7 - Seccomp | Red Hat | Public Sector</title>
+
+    
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly.min.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly-additions.min.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/highlight.js/styles/darkula.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/css/main.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/css/asciidoc.css" />
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery/dist/jquery.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/c3/c3.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/d3/d3.min.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/drmonty-datatables-colvis/js/dataTables.colVis.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables.net-colreorder/js/dataTables.colReorder.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/dist/js/patternfly.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-combobox/js/bootstrap-combobox.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/moment/min/moment.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/google-code-prettify/bin/prettify.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/highlight.js/lib/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body class="">
+    
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top " role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="http://redhatgov.io/img/brand.png" alt="Red Hat | Public Sector" />
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+          
+            <li>
+              <a href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/contact/">Contact</a>
+            </li>
+          
+        
+          
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Workshops <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                
+                  <li>
+                    <a href="/workshops/ansible_tower/">Ansible Tower Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/cloudforms41/">CloudForms Workshops</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_containers/">Container Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/containers_101/">Containers 101 Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/example/">Example Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/strangling_the_monolith/">Microservices Workshop - Strangling the Monolith</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/openshift_101_dcmetromap/">OpenShift 101 - DC Metro Map Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_openshift/">OpenShift Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/rhosp_101/">Red Hat OpenStack Platform 101</a>
+                  </li>
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="jumbotron jumbotron-page text-center">
+  <h1>Exercise 1.7 - Seccomp</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/security_containers">Return to Workshop</a>
+    </p>
+    
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/security_containers/exercise1.6/">&larr; Previous: Exercise 1.6 - Read Only Containers</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/security_containers/exercise1.8/">Next: Exercise 1.8 - SELinux &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <div class="sect1">
+<h2 id="_seccomp">Seccomp</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Secure Computing Mode (seccomp) is a kernel feature that allows you to filter system calls to the kernel from a container. The combination of restricted and allowed calls are arranged in profiles, and you can pass different profiles to different containers. Seccomp provides more fine-grained control than capabilities, giving an attacker a limited number of syscalls from the container.</p>
+</div>
+<div class="paragraph">
+<p>The default seccomp profile for docker is a JSON file and can be viewed here: <a href="https://github.com/docker/docker/blob/master/profiles/seccomp/default.json" class="bare">https://github.com/docker/docker/blob/master/profiles/seccomp/default.json</a>. It blocks 44 system calls out of more than 300 available.Making the list stricter would be a trade-off with application compatibility. A table with a significant part of the blocked calls and the reasoning for blocking can be found here: <a href="https://docs.docker.com/engine/security/seccomp/" class="bare">https://docs.docker.com/engine/security/seccomp/</a>.</p>
+</div>
+<div class="paragraph">
+<p>Seccomp uses the Berkeley Packet Filter (BPF) system, which is programmable on the fly so you can make a custom filter. You can also limit a certain syscall by also customizing the conditions on how or when it should be limited. A seccomp filter replaces the syscall with a pointer to a BPF program, which will execute that program instead of the syscall. All children to a process with this filter will inherit the filter as well. The docker option which is used to operate with seccomp is <code>--security-opt</code>. To explicitly use the default policy for a container, the command will be:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo docker run --security-opt seccomp=/path/to/default/profile.json &lt;container&gt;</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_1">Step 1:</h3>
+<div class="paragraph">
+<p>Lets take a look at the <code>1_chmod.json</code> file. This is a example seccomp file that will not allow the <code>chmod</code>, <code>chown</code>, or <code>chown32</code> systemcalls.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">cat 1_chmod.json
+
+{
+    "defaultAction": "SCMP_ACT_ALLOW",
+    "architectures": [
+        "SCMP_ARCH_X86_64",
+        "SCMP_ARCH_X86",
+        "SCMP_ARCH_X32"
+    ],
+    "syscalls": [
+        {
+            "name": "chmod",
+            "action": "SCMP_ACT_ERRNO",
+            "args": []
+        },
+        {
+            "name": "chown",
+            "action": "SCMP_ACT_ERRNO",
+            "args": []
+        },
+        {
+            "name": "chown32",
+            "action": "SCMP_ACT_ERRNO",
+            "args": []
+        }
+    ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Lets take a closer look at how this file restricts these system calls.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">"syscalls": [
+        {
+            "name": "chmod",                <i class="conum" data-value="1"></i><b>(1)</b>
+            "action": "SCMP_ACT_ERRNO",     <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><strong>chmod</strong>:  is the command and system call which may change the access permissions to file system objects (files and directories). It may also alter special mode flags. The request is filtered by the umask. The name is an abbreviation of change mode.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><strong>SCMP_ACT_ERRNO</strong>: Basically this blocks the chmod syscall. Man page: The thread will receive a return value of errno when it calls a syscall that matches the filter rule.</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_2">Step 2:</h3>
+<div class="paragraph">
+<p>Lets apply these restrictions to a container by using the <code>--security-opt</code> flag to point to our <code>1_chmod.json</code> file. We will start a container and try to run the chmod command on a file.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo docker run --rm -it --security-opt seccomp:1_chmod.json redhatgov/alpine chmod 400 /etc/hosts</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<div class="panel-group">
+  
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#collapse2810c9e161e85564a0d195acb7fc9468" class="collapsed">
+        Result
+      </a>
+    </h4>
+  </div>
+  <div id="collapse2810c9e161e85564a0d195acb7fc9468" class="panel-collapse collapse">
+    <div class="panel-body">
+       <div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">chmod: /etc/hosts: Operation not permitted</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This <code>FAILED</code> because we explicitly denied this syscall to the container via the seccomp profile. This profile can be updated to enable or disable syscalls for your application.</p>
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_syscall_identification">Syscall Identification</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Not all container operating systems use the same mappings for syscalls. While one OS may use a direct mapping of the binary <code>chown</code> to the syscall <code>chown</code> it is not always the case for other operating systems.</p>
+</div>
+<div class="paragraph">
+<p>To find out what syscalls your application or command is using under the covers we need to profile or trace the application and the syscalls it is making. To do this we use a tool called <a href="https://linux.die.net/man/1/strace"><code>strace</code></a>.</p>
+</div>
+<div class="paragraph">
+<p>Strace is used to identify the underlying syscall being made by the operating system. Lets walk through a example where the syscalls being made do not map directly to our syscalls in the <code>1_chmod.json</code> file.</p>
+</div>
+<div class="sect2">
+<h3 id="_step_1_2">Step 1:</h3>
+<div class="paragraph">
+<p>Let&#8217;s run a instance of Fedora and use the same <code>1_chmod.json</code> profile to try and limit the <code>chmod</code> command inside the container.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo docker run --rm \
+                -it  \
+                --cap-add SYS_PTRACE \
+                --security-opt seccomp:1_chmod.json \
+                redhatgov/fedora \
+                chmod 400 /etc/hosts &amp;&amp; echo $?</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command should return a zero. This means that the container was able to <code>chmod</code> the <code>/etc/hosts</code> file. We want to limit this action and need to map the correct syscall to out seccomp profile. To identify the correct syscall we need to use <code>strace</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_2_2">Step 2:</h3>
+<div class="paragraph">
+<p>Lets run the same command again and add the <a href="https://linux.die.net/man/1/strace"><code>strace</code></a> program to our command to trace the <code>chmod</code> command.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo docker run --rm -it --cap-add SYS_PTRACE --security-opt seccomp:1_chmod.json redhatgov/fedora strace chmod 400 /etc/hosts</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Create a seccomp profile using the new mappings for system calls for <code>chmod</code> &amp; <code>chown</code>. Check your answer below.</p>
+</div>
+<div class="paragraph">
+<div class="panel-group">
+  
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#collapse8287504d40b392995412a9340f50f868" class="collapsed">
+        Seccomp Profile
+      </a>
+    </h4>
+  </div>
+  <div id="collapse8287504d40b392995412a9340f50f868" class="panel-collapse collapse">
+    <div class="panel-body">
+       <div class="paragraph">
+<p>Create the following profile using vim, or your favorite editor.</p>
+</div>
+<div class="listingblock">
+<div class="title">2_chmod_fedora.json</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">{
+    "defaultAction": "SCMP_ACT_ALLOW",
+    "architectures": [
+        "SCMP_ARCH_X86_64",
+        "SCMP_ARCH_X86",
+        "SCMP_ARCH_X32"
+    ],
+    "syscalls": [
+        {
+            "name": "fchmodat",
+            "action": "SCMP_ACT_ERRNO",
+            "args": []
+        },
+        {
+            "name": "fchownat",
+            "action": "SCMP_ACT_ERRNO",
+            "args": []
+        }
+    ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://linux.die.net/man/2/fchmodat">fchmodat</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://linux.die.net/man/2/fchownat">fchownat</a></p>
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+</div>
+<div class="paragraph">
+<p>We have now found the correct syscall to add to our seccomp profile. Let&#8217;s create a seccomp profile with our new syscall mapping. Now we can create a seccomp profile called <code>2_chmod_fedora.json</code> using vim, or your favorite editor. You can copy and paster the seccomp profile above into this profile.</p>
+</div>
+<div class="paragraph">
+<p>Now that you have your new profile created, let&#8217;s run the container again and see if our new seccomp profile blocks <code>chmod</code> &amp; <code>chown</code> from working.</p>
+</div>
+<div class="listingblock">
+<div class="title">chmod</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo docker run --rm -it --security-opt seccomp:2_chmod_fedora.json redhatgov/fedora chmod 400 /etc/hosts</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<div class="panel-group">
+  
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#collapsea1b10be9667b6029af5bef985a9839f8" class="collapsed">
+        Chmod Result
+      </a>
+    </h4>
+  </div>
+  <div id="collapsea1b10be9667b6029af5bef985a9839f8" class="panel-collapse collapse">
+    <div class="panel-body">
+       <div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">chmod: changing permissions of '/etc/hosts': Operation not permitted</code></pre>
+</div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+</div>
+<div class="listingblock">
+<div class="title">chown</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo docker run --rm -it --security-opt seccomp:2_chmod_fedora.json redhatgov/fedora chown root:root /etc/hosts</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<div class="panel-group">
+  
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#collapseb929fe3dcdb0bdd986a77cc33d4f9610" class="collapsed">
+        Chown Result
+      </a>
+    </h4>
+  </div>
+  <div id="collapseb929fe3dcdb0bdd986a77cc33d4f9610" class="panel-collapse collapse">
+    <div class="panel-body">
+       <div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">chown: changing ownership of '/etc/hosts': Operation not permitted</code></pre>
+</div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_limit_network_syscalls">Limit Network Syscalls</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Docker presents the socket syscall to containers by default, this my not be a capability you want your containers to have in certain situations. Let&#8217;s look at another example where we use the Swiss army knife of networking <a href="https://linux.die.net/man/1/nc">Netcat</a>. Netcat is used for just about anything under the sun involving TCP or UDP. It can open TCP connections, send UDP packets, listen on arbitrary TCP and UDP ports, do port scanning, and deal with both IPv4 and IPv6. These may not be features you want you containers to have.</p>
+</div>
+<div class="sect2">
+<h3 id="_step_1_3">Step 1:</h3>
+<div class="paragraph">
+<p>Let&#8217;s run a container with Netcat installed in it and listen for local traffic on port 999.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo docker run --rm -it redhatgov/fedora bash</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">In a Container</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">[root@2b1369bfa927 /]# nc -l 999
+^C <i class="conum" data-value="1"></i><b>(1)</b>
+
+[root@2b1369bfa927 /]# exit
+exit <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Netcat successfully connected. Use <code>Control + C</code> to exit Netcat.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><code>exit</code> to exit the container.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>We were able to bind to the localhost and listen for traffic on port 999. In step 2 lets work on disabling networking in this container.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_2_3">Step 2:</h3>
+<div class="paragraph">
+<p>Let&#8217;s run strace on the Netcat program to identify the syscalls we need for out seccomp profile that will restrict networking from our container.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo docker run --rm -it --cap-add SYS_PTRACE redhatgov/fedora bash</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then from inside the container run strace and the netcat command.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">[root@9ad9f00480a0 /]# strace nc -l 999</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<div class="panel-group">
+  
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#collapsea1470b9aabd47095f055c37fcc0b501f" class="collapsed">
+        Strace results
+      </a>
+    </h4>
+  </div>
+  <div id="collapsea1470b9aabd47095f055c37fcc0b501f" class="panel-collapse collapse">
+    <div class="panel-body">
+       <div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">execve("/usr/bin/nc", ["nc", "-l", "555"], 0x7ffd48b77df0 /* 10 vars */) = 0
+brk(NULL)                               = 0x555a8f451000
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f97676cc000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+
+..&lt;SNIP&gt;..
+
+socket(AF_INET6, SOCK_STREAM, IPPROTO_TCP) = -1 EPERM (Operation not permitted) <i class="conum" data-value="1"></i><b>(1)</b>
+socket(AF_INET, SOCK_STREAM, IPPROTO_TCP) = -1 EPERM (Operation not permitted)  <i class="conum" data-value="2"></i><b>(2)</b>
+write(2, "Ncat: ", 6Ncat: )                   = 6
+write(2, "Unable to open any listening soc"..., 37Unable to open any listening sockets.) = 37 <i class="conum" data-value="3"></i><b>(3)</b>
+write(2, " QUITTING.\n", 11 QUITTING.
+)            = 11
+exit_group(2)                           = ?
++++ exited with 2 +++</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>socket syscall</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>socket syscall</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Failed to make socket connection message</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><a href="http://man7.org/linux/man-pages/man2/socket.2.html"><code>Socket Syscall Manpage</code></a></p>
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+</div>
+<div class="paragraph">
+<p>We have now found the correct syscall to add to our seccomp profile. Let&#8217;s create a seccomp profile with our new syscall mapping.</p>
+</div>
+<div class="paragraph">
+<div class="panel-group">
+  
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#collapsedfb4fb6830e841c41e5880c33fd5cdec" class="collapsed">
+        Seccomp Profile
+      </a>
+    </h4>
+  </div>
+  <div id="collapsedfb4fb6830e841c41e5880c33fd5cdec" class="panel-collapse collapse">
+    <div class="panel-body">
+       <div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">{
+   "defaultAction":"SCMP_ACT_ALLOW",
+   "syscalls":[
+      {
+         "name":"socket",
+         "action":"SCMP_ACT_ERRNO"
+      }
+   ]
+}</code></pre>
+</div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+</div>
+<div class="paragraph">
+<p>Now we can create a seccomp profile called <code>3_network.json</code> using vim, or your favorite editor. You can copy and paster the seccomp profile above into this profile.</p>
+</div>
+<div class="paragraph">
+<p>Now that you have your new profile created, let&#8217;s run the container again and see if our new seccomp profile blocks Netcat from working.</p>
+</div>
+<div class="paragraph">
+<div class="panel-group">
+  
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#collapsefac9a622e5a07a2d21baaa5b33fa82be" class="collapsed">
+        Answer
+      </a>
+    </h4>
+  </div>
+  <div id="collapsefac9a622e5a07a2d21baaa5b33fa82be" class="panel-collapse collapse">
+    <div class="panel-body">
+       <div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo docker run --rm -it --security-opt seccomp:3_network.json redhatgov/fedora bash</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">In a Container</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">[root@de51762b4213 /]# nc -l 555
+Ncat: Unable to open any listening sockets. QUITTING. <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Netcat is blocked from connecting to a network socket via the seccomp profile.</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Exit the container</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">[root@de51762b4213 /]# exit
+exit</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This <code>FAILED</code> because we explicitly denied this syscall to the container via the seccomp profile. This profile can help to stop would-be attackers from being able to further compromise a container or container host.</p>
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/security_containers/exercise1.6/">&larr; Previous: Exercise 1.6 - Read Only Containers</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/security_containers/exercise1.8/">Next: Exercise 1.8 - SELinux &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/security_containers">Return to Workshop</a>
+    </p>
+  </div>
+</div>
+
+    <div id="page-footer" class="container">
+      <p class="text-center">
+        Copyright &copy; 2017 Red Hat, Inc.
+      </p>
+    </div>
+  </body>
+</html>
+

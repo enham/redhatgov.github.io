@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Lab 8 - Using Heat to Describe Stacks | Red Hat | Public Sector</title>
+
+    
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly.min.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly-additions.min.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/highlight.js/styles/darkula.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/css/main.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/css/asciidoc.css" />
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery/dist/jquery.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/c3/c3.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/d3/d3.min.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/drmonty-datatables-colvis/js/dataTables.colVis.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables.net-colreorder/js/dataTables.colReorder.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/dist/js/patternfly.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-combobox/js/bootstrap-combobox.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/moment/min/moment.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/google-code-prettify/bin/prettify.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/highlight.js/lib/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body class="">
+    
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top " role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="http://redhatgov.io/img/brand.png" alt="Red Hat | Public Sector" />
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+          
+            <li>
+              <a href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/contact/">Contact</a>
+            </li>
+          
+        
+          
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Workshops <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                
+                  <li>
+                    <a href="/workshops/ansible_tower/">Ansible Tower Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/cloudforms41/">CloudForms Workshops</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_containers/">Container Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/containers_101/">Containers 101 Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/example/">Example Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/strangling_the_monolith/">Microservices Workshop - Strangling the Monolith</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/openshift_101_dcmetromap/">OpenShift 101 - DC Metro Map Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_openshift/">OpenShift Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/rhosp_101/">Red Hat OpenStack Platform 101</a>
+                  </li>
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="jumbotron jumbotron-page text-center">
+  <h1>Lab 8 - Using Heat to Describe Stacks</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/rhosp_101">Return to Workshop</a>
+    </p>
+    
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/rhosp_101/8_using_the_cli/">&larr; Previous: Lab 7 - Using the OpenStack CLI(s)</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/rhosp_101/10_storage/">Next: Lab 9 - Managing Block and Object Storage &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    
+
+<h1 id="we-have-done-a-ton-of-stuff-but-all-manually-how-do-we-orchestrate">We Have Done a Ton of Stuff, But All Manually. How Do We Orchestrate?</h1>
+
+<p>In OpenStack, the answer to that is <strong>Heat</strong>.</p>
+
+<p>Heat is the main project in the OpenStack Orchestration program. It implements an orchestration engine to launch multiple composite cloud applications based on templates in the form of text files that can be treated like code. A native Heat template format is evolving, but Heat also endeavours to provide compatibility with the AWS CloudFormation template format, so that many existing CloudFormation templates can be launched on OpenStack. Heat provides both an OpenStack-native ReST API and a CloudFormation-compatible Query API.</p>
+
+<p>Why <strong>Heat</strong>? It makes the clouds rise!</p>
+
+<p>In this lab, we are going to walk through instantiating a Heat stack via CLI.</p>
+
+<h2 id="first-we-need-access-to-a-system-with-the-clis-installed">First, We Need Access to a System with the CLIs Installed</h2>
+
+
+
+
+  <div class="alert alert-warning">
+    
+    <span class="pficon pficon-warning-triangle-o"></span>
+    <p>In order to complete this lab, you will need an SSH client.</p>
+
+<p>On Linux or Mac, you can just use your favorite terminal.</p>
+
+<p>On Windows, you will need to download <a href="https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe">putty</a> if you don't already have it. This is an exe file that does not need to be installed. Just run.</p>
+
+  </div>
+
+
+
+<blockquote>
+<p>On Linux or Mac, in your terminal, ssh to rhshadowbox.hopto.org on port 1122</p>
+</blockquote>
+
+<pre><code>$ ssh studentX@rhshadowbox.hopto.org -p 1122
+</code></pre>
+
+<p>If on Windows, run putty, enter <strong>rhshadowbox.hopto.org</strong> as the host and <strong>1122</strong> as the port.</p>
+
+<p>You will get asked if you are sure you want to connect. Type <strong>yes</strong> and hit enter.</p>
+
+<p>Login with your studentX credentials.</p>
+
+<h2 id="let-s-autenticate-to-the-openstack-cloud">Let's Autenticate to the OpenStack Cloud</h2>
+
+<blockquote>
+<p>Source your studentXrc file</p>
+</blockquote>
+
+<pre><code>$ source studentXrc
+</code></pre>
+
+<blockquote>
+<p>Verify that you are connected by running nova list</p>
+</blockquote>
+
+<pre><code>$ nova list
+</code></pre>
+
+<p>You should see the two instances you created in the previous lab.</p>
+
+
+<figure >
+    
+        <img src="../images/lab7-using-clis-1.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 7 Figure 1: Logging into CLI system and Verifying Connectivity to OpenStack</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<h2 id="now-let-s-examine-the-heat-template">Now Let's Examine the Heat Template</h2>
+
+<pre><code>[student1@rhosp-101 ~]$ cat heat-example.yaml 
+heat_template_version: 2014-10-16  
+description: A simple server.  
+parameters:
+  private_network:
+    type: string
+    default: private-a
+  public_network:
+    type: string
+    default: public
+  image:
+    type: string
+    default: rhel73
+  flavor:
+    type: string
+    default: m1.small
+  keypair:
+    type: string
+
+resources:  
+  server:
+    type: OS::Nova::Server
+    properties:
+      block_device_mapping_v2:
+        - device_name: vda
+          delete_on_termination: true
+          volume_id: { get_resource: volume }
+      flavor: {get_param: flavor}
+      metadata: {&quot;metering.stack&quot;: {get_param: &quot;OS::stack_id&quot;}}
+      key_name: {get_param: keypair}
+      networks:
+        - port: { get_resource: port }
+
+  port:
+    type: OS::Neutron::Port
+    properties:
+      network: {get_param: private_network}
+      security_groups:
+        - default
+
+  floating_ip:
+    type: OS::Neutron::FloatingIP
+    properties:
+      floating_network: {get_param: public_network}
+
+  floating_ip_assoc:
+    type: OS::Neutron::FloatingIPAssociation
+    properties:
+      floatingip_id: { get_resource: floating_ip }
+      port_id: { get_resource: port }
+
+  volume:
+    type: OS::Cinder::Volume
+    properties:
+      image: {get_param: image}
+      size: 10
+
+
+</code></pre>
+
+<blockquote>
+<p>Let's Launch a Heat Stack with this Template</p>
+</blockquote>
+
+<pre><code>$ openstack stack create --parameter keypair=studentX --parameter image=rhel73 -t heat-example.yaml studentX-stack
+</code></pre>
+
+<p>Here is an example run.</p>
+
+<pre><code>[student1@rhosp-101 ~]$ openstack stack create --parameter keypair=student1 --parameter image=rhel73 -t heat-example.yaml student1-stack
++---------------------+--------------------------------------+
+| Field               | Value                                |
++---------------------+--------------------------------------+
+| id                  | 44dda3db-b91e-4d02-a56c-4cf1f34a790a |
+| stack_name          | student1-stack                       |
+| description         | A simple server.                     |
+| creation_time       | 2017-06-20T12:48:13Z                 |
+| updated_time        | None                                 |
+| stack_status        | CREATE_IN_PROGRESS                   |
+| stack_status_reason | Stack CREATE started                 |
++---------------------+--------------------------------------+
+</code></pre>
+
+<blockquote>
+<p>You can watch stack list to see the stack go through the provisioning process and become CREATE_COMPLETE</p>
+</blockquote>
+
+<pre><code>$ watch openstack stack list
+</code></pre>
+
+<pre><code>Every 2.0s: openstack stack list                                                                                 Tue Jun 20 08:51:51 2017
+
++--------------------------------------+----------------+-----------------+----------------------+--------------+
+| ID                                   | Stack Name     | Stack Status    | Creation Time        | Updated Time |
++--------------------------------------+----------------+-----------------+----------------------+--------------+
+| 44dda3db-b91e-4d02-a56c-4cf1f34a790a | student1-stack | CREATE_COMPLETE | 2017-06-20T12:48:13Z | None         |
++--------------------------------------+----------------+-----------------+----------------------+--------------+
+</code></pre>
+
+<h1 id="examining-stack-topology-in-horizon">Examining Stack Topology in Horizon</h1>
+
+<blockquote>
+<p>Navigate to Orchestration -&gt; Stacks using the second level navigation tabs<br />
+Click on <strong>studentX-stack</strong></p>
+</blockquote>
+
+
+<figure >
+    
+        <img src="../images/lab8-heat-1.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 8 Figure 1: Heat Stack Topology for the New student1-stack</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<h1 id="examining-project-network-topology">Examining Project Network Topology</h1>
+
+<blockquote>
+<p>Navigate to Network -&gt; Network Topology using the second level navigation tabs.</p>
+</blockquote>
+
+
+<figure >
+    
+        <img src="../images/lab8-heat-2.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 8 Figure 2: Neutron Network Topology</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<h1 id="summary">Summary</h1>
+
+<p>With the power of Heat, we just did in 1 lab what it took us multiple labs to do previously with a single YAML Heat Orchestration Template.</p>
+
+<p>The major benefit to this is that we can version control our Heat templates and provisioning can be repeated in the same manner every time.</p>
+
+<p>Heat templates can also be exposed to Red Hat CloudForms to present to end users in a service catalog. CloudForms is included in the purchase of Red Hat OpenStack Platform, as well as, Red Hat Infrastructure Site Subscription.</p>
+
+<p>OpenStack has come a long way towards being the cloud software of choice for enterprise data centers.</p>
+
+
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/rhosp_101/8_using_the_cli/">&larr; Previous: Lab 7 - Using the OpenStack CLI(s)</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/rhosp_101/10_storage/">Next: Lab 9 - Managing Block and Object Storage &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/rhosp_101">Return to Workshop</a>
+    </p>
+  </div>
+</div>
+
+    <div id="page-footer" class="container">
+      <p class="text-center">
+        Copyright &copy; 2017 Red Hat, Inc.
+      </p>
+    </div>
+  </body>
+</html>
+

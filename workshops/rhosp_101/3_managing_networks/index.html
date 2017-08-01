@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Lab 2 - Managing Neutron Networks | Red Hat | Public Sector</title>
+
+    
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly.min.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly-additions.min.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/highlight.js/styles/darkula.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/css/main.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/css/asciidoc.css" />
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery/dist/jquery.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/c3/c3.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/d3/d3.min.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/drmonty-datatables-colvis/js/dataTables.colVis.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables.net-colreorder/js/dataTables.colReorder.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/dist/js/patternfly.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-combobox/js/bootstrap-combobox.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/moment/min/moment.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/google-code-prettify/bin/prettify.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/highlight.js/lib/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body class="">
+    
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top " role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="http://redhatgov.io/img/brand.png" alt="Red Hat | Public Sector" />
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+          
+            <li>
+              <a href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/contact/">Contact</a>
+            </li>
+          
+        
+          
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Workshops <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                
+                  <li>
+                    <a href="/workshops/ansible_tower/">Ansible Tower Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/cloudforms41/">CloudForms Workshops</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_containers/">Container Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/containers_101/">Containers 101 Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/example/">Example Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/strangling_the_monolith/">Microservices Workshop - Strangling the Monolith</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/openshift_101_dcmetromap/">OpenShift 101 - DC Metro Map Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_openshift/">OpenShift Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/rhosp_101/">Red Hat OpenStack Platform 101</a>
+                  </li>
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="jumbotron jumbotron-page text-center">
+  <h1>Lab 2 - Managing Neutron Networks</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/rhosp_101">Return to Workshop</a>
+    </p>
+    
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/rhosp_101/2_login_to_horizon/">&larr; Previous: Lab 1 - Login to Horizon</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/rhosp_101/4_managing_floating_ip_addresses/">Next: Lab 3 - Managing Floating IP Addresses &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    
+
+<h1 id="neutron-overlay-networking-for-openstack">Neutron - Overlay Networking for OpenStack</h1>
+
+<p>Neutron is an OpenStack project to provide &quot;networking as a service&quot; between interface devices (e.g., vNICs) managed by other Openstack services (e.g., nova).</p>
+
+<p>Starting in the Folsom release, Neutron is a core and supported part of the OpenStack platform.</p>
+
+<h1 id="examining-project-network-topology">Examining Project Network Topology</h1>
+
+<blockquote>
+<p>Navigate to Network -&gt; Network Topology using the second level navigation tabs.</p>
+</blockquote>
+
+
+<figure >
+    
+        <img src="../images/lab2-neutron-network-topology-1.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 2 Figure 1: Neutron Network Topology</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<p>There are two ways to view the project network layout.</p>
+
+<ol>
+<li>Topology which is more of a logical network layout<br /></li>
+<li>Graph which is fun becuase you can drag it and things bounce around :)</li>
+</ol>
+
+
+
+
+  <div class="alert alert-info">
+    
+    <span class="pficon pficon-info"></span>
+    <p>You will notice that at this point, there is only 1 network named Public. This is an external network that the instructor added as an OpenStack administrator. The public network is shared among all projects and will be utilized in the next lab for managing floating IP addresses. As a project member only, you will not have the ability to modify the public network.</p>
+
+  </div>
+
+
+
+<h2 id="let-s-create-our-first-project-network">Let's Create our First Project Network</h2>
+
+<blockquote>
+<p>Click on the <strong>Create Network</strong> button in the upper right<br />
+Enter <strong>private-a</strong> as the <strong>Network Name</strong><br />
+Leave <strong>Create Subnet</strong> checked and click <strong>Next</strong></p>
+</blockquote>
+
+
+<figure >
+    
+        <img src="../images/lab2-neutron-create-network-1.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 2 Figure 2: Create Neutron Network</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<h2 id="next-we-will-create-a-subnet">Next We Will Create a Subnet</h2>
+
+<blockquote>
+<p>Enter <strong>private-a-subnet</strong> as the <strong>Subnet Name</strong><br />
+Enter <strong>172.16.0.0/24</strong> as <strong>Network Address</strong><br />
+Leave <strong>IPV4</strong> as the <strong>IP Version</strong><br />
+Leave <strong>Gateway IP</strong> blank and make sure <strong>Disable Gateway</strong> is not checked</p>
+</blockquote>
+
+
+<figure >
+    
+        <img src="../images/lab2-neutron-create-network-2.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 2 Figure 3: Create Neutron Subnet</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+
+
+
+  <div class="alert alert-info">
+    
+    <span class="pficon pficon-info"></span>
+    <p>In order to differentiate visually from the public network's IP space, we will use 172.16 for the first 2 octets in the IP space for our private project networks. This way it is very easy to tell them apart from the public network.</p>
+
+<p>Be aware that because these project networks are VXLAN tunnels, they can be any IP space you desire and there will not be conflicts in the cloud.</p>
+
+  </div>
+
+
+
+<h2 id="lastly-we-will-enter-the-details-for-the-subnet">Lastly We Will Enter the Details for the Subnet</h2>
+
+<blockquote>
+<p>Leave <strong>Enable DHCP</strong> checked<br />
+Leave <strong>Allocation Pools</strong> empty (we'll use the entire range)<br />
+Enter <strong>192.168.0.1</strong> in <strong>DNS Name Servers</strong><br />
+Leave <strong>Host Routes</strong> empty and click <strong>Create</strong></p>
+</blockquote>
+
+
+<figure >
+    
+        <img src="../images/lab2-neutron-create-network-3.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 2 Figure 4: Enter Neutron Subnet Details</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+
+
+
+  <div class="alert alert-success">
+    
+    <span class="pficon pficon-ok"></span>
+    <p>You should see a green success box in the upper right corner of the screen that says <strong>Success: Created network &quot;private-a&quot;.</strong> Your network topology should now show 2 networks, public and private-a</p>
+
+<p>Note that the success and error messages in Horizon only show briefly and then they disappear.</p>
+
+<p>If this is not the case, let the instructor know now</p>
+
+  </div>
+
+
+
+
+<figure >
+    
+        <img src="../images/lab2-neutron-create-network-4.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 2 Figure 5: Neutron Network Topology Showing New Network private-a</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<h1 id="let-s-tie-these-2-networks-together-with-a-neutron-router-for-layer-3-communication">Let's Tie these 2 Networks Together with a Neutron Router for Layer 3 Communication</h1>
+
+<p>It is nice that we have these two isolated networks. However, when we add machines to the private-a network, we will want them to get out to get updates, retrieve data, etc.</p>
+
+<p>In order to allow this to happen, we need to create a Neutron router.</p>
+
+<h2 id="create-a-neutron-router">Create a Neutron Router</h2>
+
+<blockquote>
+<p>Click on the <strong>Create Router</strong> button in the upper right<br />
+Enter <strong>router-public</strong> as the <strong>Router Name</strong><br />
+Leave <strong>Admin State</strong> equal to <strong>UP</strong>
+Select <strong>public</strong> network for <strong>External Network</strong> and click <strong>Create Router</strong></p>
+</blockquote>
+
+
+
+
+  <div class="alert alert-info">
+    
+    <span class="pficon pficon-info"></span>
+    <p>Note that you may need to scroll down to see the public network in the External Network drop down.</p>
+
+  </div>
+
+
+
+
+<figure >
+    
+        <img src="../images/lab2-neutron-create-router-1.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 2 Figure 6: Create Neutron Router</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+
+
+
+  <div class="alert alert-success">
+    
+    <span class="pficon pficon-ok"></span>
+    <p>You should see a green success box in the upper right corner of the screen that says <strong>Success: Router router-public was successfully created.</strong> Your network topology should now show 2 networks, public and private-a and 1 router connected to the public network.</p>
+
+<p>If this is not the case, let the instructor know now</p>
+
+  </div>
+
+
+
+
+<figure >
+    
+        <img src="../images/lab2-neutron-create-router-2.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 2 Figure 7: Neutron Network Topology Showing New Router router-public</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<h2 id="lastly-let-s-add-an-interface-for-the-private-a-network-to-router-public">Lastly Let's Add an Interface for the private-a Network to router-public</h2>
+
+<blockquote>
+<p>Hover your mouse over the router in the network topology
+You should see a box pop up with information about the router
+Click <strong>Add Interface</strong></p>
+</blockquote>
+
+
+<figure >
+    
+        <img src="../images/lab2-neutron-create-router-4.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 2 Figure 8: Router Information Box with Add Interface Button</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<blockquote>
+<p>Select <strong>private-a</strong> as the <strong>Subnet</strong><br />
+Leave <strong>IP Address</strong> blank and click <strong>Submit</strong></p>
+</blockquote>
+
+
+<figure >
+    
+        <img src="../images/lab2-neutron-create-router-5.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 2 Figure 9: Add Interface Options</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+
+
+
+  <div class="alert alert-success">
+    
+    <span class="pficon pficon-ok"></span>
+    <p>You should see a green success box in the upper right corner of the screen that says <strong>Success: Interface added 172.16.0.1</strong></p>
+
+<p>You will be taken to router-public's overview screen.</p>
+
+<p>If you navigate back to our network topology, it should now show 2 networks, public and private-a and 1 router connected to both the public and private-a networks.</p>
+
+<p>If this is not the case, let the instructor know now</p>
+
+  </div>
+
+
+
+
+<figure >
+    
+        <img src="../images/lab2-neutron-create-router-6.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 2 Figure 10: Neutron Network Topology Showing router-public Attached to Both Networks</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<h1 id="summary">Summary</h1>
+
+<p>You should now have 2 networks in your project.</p>
+
+<p>The first is the external network named <strong>public</strong>. The second is a private VXLAN network named <strong>private-a</strong>.</p>
+
+<p>We then created a Neutron router to tie both of these networks together so that instances on private-a may route externally for updates, data, etc.</p>
+
+<p>Also, we will now be able to associate floating IP addresses from the public network to instances on our private-a network.</p>
+
+<p>In our next lab, we will start working with floating IP addresses.</p>
+
+
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/rhosp_101/2_login_to_horizon/">&larr; Previous: Lab 1 - Login to Horizon</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/rhosp_101/4_managing_floating_ip_addresses/">Next: Lab 3 - Managing Floating IP Addresses &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/rhosp_101">Return to Workshop</a>
+    </p>
+  </div>
+</div>
+
+    <div id="page-footer" class="container">
+      <p class="text-center">
+        Copyright &copy; 2017 Red Hat, Inc.
+      </p>
+    </div>
+  </body>
+</html>
+

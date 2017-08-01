@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Lab 6 - Replication and Recovery | Red Hat | Public Sector</title>
+
+    
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly.min.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly-additions.min.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/highlight.js/styles/darkula.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/css/main.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/css/asciidoc.css" />
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery/dist/jquery.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/c3/c3.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/d3/d3.min.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/drmonty-datatables-colvis/js/dataTables.colVis.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables.net-colreorder/js/dataTables.colReorder.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/dist/js/patternfly.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-combobox/js/bootstrap-combobox.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/moment/min/moment.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/google-code-prettify/bin/prettify.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/highlight.js/lib/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body class="">
+    
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top " role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="http://redhatgov.io/img/brand.png" alt="Red Hat | Public Sector" />
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+          
+            <li>
+              <a href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/contact/">Contact</a>
+            </li>
+          
+        
+          
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Workshops <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                
+                  <li>
+                    <a href="/workshops/ansible_tower/">Ansible Tower Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/cloudforms41/">CloudForms Workshops</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_containers/">Container Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/containers_101/">Containers 101 Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/example/">Example Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/strangling_the_monolith/">Microservices Workshop - Strangling the Monolith</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/openshift_101_dcmetromap/">OpenShift 101 - DC Metro Map Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_openshift/">OpenShift Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/rhosp_101/">Red Hat OpenStack Platform 101</a>
+                  </li>
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="jumbotron jumbotron-page text-center">
+  <h1>Lab 6 - Replication and Recovery</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/openshift_101_dcmetromap">Return to Workshop</a>
+    </p>
+    
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/openshift_101_dcmetromap/lab5-rollbacks/">&larr; Previous: Lab 5 - Webhooks and Rollbacks</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/openshift_101_dcmetromap/lab7-labels/">Next: Lab 7 - Labels &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    
+
+<h1 id="things-will-go-wrong-and-that-s-why-we-have-replication-and-recovery">Things will go wrong, and that's why we have replication and recovery</h1>
+
+<p>Things will go wrong with your software, or your hardware, or from something out of your control.  But we can plan for that failure, and planning for it let's us minimize the impact.  OpenShift supports this via what we call replication and recovery.</p>
+
+<h2 id="replication">Replication</h2>
+
+<p>Let's walk through a simple example of how the replication controller can keep your deployment at a desired state.  Assuming you still have the dc-metro-map project running we can manually scale up our replicas to handle increased user load.</p>
+
+<div class="panel-group">
+  
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#collapseba3ba05de9f8f3cfb6a43cee31bec3ee" class="collapsed">
+        CLI Steps
+      </a>
+    </h4>
+  </div>
+  <div id="collapseba3ba05de9f8f3cfb6a43cee31bec3ee" class="panel-collapse collapse">
+    <div class="panel-body">
+       <blockquote>
+<i class="fa fa-terminal"></i> Goto the terminal and try the following:
+</blockquote>
+
+<pre><code class="language-bash">$ oc scale --replicas=4 dc/dc-metro-map
+</code></pre>
+
+<blockquote>
+<i class="fa fa-terminal"></i> Check out the new pods:
+</blockquote>
+
+<pre><code class="language-bash">$ oc get pods
+</code></pre>
+
+<p>Notice that you now have 4 unique pods availble to inspect.  If you want go ahead and inspect them, using 'oc describe pod/<POD NAME>', you can see that each have their own IP address and logs.</p>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#collapse8afdc387ae6ca6654f259f9ff545e35f" class="collapsed">
+        Web Console Steps
+      </a>
+    </h4>
+  </div>
+  <div id="collapse8afdc387ae6ca6654f259f9ff545e35f" class="panel-collapse collapse">
+    <div class="panel-body">
+       <p><blockquote>
+Click &quot;Overview&quot;
+</blockquote>
+<blockquote>
+In the deployment, click the up arrow 3 times.
+</blockquote>
+The deployment should indicate that it is scaling to 4 pods, and eventually you will have 4 running pods.  Keep in mind that each pod has it's own container which is an identical deployment of the webapp.  OpenShift is now (by default) round robin load-balancing traffic to each pod.
+<img src="../images/ocp-lab-replicationrecovery-4pods.png" width="900"><br/></p>
+
+<p><blockquote>
+Hover over the pod counter (the circle) and click
+</blockquote>
+Notice that you now have 4 unique webapp pods available to inspect.  If you want go ahead and inspect them you can see that each have their own IP address and logs.
+<img src="../images/ocp-lab-replicationrecovery-4podslist.png" width="900"><br/></p>
+
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+<p>So you've told OpenShift that you'd like to maintain 4 running, load-balanced, instances of our web app.</p>
+
+<h2 id="recovery">Recovery</h2>
+
+<p>Okay, now that we have a slightly more interesting replication state, we can test a service outages scenario. In this scenario, the dc-metro-map replication controller will ensure that other pods are created to replace those that become unhealthy.  Let's force inflict an issue and see how OpenShift reponds.</p>
+
+<p><div class="panel-group">
+  
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#collapsef4e5b602f1ad80e94135506d6e3d31a0" class="collapsed">
+        CLI Steps
+      </a>
+    </h4>
+  </div>
+  <div id="collapsef4e5b602f1ad80e94135506d6e3d31a0" class="panel-collapse collapse">
+    <div class="panel-body">
+       <blockquote>
+<i class="fa fa-terminal"></i> Choose a random pod and delete it:
+</blockquote>
+
+<pre><code class="language-bash">$ oc get pods
+$ oc delete pod/PODNAME
+$ oc get pods -w
+</code></pre>
+
+<p>If you're fast enough you'll see the pod you deleted go &quot;Terminating&quot; and you'll also see a new pod immediately get created and transition from &quot;Pending&quot; to &quot;Running&quot;.  If you weren't fast enough you can see that your old pod is gone and a new pod is in the list with an age of only a few seconds.</p>
+
+<blockquote>
+<i class="fa fa-info-circle"></i>  You can see the more details about your replication controller with:
+</blockquote>
+
+<pre><code class="language-bash">$ oc describe rc
+</code></pre>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#collapse6d42806b9854401ee2bc08d8dad01a98" class="collapsed">
+        Web Console Steps
+      </a>
+    </h4>
+  </div>
+  <div id="collapse6d42806b9854401ee2bc08d8dad01a98" class="panel-collapse collapse">
+    <div class="panel-body">
+       <p>From the browse pods list:</p>
+
+<blockquote>
+Click one of the running pods (not a build pod)
+</blockquote>
+<blockquote>
+Click the "Actions" button in the top right and then select "Delete"
+</blockquote>
+<img src="../images/ocp-lab-replicationrecovery-podaction.png" width="900"><br/>
+
+<blockquote>
+Now click the "Delete" button in the popup to confirm the pod deletion
+</blockquote>
+<img src="../images/ocp-lab-replicationrecovery-deletepod.png" width="900"><br/>
+
+<blockquote>
+Quickly switch back to the Overview
+</blockquote>
+
+<p>If you're fast enough you'll see the pod you deleted unfill a portion of the deployment circle, and then a new pod fill it back up.</p>
+
+<p><img src="../images/ocp-lab-replicationrecovery-poddelete.png" width="900"><br/></p>
+
+<p>You can browse the pods list again to see the old pod was deleted and a new pod with an age of &quot;a few seconds&quot; has been created to replace it.</p>
+
+<p><img src="../images/ocp-lab-replicationrecovery-podrecovery.png" width="900"><br/></p>
+
+    </div>
+  </div>
+</div>
+
+
+</div>
+</p>
+
+<h2 id="application-health">Application Health</h2>
+
+<p>In addition to the health of your application's pods, OpenShift will watch the containers inside those pods.  Let's force inflict some issues and see how OpenShift reponds.</p>
+
+<p><div class="panel-group">
+  
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#collapseb979ef7b3150f12709ce02ea716985b5" class="collapsed">
+        CLI Steps
+      </a>
+    </h4>
+  </div>
+  <div id="collapseb979ef7b3150f12709ce02ea716985b5" class="panel-collapse collapse">
+    <div class="panel-body">
+       <blockquote>
+<i class="fa fa-terminal"></i> Choose a running pod and shell into it:
+</blockquote>
+
+<pre><code class="language-bash">$ oc get pods
+$ oc exec PODNAME -it /bin/bash
+</code></pre>
+
+<p>You are now executing a bash shell running in the container of the pod.  Let's kill our webapp and see what happens.</p>
+
+<blockquote>
+<i class="fa fa-info-circle"></i> If we had multiple containers in the pod we could use "-c CONTAINER_NAME" to select the right one
+</blockquote>
+
+<blockquote>
+<i class="fa fa-terminal"></i> Choose a running pod and shell into its container:
+</blockquote>
+
+<pre><code class="language-bash">$ pkill -9 node
+</code></pre>
+
+<p>This will kick you out off the container with an error like &quot;Error executing command in container&quot;</p>
+
+<blockquote>
+<i class="fa fa-terminal"></i> Do it again - shell in and execute the same command to kill node
+</blockquote>
+
+<blockquote>
+<i class="fa fa-terminal"></i> Watch for the container restart
+</blockquote>
+
+<pre><code class="language-bash">$ oc get pods -w
+</code></pre>
+
+<p>If a container dies multiple times quickly, OpenShift is going to put the pod in a CrashBackOff state.  This ensures the system doesn't waste resources trying to restart containers that are continuously crashing.</p>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#collapse1fbfe34b957654bf37e3b3ce6505c1c0" class="collapsed">
+        Web Console Steps
+      </a>
+    </h4>
+  </div>
+  <div id="collapse1fbfe34b957654bf37e3b3ce6505c1c0" class="panel-collapse collapse">
+    <div class="panel-body">
+       <blockquote>
+Navigate to browse the pods list, and click on a running pod
+</blockquote>
+<blockquote>
+In the tab bar for this pod, click on "Terminal"
+</blockquote>
+<blockquote>
+Click inside the terminal view and type $ pkill -9 node
+</blockquote>
+<img src="../images/ocp-lab-replicationrecovery-terminal.png" width="900"><br/>
+
+</br>This is going to kill the node.js web server and kick you off the container.</br></br>
+
+<img src="../images/ocp-lab-replicationrecovery-terminalkick.png" width="900"><br/>
+
+</br>
+
+<blockquote>
+Click the refresh button (on the terminal) and do that a couple more times
+</blockquote>
+
+<blockquote>
+Go back to the pods list
+</blockquote>
+
+<p><img src="../images/ocp-lab-replicationrecovery-backoff.png" width="900"><br/></p>
+
+<p>The container died multiple times so quickly that OpenShift is going to put the pod in a CrashBackOff state.  This ensures the system doesn't waste resources trying to restart containers that are continuously crashing.</p>
+
+    </div>
+  </div>
+</div>
+
+
+</div>
+</p>
+
+<h2 id="clean-up">Clean up</h2>
+
+<p>Let's scale back down to 1 replica.  If you are using the web console just click the down arrow from the Overview page.  If you are using the command line use the &quot;oc scale&quot; command.</p>
+
+<h1 id="summary">Summary</h1>
+
+<p>In this lab we learned about replication controllers and how they can be used to scale your applications and services.  We also tried to break a few things and saw how OpenShift responded to heal the system and keep it running.  This topic can get deeper than we've experimented with here, but getting deeper into application health and recovery is an advanced topic.  If you're interested you can read more about it in the documentation <a href="https://docs.openshift.com/enterprise/3.1/dev_guide/application_health.html">here</a>, <a href="https://docs.openshift.com/enterprise/latest/dev_guide/deployments.html#scaling">here</a>, and <a href="http://kubernetes.io/docs/user-guide/walkthrough/k8s201/#health-checking">here</a>.</p>
+
+
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/openshift_101_dcmetromap/lab5-rollbacks/">&larr; Previous: Lab 5 - Webhooks and Rollbacks</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/openshift_101_dcmetromap/lab7-labels/">Next: Lab 7 - Labels &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/openshift_101_dcmetromap">Return to Workshop</a>
+    </p>
+  </div>
+</div>
+
+    <div id="page-footer" class="container">
+      <p class="text-center">
+        Copyright &copy; 2017 Red Hat, Inc.
+      </p>
+    </div>
+  </body>
+</html>
+

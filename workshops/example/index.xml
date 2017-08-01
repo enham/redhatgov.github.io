@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Example Workshop on Red Hat | Public Sector</title>
+    <link>http://redhatgov.io/workshops/example/</link>
+    <description>Recent content in Example Workshop on Red Hat | Public Sector</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://redhatgov.io/workshops/example/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Content Ideas</title>
+      <link>http://redhatgov.io/workshops/example/ideas/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/example/ideas/</guid>
+      <description>Future Work One of the goals of this example workshop is to showcase all of the things that are possible when building a workshop. Initially, some work needs to be done to highlight what&#39;s already available. It&#39;s also expected that additional features will be added over time.
+This &amp;quot;lab&amp;quot; is a place to collect those ideas so that we don&#39;t forget to update this workshop as we have time.</description>
+    </item>
+    
+    <item>
+      <title>Create A New Workshop</title>
+      <link>http://redhatgov.io/workshops/example/create_a_new_workshop/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/example/create_a_new_workshop/</guid>
+      <description>Don&#39;t Recreate The Wheel Not only is this example workshop here to show you what&#39;s possible, but it&#39;s also expected to be the starting point and reference for any new workshop.
+The easiest way to get started is to copy this workshop into a new directory and add your own content.
+ Warning: There are a few things you&#39;ll need to change though, so pay close attention to each step below to save yourself frustration down the road.</description>
+    </item>
+    
+    <item>
+      <title>Hugo Shortcodes</title>
+      <link>http://redhatgov.io/workshops/example/hugo_shortcodes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/example/hugo_shortcodes/</guid>
+      <description>Hugo uses Markdown for its simple content format. However, there are a lot of things that Markdown doesn’t support well.
+We are unwilling to accept being constrained by our simple format. Also unacceptable is writing raw HTML in our Markdown every time we want to include unsupported content such as a video. To do so is in complete opposition to the intent of using a bare-bones format for our content and utilizing templates to apply styling for display.</description>
+    </item>
+    
+    <item>
+      <title>Prerequisites</title>
+      <link>http://redhatgov.io/workshops/example/prerequisites/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/example/prerequisites/</guid>
+      <description>Getting Started This entire site, including the workshop content, is built using a tool named Hugo. Hugo is known as a &amp;quot;static site generator&amp;quot; where the content you build is pre-compiled before being served by a web server.
+The Good News The good news is that you don&#39;t have to worry about how Hugo works, how to configure it, or how everything gets deployed.
+All of that is being handled for you and you can focus on the content of your workshop.</description>
+    </item>
+    
+    <item>
+      <title>Workshop Content</title>
+      <link>http://redhatgov.io/workshops/example/workshop_content/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redhatgov.io/workshops/example/workshop_content/</guid>
+      <description>Setting Expectations For Your Audience  Clearly tell your audience what the lab is, what things they will be doing, and what kind of skills are required to be successful at your workshop.
+ Examples of expectation setting:
+ &#39;This is a hands-on workshop.&#39; &#39;You should be comfortable with the command line.&#39; &#39;You should be comfortable being a Java developer.&#39; &#39;You understand classes and how to create them.&#39; &#39;You can write, understand and create html/jsp/servlets.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Exercise 1.1 - Reproducible and Trustworthy Dockerfiles | Red Hat | Public Sector</title>
+
+    
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly.min.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly-additions.min.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/highlight.js/styles/darkula.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/css/main.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/css/asciidoc.css" />
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery/dist/jquery.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/c3/c3.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/d3/d3.min.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/drmonty-datatables-colvis/js/dataTables.colVis.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables.net-colreorder/js/dataTables.colReorder.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/dist/js/patternfly.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-combobox/js/bootstrap-combobox.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/moment/min/moment.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/google-code-prettify/bin/prettify.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/highlight.js/lib/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body class="">
+    
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top " role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="http://redhatgov.io/img/brand.png" alt="Red Hat | Public Sector" />
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+          
+            <li>
+              <a href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/contact/">Contact</a>
+            </li>
+          
+        
+          
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Workshops <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                
+                  <li>
+                    <a href="/workshops/ansible_tower/">Ansible Tower Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/cloudforms41/">CloudForms Workshops</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_containers/">Container Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/containers_101/">Containers 101 Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/example/">Example Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/strangling_the_monolith/">Microservices Workshop - Strangling the Monolith</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/openshift_101_dcmetromap/">OpenShift 101 - DC Metro Map Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_openshift/">OpenShift Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/rhosp_101/">Red Hat OpenStack Platform 101</a>
+                  </li>
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="jumbotron jumbotron-page text-center">
+  <h1>Exercise 1.1 - Reproducible and Trustworthy Dockerfiles</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/security_containers">Return to Workshop</a>
+    </p>
+    
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/security_containers/exercise1.0/">&larr; Previous: Exercise 1.0 - Intro to Cockpit</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/security_containers/exercise1.2/">Next: Exercise 1.2 - Docker `USER` &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <div id="preamble">
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="/workshops/security_containers/images/file.png" alt="file">
+</div>
+</div>
+<div class="paragraph">
+<p>Now that you&#8217;ve gotten a sense of how Cockpit works, we are going to start
+digging in at the commandline on Container security. You can use either the
+Terminal in Cockpit from your browser, a SSH terminal or Terminal client like
+PuTTy. The choice is yours.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_best_practices">Best Practices</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_step_1">Step 1:</h3>
+<div class="paragraph">
+<p>Always specify a <code>tag</code> in <code>FROM</code> instructions. <code>FROM redis</code> is bad, because it
+pulls the <code>latest</code> tag, which changes over time and can be expected to move
+with major version changes. <code>FROM redis:3.0</code> is better, but can still be
+expected to change with minor updates and bug fixes (which may be exactly what
+you want). If you want to be certain that the image you are pulling has not
+been tampered with, you can pull your images by hash rather than tag. This is
+can also be done from after you make changes to a image and want to
+specifically pull that image; for example:</p>
+</div>
+<div class="listingblock">
+<div class="title">Pull a image by sha256</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo docker images
+
+sudo docker pull centos@sha256:be5b4a93f116a57ab3fd454ada72421eac892a3a4925627ac9a44f65fcd69cf8</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Securely Downloading Software in Dockerfiles</strong></p>
+</div>
+<div class="paragraph">
+<p>In the majority of cases, vendors will make signed checksums available for
+verifying downloads. For example, the Dockerfile for the official Node.js image
+includes the following:</p>
+</div>
+<div class="listingblock">
+<div class="title">Example of signed checksums in a Dockerfile</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">RUN gpg --keyserver pool.sks-keyservers.net \ <i class="conum" data-value="1"></i><b>(1)</b>
+--recv-keys 7937DFD2AB06298B2293C3187D33FF9D0246406D \
+                        114F43EE0176B71C7BC219DD50A3051F888C628D
+ENV NODE_VERSION 0.10.38
+ENV NPM_VERSION 2.10.0
+RUN curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v\
+$NODE_VERSION-linux-x64.tar.gz" \ <i class="conum" data-value="2"></i><b>(2)</b>
+&amp;&amp; curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/\
+SHASUMS256.txt.asc" \ <i class="conum" data-value="3"></i><b>(3)</b>
+&amp;&amp; gpg --verify SHASUMS256.txt.asc \ <i class="conum" data-value="4"></i><b>(4)</b>
+&amp;&amp; grep " node-v$NODE_VERSION-linux-x64.tar.gz\$" \
+            SHASUMS256.txt.asc | sha256sum -c - <i class="conum" data-value="5"></i><b>(5)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Gets the GNU Privacy Guard (GPG) keys used to sign the Node.js download.
+Here, we do have to trust that these are the correct keys. Downloads the
+Node.js tarball. Downloads the checksum for the tarball. Uses GPG to verify
+that the checksum was signed by whoever owns the keys we obtained. Tests that
+the checksum matches the tarball by using the sha256sum tool.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Downloads the Node.js tarball.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Downloads the checksum for the tarball.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Uses GPG to verify that the checksum was signed by whoever owns the keys we obtained.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>Tests that the checksum matches the tarball by using the sha256sum tool.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Assuming no signed package or checksum is available, creating your own is easy.
+For example, to create a checksum for a Redis release:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">curl http://download.redis.io/releases/redis-3.2.8.tar.gz --output redis.tar.gz --progress-bar</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sha1sum -b redis.tar.gz
+
+
+6780d1abb66f33a97aad0edbe020403d0a15b67f *redis.tar.gz</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here, we’re creating a 160-bit SHA-1 checksum. The -b flag tells the sha1sum
+utility that we are dealing with binary data, not text.</p>
+</div>
+<div class="paragraph">
+<p>Once you’ve tested and verified the software, you can add something like the
+following first RUN command to your Dockerfile: (about 2-3min build time)</p>
+</div>
+<div class="listingblock">
+<div class="title">Dockerfile Redis with verified software download</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">FROM fedora:25
+
+# Verified sha1sum
+RUN cd /tmp &amp;&amp; \
+    curl -sSL -o redis.tar.gz \
+    http://download.redis.io/releases/redis-3.2.8.tar.gz &amp;&amp; \
+    echo "6780d1abb66f33a97aad0edbe020403d0a15b67f *redis.tar.gz" | sha1sum -c -
+
+RUN cd /tmp &amp;&amp; \
+    tar xvzf redis.tar.gz &amp;&amp; \
+    cd redis-3.2.8 &amp;&amp; \
+    dnf install -y make gcc &amp;&amp; \
+    make &amp;&amp; \
+    make install &amp;&amp; \
+    cp -f src/redis-sentinel /usr/local/bin &amp;&amp; \
+    mkdir -p /etc/redis &amp;&amp; \
+    cp -f *.conf /etc/redis &amp;&amp; \
+    rm -rf /tmp/redis-3.2.8* &amp;&amp; \
+    sed -i 's/^\(bind .*\)$/# \1/' /etc/redis/redis.conf &amp;&amp; \
+    sed -i 's/^\(daemonize .*\)$/# \1/' /etc/redis/redis.conf &amp;&amp; \
+    sed -i 's/^\(dir .*\)$/# \1\ndir \/data/' /etc/redis/redis.conf &amp;&amp; \
+    sed -i 's/^\(logfile .*\)$/# \1/' /etc/redis/redis.conf
+
+# Define mountable directories.
+VOLUME ["/data"]
+
+# Define working directory.
+WORKDIR /data
+
+# Define default command.
+CMD ["redis-server", "/etc/redis/redis.conf"]
+
+# Expose ports.
+EXPOSE 6379</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can use your choice of [ Vi | Vim | Nano ] to copy and paste this into a
+new file called <code>Dockerfile</code>. Notice the <code>.</code> it just means build in the
+current directory.</p>
+</div>
+<div class="listingblock">
+<div class="title">Build the Dockerfile</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">mkdir redis
+
+cd redis
+
+vim Dockerfile</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Copy the text above. Type <code>vim Dockerfile</code>, Press <code>i</code> for Insert, then cut and
+paste <code>control + v</code>, then escape and write the file <code>esc</code>, <code>:wq</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Now build the image.</p>
+</div>
+<div class="listingblock">
+<div class="title">built the image</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo docker build -t redis:3.2.8 .</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After about 2-3 minutes (Depending on how AWS is feeling today) you should see
+something similar to below;</p>
+</div>
+<div class="listingblock">
+<div class="title">Successfully built <code>redis</code> container</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">make[1]: Leaving directory '/tmp/redis-3.2.8/src'
+---&gt; 3f0fbb2cffc7
+Removing intermediate container 2723d408fca1
+Step 4 : VOLUME /data
+---&gt; Running in a0dba76fe7e3
+---&gt; df656c4567c6
+Removing intermediate container a0dba76fe7e3
+Step 5 : WORKDIR /data
+---&gt; Running in 8f17d79f5d29
+---&gt; 972733d86348
+Removing intermediate container 8f17d79f5d29
+Step 6 : CMD redis-server /etc/redis/redis.conf
+---&gt; Running in e54f055547de
+---&gt; 9a2d24686f5f
+Removing intermediate container e54f055547de
+Step 7 : EXPOSE 6379
+---&gt; Running in f0178e2d39a8
+---&gt; 6b6864a5e3ba
+Removing intermediate container f0178e2d39a8
+Successfully built 6b6864a5e3ba</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then run the container to look around and when your done type <code>exit</code> to quit.
+Then we will move on to our next exercise.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo docker run --rm -it redis:3.2.8 bash</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<div class="panel-group">
+  
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#collapse39aeae6d96bfd266688c6a766629ffa7" class="collapsed">
+        Result
+      </a>
+    </h4>
+  </div>
+  <div id="collapse39aeae6d96bfd266688c6a766629ffa7" class="panel-collapse collapse">
+    <div class="panel-body">
+       <div class="paragraph">
+<p>Now you are inside a container. In this example you can see out command shell changed to <code>[root@0636c3c4ee44 data]</code>. Try the following command <code>redis-server</code>.</p>
+</div>
+<div class="listingblock">
+<div class="title">In a Container</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">[root@0636c3c4ee44 data]# redis-server
+19:C 20 Jul 13:56:30.299 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+                _._
+           _.-``__ ''-._
+      _.-``    `.  `_.  ''-._           Redis 3.2.8 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._
+ (    '      ,       .-`  | `,    )     Running in standalone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 19
+  `-._    `-._  `-./  _.-'    _.-'
+ |`-._`-._    `-.__.-'    _.-'_.-'|
+ |    `-._`-._        _.-'_.-'    |           http://redis.io
+  `-._    `-._`-.__.-'_.-'    _.-'
+ |`-._`-._    `-.__.-'    _.-'_.-'|
+ |    `-._`-._        _.-'_.-'    |
+  `-._    `-._`-.__.-'_.-'    _.-'
+      `-._    `-.__.-'    _.-'
+          `-._        _.-'
+              `-.__.-'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Type <code>control + c</code> to exit.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">control + c</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Type <code>exit</code> to quit</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">[root@0636c3c4ee44 data]# exit</code></pre>
+</div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/security_containers/exercise1.0/">&larr; Previous: Exercise 1.0 - Intro to Cockpit</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/security_containers/exercise1.2/">Next: Exercise 1.2 - Docker `USER` &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/security_containers">Return to Workshop</a>
+    </p>
+  </div>
+</div>
+
+    <div id="page-footer" class="container">
+      <p class="text-center">
+        Copyright &copy; 2017 Red Hat, Inc.
+      </p>
+    </div>
+  </body>
+</html>
+

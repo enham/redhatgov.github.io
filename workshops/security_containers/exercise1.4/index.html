@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Exercise 1.4 - CGroups | Red Hat | Public Sector</title>
+
+    
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly.min.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly-additions.min.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/highlight.js/styles/darkula.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/css/main.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/css/asciidoc.css" />
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery/dist/jquery.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/c3/c3.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/d3/d3.min.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/drmonty-datatables-colvis/js/dataTables.colVis.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables.net-colreorder/js/dataTables.colReorder.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/dist/js/patternfly.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-combobox/js/bootstrap-combobox.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/moment/min/moment.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/google-code-prettify/bin/prettify.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/highlight.js/lib/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body class="">
+    
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top " role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="http://redhatgov.io/img/brand.png" alt="Red Hat | Public Sector" />
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+          
+            <li>
+              <a href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/contact/">Contact</a>
+            </li>
+          
+        
+          
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Workshops <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                
+                  <li>
+                    <a href="/workshops/ansible_tower/">Ansible Tower Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/cloudforms41/">CloudForms Workshops</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_containers/">Container Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/containers_101/">Containers 101 Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/example/">Example Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/strangling_the_monolith/">Microservices Workshop - Strangling the Monolith</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/openshift_101_dcmetromap/">OpenShift 101 - DC Metro Map Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_openshift/">OpenShift Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/rhosp_101/">Red Hat OpenStack Platform 101</a>
+                  </li>
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="jumbotron jumbotron-page text-center">
+  <h1>Exercise 1.4 - CGroups</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/security_containers">Return to Workshop</a>
+    </p>
+    
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/security_containers/exercise1.3/">&larr; Previous: Exercise 1.3 - Remove setuid/setgid Binaries</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/security_containers/exercise1.5/">Next: Exercise 1.5 - Namespaces &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <div id="preamble">
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="/workshops/security_containers/images/cgroups.png" alt="cgroups">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cgroups">CGroups</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Resource_Management_Guide/ch01.html">Device Cgroup</a> is primary in isolating and limiting containers to their own shares of CPU, memory, disk I/O, network, etc., other wise it will be denied.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_memory_limits">Memory Limits</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Docker uses Cgroups to control and limit the amount of system resources a container can use. This will help to protect a system runing from potential application memory leaks or Denial of Service DoS attacks that can consume all available memory and take down a system. By running containers with special docker flags we can restrict the amount of memory a container is able to consume even when a applcation is trying to consume more memory.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo docker run -d --name fedora1 fedora sleep 15m</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We can check using the <code><a href="https://docs.docker.com/engine/reference/commandline/stats/#description">docker stats</a></code> command and see that this instance <code>fedora1</code> has no memory limits placed on it.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo docker stats --no-stream fedora1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<div class="panel-group">
+  
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#collapseba7b71181570024bdfd6b7195313ad59" class="collapsed">
+        Result
+      </a>
+    </h4>
+  </div>
+  <div id="collapseba7b71181570024bdfd6b7195313ad59" class="panel-collapse collapse">
+    <div class="panel-body">
+       <div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">CONTAINER           CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+f08a3b36f550        0.00%               312 KiB / 487.1 MiB   0.06%               450 B / 1.09 kB     0 B / 0 B           1</code></pre>
+</div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+</div>
+<div class="paragraph">
+<p>Now we can place a memory limit on this second container <code>fedora2</code> with the docker flag <code><a href="https://docs.docker.com/engine/admin/resource_constraints/">--memory</a></code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo docker run -d --name fedora2 --memory 150m fedora sleep 15m</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now lets check again using the <code>docker stats</code> command to see the memory restrictions it has placed on this new container.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo docker stats --no-stream fedora1 fedora2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<div class="panel-group">
+  
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#collapseacda669140f4aee53b396d58c74914de" class="collapsed">
+        Result
+      </a>
+    </h4>
+  </div>
+  <div id="collapseacda669140f4aee53b396d58c74914de" class="panel-collapse collapse">
+    <div class="panel-body">
+       <div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">CONTAINER           CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e55f29717477        0.00%               268 KiB / 150 MiB     0.17%               90 B / 1.03 kB      0 B / 0 B           1
+f08a3b36f550        0.00%               312 KiB / 487.1 MiB   0.06%               1.55 kB / 1.44 kB   0 B / 0 B           1</code></pre>
+</div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+</div>
+<div class="paragraph">
+<p>Now you know how to restrict the amount of memory a container is able to use.</p>
+</div>
+<div class="sect2">
+<h3 id="_clean_up">Clean Up</h3>
+<div class="paragraph">
+<p>Lets clean up for the next exercise.</p>
+</div>
+<div class="paragraph">
+<p>Kill all running containers</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo docker kill $(sudo docker ps -q)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Delete exited containers</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo docker rm $(sudo docker ps -aqf status=exited)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Make sure everything is cleared out.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo docker ps -a</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cpu_limits">CPU Limits</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>By default, each container’s access to the host machine’s CPU cycles is unlimited. Various constraints can be set to limit a given
+container’s access to the host machine’s CPU cycles. Docker provides several flags for setting limits on how many shares of a proccessor a container is able to use. Previously we looked at memory restrictions and setting a maximum ceiling for memory usage, CPU limits are set by shares. We can defin share weights for each container and slit the available shares between the containers for a single processor.</p>
+</div>
+<div class="paragraph">
+<p>Lets run a container with <code>512</code> limit of CPU shares.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo docker run -d --name fedora1 --cpuset-cpus 0 --cpu-shares 512 dkuffner/docker-stress --cpu 10</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now lets see how many shares this container is using.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo docker stats --no-stream fedora1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<div class="panel-group">
+  
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#collapse877758a4a0a3843f936b2532eb3766af" class="collapsed">
+        Result
+      </a>
+    </h4>
+  </div>
+  <div id="collapse877758a4a0a3843f936b2532eb3766af" class="panel-collapse collapse">
+    <div class="panel-body">
+       <div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">CONTAINER           CPU %               MEM USAGE / LIMIT       MEM %               NET I/O             BLOCK I/O           PIDS
+fedora1             177.07%             1.449 MiB / 487.1 MiB   0.30%               450 B / 1.18 kB     0 B / 0 B           11</code></pre>
+</div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+</div>
+<div class="paragraph">
+<p>CPU shares are defined as a value between 0-1024, however when idle the container will use all availible shares untill another process needs to use the existing shares. Let&#8217;s run a example where another container needs to run and we divide up the shares equally.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo docker run -d --name fedora2 --cpuset-cpus 0 --cpu-shares 512 dkuffner/docker-stress --cpu 10</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now lets see how the processer shares get divided between the two.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo docker stats --no-stream fedora1 fedora2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<div class="panel-group">
+  
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#collapse2adbfde2fbc48c59e32369e1c79d03d1" class="collapsed">
+        Result
+      </a>
+    </h4>
+  </div>
+  <div id="collapse2adbfde2fbc48c59e32369e1c79d03d1" class="panel-collapse collapse">
+    <div class="panel-body">
+       <div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">CONTAINER           CPU %               MEM USAGE / LIMIT       MEM %               NET I/O             BLOCK I/O           PIDS
+fedora1             76.28%              1.449 MiB / 487.1 MiB   0.30%               1.47 kB / 1.46 kB   0 B / 0 B           11
+fedora2             78.52%              1.527 MiB / 487.1 MiB   0.31%               90 B / 1.02 kB      0 B / 0 B           11</code></pre>
+</div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+</div>
+<div class="paragraph">
+<p>Now you know how to control the amount of CPU shares a container is able to use.</p>
+</div>
+<div class="sect2">
+<h3 id="_clean_up_2">Clean Up</h3>
+<div class="paragraph">
+<p>Lets clean up for the next exercise.</p>
+</div>
+<div class="paragraph">
+<p>Kill all running containers</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo docker kill $(sudo docker ps -q)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Delete exited containers</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo docker rm $(sudo docker ps -aqf status=exited)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Make sure everything is cleared out.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo docker ps -a</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/security_containers/exercise1.3/">&larr; Previous: Exercise 1.3 - Remove setuid/setgid Binaries</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/security_containers/exercise1.5/">Next: Exercise 1.5 - Namespaces &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/security_containers">Return to Workshop</a>
+    </p>
+  </div>
+</div>
+
+    <div id="page-footer" class="container">
+      <p class="text-center">
+        Copyright &copy; 2017 Red Hat, Inc.
+      </p>
+    </div>
+  </body>
+</html>
+

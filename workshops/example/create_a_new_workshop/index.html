@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Create A New Workshop | Red Hat | Public Sector</title>
+
+    
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly.min.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly-additions.min.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/highlight.js/styles/darkula.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/css/main.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/css/asciidoc.css" />
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery/dist/jquery.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/c3/c3.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/d3/d3.min.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/drmonty-datatables-colvis/js/dataTables.colVis.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables.net-colreorder/js/dataTables.colReorder.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/dist/js/patternfly.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-combobox/js/bootstrap-combobox.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/moment/min/moment.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/google-code-prettify/bin/prettify.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/highlight.js/lib/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body class="">
+    
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top " role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="http://redhatgov.io/img/brand.png" alt="Red Hat | Public Sector" />
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+          
+            <li>
+              <a href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/contact/">Contact</a>
+            </li>
+          
+        
+          
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Workshops <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                
+                  <li>
+                    <a href="/workshops/ansible_tower/">Ansible Tower Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/cloudforms41/">CloudForms Workshops</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_containers/">Container Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/containers_101/">Containers 101 Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/example/">Example Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/strangling_the_monolith/">Microservices Workshop - Strangling the Monolith</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/openshift_101_dcmetromap/">OpenShift 101 - DC Metro Map Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_openshift/">OpenShift Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/rhosp_101/">Red Hat OpenStack Platform 101</a>
+                  </li>
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="jumbotron jumbotron-page text-center">
+  <h1>Create A New Workshop</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/example">Return to Workshop</a>
+    </p>
+    
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/example/prerequisites/">&larr; Previous: Prerequisites</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/example/workshop_content/">Next: Workshop Content &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    
+
+<h1 id="don-t-recreate-the-wheel">Don't Recreate The Wheel</h1>
+
+<p>Not only is this example workshop here to show you what's possible, but it's
+also expected to be the starting point and reference for any new workshop.</p>
+
+<p>The easiest way to get started is to <strong>copy this workshop</strong> into a new
+directory and add your own content.</p>
+
+
+
+
+  <div class="alert alert-warning">
+    
+    <span class="pficon pficon-warning-triangle-o"></span>
+    <p><strong>Warning:</strong> There are a few things you'll need to change though, so pay close
+attention to each step below to save yourself frustration down the road.</p>
+
+  </div>
+
+
+
+<h1 id="tell-me-the-steps-already">Tell Me The Steps Already!</h1>
+
+<h2 id="step-1">Step 1</h2>
+
+<p>In the <a href="/workshops/cloudforms41/prerequisites/">Prerequisites lab</a>, you were told
+to clone the <a href="https://github.com/RedHatGov/redhatgov.github.io">https://github.com/RedHatGov/redhatgov.github.io</a> repository. This
+works if you want to pull down the source code and build the site locally
+using Hugo.</p>
+
+<p>If you want to contribute, <strong>we need to fork the repository</strong> so that you have
+your own copy that you can push changes to.</p>
+
+<p>To do that, go to <a href="https://github.com/RedHatGov/redhatgov.github.io/fork">https://github.com/RedHatGov/redhatgov.github.io/fork</a> and
+follow the instructions.</p>
+
+
+
+
+  <div class="alert alert-info">
+    
+    <span class="pficon pficon-info"></span>
+    <p>After the forking is complete, you will have your own copy at
+<a href="https://github.com/YOUR_USERNAME/redhatgov.github.io">https://github.com/YOUR_USERNAME/redhatgov.github.io</a></p>
+
+  </div>
+
+
+
+<h2 id="step-2">Step 2</h2>
+
+<p>If you cloned the main repository in the Prerequisites lab, follow <strong>Step 2a</strong>.<br/>
+If you have not cloned the main repository, follow <strong>Step 2b</strong>.</p>
+
+<h3 id="step-2a">Step 2a</h3>
+
+<p>Open up your <strong>Terminal</strong> and change to the directory where you cloned the main
+repository. This example assumes that location is
+<code>~/projects/redhatgov.github.io</code>.</p>
+
+<pre><code class="language-bash">$ cd ~/projects/redhatgov.github.io
+</code></pre>
+
+<p>Currently, the main repository is going to be listed as the <code>origin</code> remote. We
+need to rename this to <code>upstream</code> so that we can add our fork as the <code>origin</code>
+remote.</p>
+
+<p>First, let's verify that this is true. Run <code>git remote -v</code> and you should see
+the following output.</p>
+
+<pre><code class="language-bash">$ git remote -v
+origin	https://github.com/RedHatGov/redhatgov.github.io.git (fetch)
+origin	https://github.com/RedHatGov/redhatgov.github.io.git (push)
+</code></pre>
+
+<p>Now we will rename the main repository from <code>origin</code> to <code>upstream</code> and add your
+fork as <code>origin</code>. Take note of <code>YOUR_USERNAME</code> and replace that before running
+the 2nd command.</p>
+
+<pre><code class="language-bash">$ git remote rename origin upstream
+
+$ git remote add origin git@github.com:YOUR_USERNAME/redhatgov.github.io.git
+</code></pre>
+
+<p>Let's check <code>git remote -v</code> to verify everything looks correct.</p>
+
+<pre><code class="language-bash">$ git remote -v                                                           
+origin	git@github.com:YOUR_USERNAME/redhatgov.github.io.git (fetch)
+origin	git@github.com:YOUR_USERNAME/redhatgov.github.io.git (push)
+upstream	https://github.com/RedHatGov/redhatgov.github.io.git (fetch)
+upstream	https://github.com/RedHatGov/redhatgov.github.io.git (push)
+</code></pre>
+
+<p>Lastly, we need to update your local <code>docs</code> branch to point to the remote
+<code>docs</code> branch in your fork.</p>
+
+<pre><code class="language-bash">$ git fetch --all
+
+$ git branch --set-upstream-to origin/docs docs
+Branch docs set up to track remote branch docs from origin.
+</code></pre>
+
+<p>You can now move on to <strong>Step 3</strong>.</p>
+
+<h3 id="step-2b">Step 2b</h3>
+
+<p>Open up your <strong>Terminal</strong> and change to the directory where you want to clone
+your fork of the repository. This example assumes you are in the
+<code>~/projects</code> directory.</p>
+
+<pre><code class="language-bash">$ cd ~/projects
+
+$ $ git clone git@github.com:YOUR_USERNAME/redhatgov.github.io.git
+</code></pre>
+
+<p>Next, let's add the main repository as the <code>upstream</code> remote so that you'll be
+able to pull down changes as needed.</p>
+
+<pre><code class="language-bash">$ git remote add upstream https://github.com/RedHatGov/redhatgov.github.io.git
+</code></pre>
+
+<p>Let's check <code>git remote -v</code> to verify everything looks correct.</p>
+
+<pre><code class="language-bash">$ git remote -v                                                           
+origin	git@github.com:YOUR_USERNAME/redhatgov.github.io.git (fetch)
+origin	git@github.com:YOUR_USERNAME/redhatgov.github.io.git (push)
+upstream	https://github.com/RedHatGov/redhatgov.github.io.git (fetch)
+upstream	https://github.com/RedHatGov/redhatgov.github.io.git (push)
+</code></pre>
+
+<p>You can now move on to <strong>Step 3</strong>.</p>
+
+<h2 id="step-3">Step 3</h2>
+
+<p>Now that you have the files on your computer, you can get to working on your
+workshop content!</p>
+
+<p>Let's start by copying this example to a new directory. You can find the source
+code for this example workshop at
+<code>~/projects/redhatgov.github.io/content/workshops/example</code>.</p>
+
+<pre><code class="language-bash">$ cd ~/projects/redhatgov.github.io/content/workshops
+
+$ cp -rv example new_workshop
+</code></pre>
+
+<h1 id="personalization">Personalization</h1>
+
+
+
+
+  <div class="alert alert-warning">
+    
+    <span class="pficon pficon-warning-triangle-o"></span>
+    <p>This is a very important section. If you skip this section, your content will
+not show up where you expect it to.</p>
+
+  </div>
+
+
+
+<p>Now that we have our new workshop, there are a few things we need to update
+in order to make our content show up in the correct location and remain linked
+together.</p>
+
+<h2 id="step-1-1">Step 1</h2>
+
+<p>Let's start with the name of your workshop.</p>
+
+<p>This is set in the metadata section at the top of the <code>_index.md</code> file.</p>
+
+<p>By default, it will look something like this:</p>
+
+<pre><code class="language-yaml">---
+title: Example Workshop
+menu:
+  main:
+    parent: workshops
+---
+</code></pre>
+
+<p>Update <code>title: Example Workshop</code> to be the name of your workshop.</p>
+
+
+
+
+  <div class="alert alert-warning">
+    
+    <span class="pficon pficon-warning-triangle-o"></span>
+    <p>Be sure to keep the <code>menu</code> section there, otherwise your workshop will not show
+up on the home page or the navigation bar.</p>
+
+  </div>
+
+
+
+<p>You can then update the content of this file to be the content you wish to have
+on the main page of your workshop.</p>
+
+
+
+
+  <div class="alert alert-info">
+    
+    <span class="pficon pficon-info"></span>
+    <p>Take note of the <code>{{&lt; labs example &gt;}}</code> item under the <strong>Labs</strong>
+heading. This is a <em>shortcode</em> that will automatically add a list of your labs
+to your main page and keep it updated as you add new labs.</p>
+
+<p>You will need to update the value <code>example</code> to match the name of the directory
+that your new workshop is in. Following the example from above, this would be
+<code>new_workshop</code>.</p>
+
+  </div>
+
+
+
+<h2 id="step-2-1">Step 2</h2>
+
+<p>Next, let's take a look at one of the lab files. We'll use <code>prerequisites.md</code>
+as an example.</p>
+
+<p>You will see this metadata section at the top of that file:</p>
+
+<pre><code class="language-yaml">---
+title: Prerequisites
+workshops: example
+workshop_weight: 10
+layout: lab
+---
+</code></pre>
+
+<p>We need to update a few things here in order to have the lab content show up
+under your new workshop.</p>
+
+<ul>
+<li><code>title</code>: Set this to the title of your lab.</li>
+<li><code>workshops</code>: This value needs to match the name of the directory you created
+for your workshop. <strong>This is how your lab is associated with your workshop.</strong></li>
+<li><code>workshop_weight</code>: This is how you control the ordering of your labs.</li>
+<li><code>layout</code>: Keep this value set to <code>lab</code> as it will ensure the proper layout of
+your content and will include forward and back buttons for your labs.</li>
+</ul>
+
+
+
+
+  <div class="alert alert-info">
+    
+    <span class="pficon pficon-info"></span>
+    <p>You may need to restart the Hugo server in order for your listing of labs to show up on the workshop index.</p>
+
+<p>Hit ctrl+c in the terminal window where you launched the hugo server command. Then rerun hugo server to restart.</p>
+
+  </div>
+
+
+
+<h2 id="step-3-1">Step 3</h2>
+
+<p>You are now free to add your own content for your workshop.</p>
+
+<p>For each lab:</p>
+
+<ul>
+<li>Create a new file</li>
+<li>Add the metadata section from <strong>Step 2</strong> to the top of the file</li>
+<li>Add your content</li>
+</ul>
+
+
+
+
+  <div class="alert alert-warning">
+    
+    <span class="pficon pficon-warning-triangle-o"></span>
+    <p>Be sure to delete any files in your workshop directory that are left over from
+the example workshop that you are not using.</p>
+
+  </div>
+
+
+
+
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/example/prerequisites/">&larr; Previous: Prerequisites</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/example/workshop_content/">Next: Workshop Content &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/example">Return to Workshop</a>
+    </p>
+  </div>
+</div>
+
+    <div id="page-footer" class="container">
+      <p class="text-center">
+        Copyright &copy; 2017 Red Hat, Inc.
+      </p>
+    </div>
+  </body>
+</html>
+

@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Lab 6 - Managing Instances | Red Hat | Public Sector</title>
+
+    
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly.min.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly-additions.min.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/highlight.js/styles/darkula.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/css/main.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/css/asciidoc.css" />
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery/dist/jquery.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/c3/c3.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/d3/d3.min.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/drmonty-datatables-colvis/js/dataTables.colVis.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables.net-colreorder/js/dataTables.colReorder.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/dist/js/patternfly.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-combobox/js/bootstrap-combobox.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/moment/min/moment.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/google-code-prettify/bin/prettify.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/highlight.js/lib/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body class="">
+    
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top " role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="http://redhatgov.io/img/brand.png" alt="Red Hat | Public Sector" />
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+          
+            <li>
+              <a href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/contact/">Contact</a>
+            </li>
+          
+        
+          
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Workshops <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                
+                  <li>
+                    <a href="/workshops/ansible_tower/">Ansible Tower Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/cloudforms41/">CloudForms Workshops</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_containers/">Container Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/containers_101/">Containers 101 Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/example/">Example Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/strangling_the_monolith/">Microservices Workshop - Strangling the Monolith</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/openshift_101_dcmetromap/">OpenShift 101 - DC Metro Map Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_openshift/">OpenShift Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/rhosp_101/">Red Hat OpenStack Platform 101</a>
+                  </li>
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="jumbotron jumbotron-page text-center">
+  <h1>Lab 6 - Managing Instances</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/rhosp_101">Return to Workshop</a>
+    </p>
+    
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/rhosp_101/6_managing_images/">&larr; Previous: Lab 5 - Managing Images</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/rhosp_101/8_using_the_cli/">Next: Lab 7 - Using the OpenStack CLI(s) &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    
+
+<h1 id="now-we-are-ready-to-launch-an-openstack-instance">Now We are Ready to Launch an OpenStack Instance</h1>
+
+<h2 id="first-what-is-an-instance">First, What is an Instance?</h2>
+
+<p>Instances are virtual machines that run inside the OpenStack cloud. You can launch an instance from the following sources:</p>
+
+<ul>
+<li>Images uploaded to the Image service<br /></li>
+<li>Image that you have copied to a persistent volume. The instance launches from the volume, which is provided by the cinder-volume API through iSCSI<br /></li>
+<li>Instance snapshot that you took</li>
+</ul>
+
+<h1 id="let-s-go-launch-a-new-instance">Let's Go Launch a New Instance</h1>
+
+<blockquote>
+<p>Navigate to Compute -&gt; Instances using the second level navigation tabs</p>
+</blockquote>
+
+
+<figure >
+    
+        <img src="../images/lab6-instances-1.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 6 Figure 1: Project Instance Listing</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<blockquote>
+<p>Click <strong>Launch Instance</strong> on the right hand side of the screen<br />
+Enter <strong>studentX-instance</strong> for <strong>Name</strong><br />
+Leave <strong>Availability</strong> set to <strong>nova</strong><br />
+Enter <strong>2</strong> for <strong>Count</strong><br />
+Click <strong>Next</strong></p>
+</blockquote>
+
+
+<figure >
+    
+        <img src="../images/lab6-instances-2.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 6 Figure 2: Details for New Instance</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<blockquote>
+<p>Leave <strong>Select Boot Source</strong> set to <strong>Image</strong><br />
+Click <strong>No</strong> for <strong>Create New Volume</strong><br />
+Click the <strong>Up</strong> arrow to the right of <strong>studentX-cirros</strong> to move that image up to the <strong>Allocated</strong> section<br />
+Click <strong>Next</strong></p>
+</blockquote>
+
+
+<figure >
+    
+        <img src="../images/lab6-instances-3.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 6 Figure 3: Source for New Instance</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<blockquote>
+<p>Click the <strong>Up</strong> arrow to the right of <strong>m1.tiny</strong> to move that flavor up to the <strong>Allocated</strong> section<br />
+Click <strong>Next</strong></p>
+</blockquote>
+
+
+<figure >
+    
+        <img src="../images/lab6-instances-4.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 6 Figure 4: Flavor for New Instance</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<blockquote>
+<p>Click the <strong>Up</strong> arrow to the right of <strong>private-a</strong> to move that network up to the <strong>Allocated</strong> section<br />
+Click <strong>Next</strong> until you get to Security Groups</p>
+</blockquote>
+
+
+<figure >
+    
+        <img src="../images/lab6-instances-5.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 6 Figure 5: Networks for New Instance</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<blockquote>
+<p>Leave the <strong>default</strong> security group allocated<br />
+Click <strong>Next</strong></p>
+</blockquote>
+
+
+<figure >
+    
+        <img src="../images/lab6-instances-6.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 6 Figure 6: Security Groups for New Instance</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<p>We need a key pair created to use when we provision instances. The public key is passed to the instance and put in the authorized_keys file on the login user account.</p>
+
+<blockquote>
+<p>Click <strong>Create Key Pair</strong></p>
+</blockquote>
+
+
+<figure >
+    
+        <img src="../images/lab6-instances-7.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 6 Figure 7: Key Pair for New Instance</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<blockquote>
+<p>Enter <strong>studentX</strong> for <strong>Key Pair Name</strong><br />
+Click <strong>Create Keypair</strong></p>
+</blockquote>
+
+
+<figure >
+    
+        <img src="../images/lab6-instances-8.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 6 Figure 8: Create New Key Pair</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+
+
+
+  <div class="alert alert-warning">
+    
+    <span class="pficon pficon-warning-triangle-o"></span>
+    <p>Note that when you create a key pair, it should get automatically downloaded. You should verify that you definitely have the pem file in your downloads.</p>
+
+<p>If you do not you can click the download button to get it.</p>
+
+<p>You need this key file in order to access instances later.</p>
+
+  </div>
+
+
+
+<blockquote>
+<p>You can ignore the rest of the option pages<br />
+Click <strong>Launch Instance</strong></p>
+</blockquote>
+
+
+<figure >
+    
+        <img src="../images/lab6-instances-9.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 6 Figure 9: Key Pair Created and Launching New Instance</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+
+
+
+  <div class="alert alert-success">
+    
+    <span class="pficon pficon-ok"></span>
+    <p>You should see a green box appear in the upper right corner of the screen that says &quot;Success: 2 instances launched.&quot;</p>
+
+<p>If you did not, let the intstructor know now</p>
+
+  </div>
+
+
+
+
+
+
+  <div class="alert alert-info">
+    
+    <span class="pficon pficon-info"></span>
+    <p>The instances will take a little while to become active.</p>
+
+<p>If for some reason they do not, let the instructor know</p>
+
+  </div>
+
+
+
+
+<figure >
+    
+        <img src="../images/lab6-instances-10.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 6 Figure 10: New Instances Created and Active in Project</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<h1 id="now-let-s-associate-a-floating-ip-address-with-one-of-our-instances">Now Let's Associate a Floating IP Address with one of our instances</h1>
+
+<blockquote>
+<p>Look all the way to the right in the row for your <strong>studentX-instance-1</strong> instance, Click the down arrow<br />
+Click <strong>Associate Floating IP</strong><br />
+Select any one of your available floating IP addresses for <strong>IP Address</strong><br />
+Leave <strong>Port to be Associated</strong> as is
+Click <strong>Associate</strong></p>
+</blockquote>
+
+
+<figure >
+    
+        <img src="../images/lab6-instances-fip-1.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 6 Figure 11: Selecting Floating IP to Associate with Our Instance</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+
+
+
+  <div class="alert alert-success">
+    
+    <span class="pficon pficon-ok"></span>
+    <p>You should see a green box appear in the upper right corner of the screen that says something similar to &quot;Success: IP address 192.168.1.76 associated.&quot;</p>
+
+<p>If you did not, let the intstructor know now</p>
+
+  </div>
+
+
+
+
+<figure >
+    
+        <img src="../images/lab6-instances-fip-2.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 6 Figure 12: Floating IP Address Associated with Our Instance</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+
+<figure >
+    
+        <img src="../images/lab6-instances-network-topology.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 6 Figure 13: Network Topology Showing Two New Instances</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<h1 id="summary">Summary</h1>
+
+<p>At this point, we now have two running instances in our project. These instances are based on the cirros image we uploaded earlier.</p>
+
+<p>The instances have IP addresses on the private-a network we created and are using the default security group as a baseline firewall setup.</p>
+
+<p>One of our instances also has a Floating IP Address assigned and is routable on the 192.168.0.0/23 public network via both ICMP and SSH.</p>
+
+<p>In our next lab, we will use the CLI to go through some of the steps we have done in previous labs.</p>
+
+
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/rhosp_101/6_managing_images/">&larr; Previous: Lab 5 - Managing Images</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/rhosp_101/8_using_the_cli/">Next: Lab 7 - Using the OpenStack CLI(s) &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/rhosp_101">Return to Workshop</a>
+    </p>
+  </div>
+</div>
+
+    <div id="page-footer" class="container">
+      <p class="text-center">
+        Copyright &copy; 2017 Red Hat, Inc.
+      </p>
+    </div>
+  </body>
+</html>
+

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Lab 2 - BYO Docker | Red Hat | Public Sector</title>
+
+    
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly.min.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly-additions.min.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/highlight.js/styles/darkula.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/css/main.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/css/asciidoc.css" />
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery/dist/jquery.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/c3/c3.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/d3/d3.min.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/drmonty-datatables-colvis/js/dataTables.colVis.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables.net-colreorder/js/dataTables.colReorder.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/dist/js/patternfly.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-combobox/js/bootstrap-combobox.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/moment/min/moment.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/google-code-prettify/bin/prettify.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/highlight.js/lib/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body class="">
+    
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top " role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="http://redhatgov.io/img/brand.png" alt="Red Hat | Public Sector" />
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+          
+            <li>
+              <a href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/contact/">Contact</a>
+            </li>
+          
+        
+          
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Workshops <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                
+                  <li>
+                    <a href="/workshops/ansible_tower/">Ansible Tower Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/cloudforms41/">CloudForms Workshops</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_containers/">Container Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/containers_101/">Containers 101 Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/example/">Example Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/strangling_the_monolith/">Microservices Workshop - Strangling the Monolith</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/openshift_101_dcmetromap/">OpenShift 101 - DC Metro Map Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_openshift/">OpenShift Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/rhosp_101/">Red Hat OpenStack Platform 101</a>
+                  </li>
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="jumbotron jumbotron-page text-center">
+  <h1>Lab 2 - BYO Docker</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/openshift_101_dcmetromap">Return to Workshop</a>
+    </p>
+    
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/openshift_101_dcmetromap/lab1-welcome/">&larr; Previous: Lab 1 - Welcome</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/openshift_101_dcmetromap/lab3-s2i/">Next: Lab 3 - Deploying an App with S2I &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    
+
+<h1 id="bring-your-own-docker">Bring your own docker</h1>
+
+<p>It's easy to get started with OpenShift whether you're using our app templates or bringing your existing docker assets.  In this quick lab we will deploy an application using an exisiting docker image.  OpenShift will create an image stream for the image as well as deploy and manage containers based on that image.  And we will dig into the details to show how all that works.</p>
+
+<h2 id="let-s-point-openshift-to-an-existing-built-docker-image">Let's point OpenShift to an existing built docker image</h2>
+
+<div class="panel-group">
+  
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#collapseb7fe72bcc5348c14e608b76c942b6a85" class="collapsed">
+        CLI Steps
+      </a>
+    </h4>
+  </div>
+  <div id="collapseb7fe72bcc5348c14e608b76c942b6a85" class="panel-collapse collapse">
+    <div class="panel-body">
+       <p><blockquote>
+<i class="fa fa-terminal"></i> Goto the terminal and type the following:
+</blockquote></p>
+
+<pre><code class="language-bash">$ oc new-app kubernetes/guestbook
+</code></pre>
+
+<p><blockquote>
+The output should show something <em>similar</em> to below:
+</blockquote></p>
+
+<pre><code class="language-bash">--&gt; Found docker image a49fe18 (17 months old) from docker Hub for &quot;kubernetes/guestbook&quot;
+    * An image stream will be created as &quot;guestbook:latest&quot; that will track this image
+    * This image will be deployed in deployment config &quot;guestbook&quot;
+    * Port 3000/tcp will be load balanced by service &quot;guestbook&quot;
+--&gt; Creating resources with label app=guestbook ...
+    ImageStream &quot;guestbook&quot; created
+    DeploymentConfig &quot;guestbook&quot; created
+    Service &quot;guestbook&quot; created
+--&gt; Success
+    Run 'oc status' to view your app.
+</code></pre>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#collapsef14cf5104ba1be048543599b0c506caf" class="collapsed">
+        Web Console Steps
+      </a>
+    </h4>
+  </div>
+  <div id="collapsef14cf5104ba1be048543599b0c506caf" class="panel-collapse collapse">
+    <div class="panel-body">
+       <blockquote>
+Click "Add to Project"
+</blockquote>
+<img src="../images/ocp-addToProjectButton.png" width="200"><br/>
+
+<blockquote>
+Select the tab for "Deploy Image" from the top options
+</blockquote>
+<img src="../images/ocp-guestbook-deploy-image.png" width="400"><br/>
+
+<blockquote>
+Select the option for "Image Name" and enter "kubernetes/guestbook", then click the magnifying glass to the far right to search for the image.
+</blockquote>
+<img src="../images/ocp-guestbook-imagename-expand.png" width="600"><br/>
+
+<blockquote>
+Observe default values that are populated in the search results
+</blockquote>
+<img src="../images/ocp-guestbook-create-1.png" width="600"><br/>
+<img src="../images/ocp-guestbook-create-2.png" width="600"><br/>
+
+<blockquote>
+Scroll to the bottom and click "Create"
+</blockquote>
+
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+<h2 id="we-can-browse-our-project-details-with-the-command-line">We can browse our project details with the command line</h2>
+
+<blockquote>
+<p><i class="fa fa-terminal"></i> Try typing the following to see what is available to 'get':</p>
+</blockquote>
+
+<pre><code class="language-bash">$ oc get
+</code></pre>
+
+<blockquote>
+<p><i class="fa fa-terminal"></i> Now let's look at what our image stream has in it:</p>
+</blockquote>
+
+<pre><code class="language-bash">$ oc get is
+</code></pre>
+
+<pre><code class="language-bash">$ oc describe is/guestbook
+</code></pre>
+
+
+
+
+  <div class="alert alert-info">
+    
+    <span class="pficon pficon-info"></span>
+    <p>An image stream can be used to automatically perform an action, such as updating a deployment, when a new image, in our case a new version of the guestbook image, is created.</p>
+
+  </div>
+
+
+
+<blockquote>
+<p><i class="fa fa-terminal"></i> The app is running in a pod, let's look at that:</p>
+</blockquote>
+
+<pre><code class="language-bash">$ oc describe pods
+</code></pre>
+
+<h2 id="we-can-see-those-details-using-the-web-console-too">We can see those details using the web console too</h2>
+
+<p>Let's look at the image stream.</p>
+
+<blockquote>
+Click on "Builds -> Images"
+</blockquote>
+
+<p>This shows a list of all image streams within the project.</p>
+
+<blockquote>
+Now click on the guestbook image stream
+</blockquote>
+
+<p>You should see something similar to this:</p>
+
+<p><img src="../images/ocp-guestbook-is.png" width="600"><br/></p>
+
+<h2 id="does-this-guestbook-do-anything">Does this guestbook do anything?</h2>
+
+<p>Good catch, your service is running but there is no way for users to access it yet.  We can fix that from the web console or the command line. You decide which you'd rather do from the steps below.</p>
+
+<div class="panel-group">
+  
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#collapsed6f6910aaacbd115ae3b2a0a18deb895" class="collapsed">
+        CLI Steps
+      </a>
+    </h4>
+  </div>
+  <div id="collapsed6f6910aaacbd115ae3b2a0a18deb895" class="panel-collapse collapse">
+    <div class="panel-body">
+       <blockquote>
+<i class="fa fa-terminal"></i> In the command line type this:
+</blockquote>
+
+<pre><code class="language-bash">$ oc expose service guestbook
+</code></pre>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#collapsed3795cba308970c5b6201808ba088e71" class="collapsed">
+        Web Console Steps
+      </a>
+    </h4>
+  </div>
+  <div id="collapsed3795cba308970c5b6201808ba088e71" class="panel-collapse collapse">
+    <div class="panel-body">
+       <blockquote>
+To expose via the web console, click on "Overview" to get to this view
+</blockquote>
+<img src="../images/ocp-guestbook-noroute.png" width="600"><br/>
+
+<p>Notice there is no exposed route </p>
+
+<blockquote>
+Click on the "Create Route" link
+</blockquote>
+
+<p><img src="../images/ocp-guestbook-createRoute.png" width="600"><br/></p>
+
+<p>This is where you could specify route parameters, but we will just use the defaults.</p>
+
+<blockquote>
+Click "Create"
+</blockquote>
+
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+
+
+
+  <div class="alert alert-info">
+    
+    <span class="pficon pficon-info"></span>
+    <p>You can also create secured HTTPS routes, but that's a topic for a more advanced workshop</p>
+
+  </div>
+
+
+
+<h2 id="test-out-the-guestbook-webapp">Test out the guestbook webapp</h2>
+
+<p>Notice that in the web console overview, you now have a URL in the service box.  There is no database setup, but you can see the webapp running by clicking the route you just exposed.</p>
+
+<blockquote>
+<p>Click the link in the service box. You should see:</p>
+</blockquote>
+
+<p><img src="../images/ocp-guestbook-app.png" width="600"><br/></p>
+
+<h2 id="good-work-let-s-clean-this-up">Good work, let's clean this up</h2>
+
+<blockquote>
+<p><i class="fa fa-terminal"></i> Let's clean up all this to get ready for the next lab:</p>
+</blockquote>
+
+<pre><code class="language-bash">$ oc delete all --all
+</code></pre>
+
+<h1 id="summary">Summary</h1>
+
+<p>In this lab you've deployed an example docker image, pulled from docker hub, into a pod running in OpenShift.  You exposed a route for clients to access that service via thier web browsers.  And you learned how to get and describe resources using the command line and the web console.  Hopefully, this basic lab also helped to get you familiar with using the CLI and navigating within the web console.</p>
+
+
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/openshift_101_dcmetromap/lab1-welcome/">&larr; Previous: Lab 1 - Welcome</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/openshift_101_dcmetromap/lab3-s2i/">Next: Lab 3 - Deploying an App with S2I &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/openshift_101_dcmetromap">Return to Workshop</a>
+    </p>
+  </div>
+</div>
+
+    <div id="page-footer" class="container">
+      <p class="text-center">
+        Copyright &copy; 2017 Red Hat, Inc.
+      </p>
+    </div>
+  </body>
+</html>
+

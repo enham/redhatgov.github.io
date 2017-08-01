@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Exercise 1.14 - Examine Policies | Red Hat | Public Sector</title>
+
+    
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly.min.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly-additions.min.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/highlight.js/styles/darkula.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/css/main.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/css/asciidoc.css" />
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery/dist/jquery.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/c3/c3.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/d3/d3.min.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/drmonty-datatables-colvis/js/dataTables.colVis.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables.net-colreorder/js/dataTables.colReorder.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/dist/js/patternfly.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-combobox/js/bootstrap-combobox.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/moment/min/moment.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/google-code-prettify/bin/prettify.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/highlight.js/lib/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body class="">
+    
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top " role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="http://redhatgov.io/img/brand.png" alt="Red Hat | Public Sector" />
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+          
+            <li>
+              <a href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/contact/">Contact</a>
+            </li>
+          
+        
+          
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Workshops <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                
+                  <li>
+                    <a href="/workshops/ansible_tower/">Ansible Tower Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/cloudforms41/">CloudForms Workshops</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_containers/">Container Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/containers_101/">Containers 101 Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/example/">Example Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/strangling_the_monolith/">Microservices Workshop - Strangling the Monolith</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/openshift_101_dcmetromap/">OpenShift 101 - DC Metro Map Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_openshift/">OpenShift Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/rhosp_101/">Red Hat OpenStack Platform 101</a>
+                  </li>
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="jumbotron jumbotron-page text-center">
+  <h1>Exercise 1.14 - Examine Policies</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/cloudforms41">Return to Workshop</a>
+    </p>
+    
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/cloudforms41/exercise1.13/">&larr; Previous: Exercise 1.13 - Explore Planning</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/cloudforms41/exercise1.15/">Next: Exercise 1.15 - Explore Network Topology &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    
+
+<h1 id="what-are-policies">What Are Policies?</h1>
+
+<p>In Red Hat CloudForms, Policy profiles are groupings of policies that you can apply to entities within CloudForms.  Compliance policies check for a certain state in a host or VM. Control policies control a host or VM depending on certain criteria.</p>
+
+<h1 id="examine-policies">Examine Policies</h1>
+
+<blockquote>
+<p>Select <strong>Control</strong> → <strong>Explorer</strong>.</p>
+</blockquote>
+
+<p><img title="CloudForms Top Window Navigation VM Providers" src="../images/cfme-nav-control-explorer.png" width="1000"/><br/>
+<em>Control Explorer</em></p>
+
+<blockquote>
+<p>Select the <strong>Policy Profiles</strong> accordion.</p>
+</blockquote>
+
+<p><img title="CloudForms Top Window Navigation VM Providers" src="../images/cfme-policy-profile-accordion.png" /><br/>
+<em>Policy Profile Accordion</em></p>
+
+<blockquote>
+<p>Select <strong>All Policy Profiles</strong> → <strong>Linux Compliance Check</strong> → <strong>VM and Instance Compliance: Shell-Shock Vulnerability</strong> → <strong>Vulnerable bash Package (ShellShock)</strong>.</p>
+</blockquote>
+
+<p><img title="CloudForms Top Window Navigation VM Providers" src="../images/cfme-shell-shock.png" width="1000"/><br/>
+<em>Shell-Shock Vulnerability</em></p>
+
+<p>On the right, observe the Expression used for this policy.</p>
+
+<h1 id="explore-events">Explore Events</h1>
+
+<blockquote>
+<p>Select the <strong>Events</strong> accordion.</p>
+</blockquote>
+
+<p><img title="CloudForms Top Window Navigation VM Providers" src="../images/cfme-events-accordion.png" /><br/>
+<em>Events Accordion</em></p>
+
+<blockquote>
+<p>Select <strong>All Events</strong> → <strong>Container Image Discovered</strong>.</p>
+</blockquote>
+
+<p><img title="CloudForms Top Window Navigation VM Providers" src="../images/cfme-container-image-discovered.png" width="1000"/><br/>
+<em>Container Image Discovered</em></p>
+
+<p>Observe that the imported policy shows up as assigned.</p>
+
+<h1 id="explore-conditions">Explore Conditions</h1>
+
+<blockquote>
+<p>Select the <strong>Conditions</strong> accordion.</p>
+</blockquote>
+
+<p><img title="CloudForms Top Window Navigation VM Providers" src="../images/cfme-conditions-accordion.png" /><br/>
+<em>Conditions Accordion</em></p>
+
+<blockquote>
+<p>Select <strong>All Conditions</strong> → <strong>All VM and Instance Conditions</strong> → <strong>Vulnerable bash Package (ShellShock)</strong></p>
+</blockquote>
+
+<p><img title="CloudForms Top Window Navigation VM Providers" src="../images/cfme-conditions-shellshock.png" width="1000"/><br/>
+<em>Conditions ShellShock</em></p>
+
+<p>Examine the <strong>Expression</strong>.</p>
+
+<h1 id="explore-actions">Explore Actions</h1>
+
+<blockquote>
+<p>Select the <strong>Actions</strong> accordion.</p>
+</blockquote>
+
+<p><img title="CloudForms Top Window Navigation VM Providers" src="../images/cfme-actions-accordion.png" /><br/>
+<em>Actions Accordion</em></p>
+
+<blockquote>
+<p>Select <strong>All Actions</strong> → <strong>Send Email to Security Team</strong>.</p>
+</blockquote>
+
+<p><img title="CloudForms Top Window Navigation VM Providers" src="../images/cfme-actions-send-email.png" width="1000"/><br/>
+<em>Send Email</em></p>
+
+<p>Observe what this action does and the policies to which it is assigned.</p>
+
+<p>Examine other actions and results.</p>
+
+<h1 id="explore-alerts">Explore Alerts</h1>
+
+<blockquote>
+<p>Select the <strong>Alerts</strong> accordion.</p>
+</blockquote>
+
+<p><img title="CloudForms Top Window Navigation VM Providers" src="../images/cfme-alerts-accordion.png" /><br/>
+<em>Alerts Accordion</em></p>
+
+<blockquote>
+<p>Select <strong>All Alerts</strong> → <strong>VM Memory was decreased</strong>.</p>
+</blockquote>
+
+<p><img title="CloudForms Top Window Navigation VM Providers" src="../images/cfme-alerts-vm-decrease.png" width="1000"/><br/>
+<em>VM Memory Alerts</em></p>
+
+<p>Review the <strong>Hardware Reconfigured Parameters</strong> section to see what this alert monitors.</p>
+
+<h1 id="explore-alert-profiles">Explore Alert Profiles</h1>
+
+<blockquote>
+<p>Select the <strong>Alert Profiles</strong> accordion.</p>
+</blockquote>
+
+<p><img title="CloudForms Top Window Navigation VM Providers" src="../images/cfme-alert-profile.png" /><br/>
+<em>Alerts Profile Accordion</em></p>
+
+<blockquote>
+<p>Select <strong>All Alert Profiles</strong> → <strong>VM and Instance Alert Profiles</strong>.</p>
+</blockquote>
+
+<p><img title="CloudForms Top Window Navigation VM Providers" src="../images/cfme-alert-profile-vm-instance.png" width="1000"/><br/>
+<em>All VM and Instance Alert Profiles</em></p>
+
+<p>Add an alert profile:</p>
+
+<ol>
+<li>Click <i class="fa fa-cog fa-lg" aria-hidden="true"></i> (<strong>Configuration</strong>) → <strong>Add a New VM and Instance Alert Profile</strong>.</li>
+<li>Enter <strong>VM Memory Decrease</strong> for <strong>Description</strong>.</li>
+<li>In <strong>Alert Selection</strong>, select <strong>VM Memory was decreased</strong> and click <i class="fa fa-caret-right fa-lg" aria-hidden="true"></i>.</li>
+<li>Click <strong>Add</strong>.</li>
+</ol>
+
+<p><img title="CloudForms Top Window Navigation VM Providers" src="../images/cfme-alert-profile-add.png" width="1000"/><br/>
+<em>Add Alert Profile</em></p>
+
+
+
+
+  <div class="alert alert-warning">
+    
+    <span class="pficon pficon-warning-triangle-o"></span>
+    You cannot assign an alert directly to an entity; you must put alerts into an alert profile as you did here.
+  </div>
+
+
+
+
+
+
+  <div class="alert alert-info">
+    
+    <span class="pficon pficon-info"></span>
+    An alert profile can contain many alerts or just one.
+  </div>
+
+
+
+<p>Assign your alert profile:</p>
+
+<ol>
+<li>Select the new alert profile you just created.</li>
+<li>Click <i class="fa fa-cog fa-lg" aria-hidden="true"></i> (<strong>Configuration</strong>) → <strong>Edit assignments for this Alert Profile</strong>.</li>
+<li>Choose <strong>Selected Cluster/Deployment Roles</strong> for <strong>Assign To</strong>.</li>
+<li>Check the <strong>Raleigh</strong> box.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+
+<p><img title="CloudForms Top Window Navigation VM Providers" src="../images/cfme-alert-profile-assign.png" width="1000"/><br/>
+<em>Assign Alert Profile</em></p>
+
+<p>You have now assigned this alert to any VM in the Raleigh cluster.</p>
+
+
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/cloudforms41/exercise1.13/">&larr; Previous: Exercise 1.13 - Explore Planning</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/cloudforms41/exercise1.15/">Next: Exercise 1.15 - Explore Network Topology &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/cloudforms41">Return to Workshop</a>
+    </p>
+  </div>
+</div>
+
+    <div id="page-footer" class="container">
+      <p class="text-center">
+        Copyright &copy; 2017 Red Hat, Inc.
+      </p>
+    </div>
+  </body>
+</html>
+

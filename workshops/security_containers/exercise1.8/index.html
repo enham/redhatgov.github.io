@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Exercise 1.8 - SELinux | Red Hat | Public Sector</title>
+
+    
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly.min.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly-additions.min.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/highlight.js/styles/darkula.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/css/main.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/css/asciidoc.css" />
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery/dist/jquery.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/c3/c3.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/d3/d3.min.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/drmonty-datatables-colvis/js/dataTables.colVis.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables.net-colreorder/js/dataTables.colReorder.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/dist/js/patternfly.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-combobox/js/bootstrap-combobox.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/moment/min/moment.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/google-code-prettify/bin/prettify.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/highlight.js/lib/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body class="">
+    
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top " role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="http://redhatgov.io/img/brand.png" alt="Red Hat | Public Sector" />
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+          
+            <li>
+              <a href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/contact/">Contact</a>
+            </li>
+          
+        
+          
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Workshops <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                
+                  <li>
+                    <a href="/workshops/ansible_tower/">Ansible Tower Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/cloudforms41/">CloudForms Workshops</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_containers/">Container Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/containers_101/">Containers 101 Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/example/">Example Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/strangling_the_monolith/">Microservices Workshop - Strangling the Monolith</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/openshift_101_dcmetromap/">OpenShift 101 - DC Metro Map Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_openshift/">OpenShift Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/rhosp_101/">Red Hat OpenStack Platform 101</a>
+                  </li>
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="jumbotron jumbotron-page text-center">
+  <h1>Exercise 1.8 - SELinux</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/security_containers">Return to Workshop</a>
+    </p>
+    
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/security_containers/exercise1.7/">&larr; Previous: Exercise 1.7 - Seccomp</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/security_containers/exercise1.9/">Next: Exercise 1.9 - Linux Kernel Capabilities &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <div id="preamble">
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="/workshops/security_containers/images/selinux.png" alt="selinux">
+</div>
+</div>
+<div class="paragraph">
+<p>Now that you&#8217;ve gotten a sense of Read Only Containers, let&#8217;s move on to
+SELinux.</p>
+</div>
+<div class="paragraph">
+<p>In this section, we’ll cover the basics of SELinux and containers. SELinux
+policy prevents a lot of break out situations where the other security
+mechanisms fail. With SELinux on Docker, we write policy that says that the
+container process running as <code>svirt_lxc_net_t</code> can only read/write files with
+the <code>svirt_sandbox_file_t</code> label.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_step_1">Step 1:</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Create the following directories.</p>
+</div>
+<div class="listingblock">
+<div class="title">Setup directory and file</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">mkdir selinux
+
+cd  selinux
+
+mkdir data
+
+echo "SELINUX!" &gt; data/file1.txt
+
+cat data/file1.txt</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Get SELinux policy</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sestatus | grep mode</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_step_2">Step 2:</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">Try to cat out the file</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo docker run -v $(pwd)/data:/data fedora cat /data/file1.txt</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can see the reason by inspecting the folder’s security context:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">ls --scontext data</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The label for the data doesn’t match the label for containers. The fix is to
+apply the container label to the data by using the <code>chcon</code> tool, effectively
+notifying the system that you expect these files to be consumed by containers:</p>
+</div>
+<div class="paragraph">
+<p>Find the selinux file context associated with containers.</p>
+</div>
+<div class="listingblock">
+<div class="title">Find the Containers Labels</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo semanage fcontext --list | grep svirt</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The containers should be running at <code>svirt_sandbox_file_t</code></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_step_3">Step 3:</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Apply the container label to the data by using the <code>chcon</code> tool</p>
+</div>
+<div class="listingblock">
+<div class="title">relable the data dir</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">chcon -Rt svirt_sandbox_file_t data</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Try to cat out the file again from the container.</p>
+</div>
+<div class="listingblock">
+<div class="title">run docker again</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo docker run -v $(pwd)/data:/data fedora cat /data/file1.txt</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Append text from the container to the file</p>
+</div>
+<div class="listingblock">
+<div class="title">append text</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo docker run -v $(pwd)/data:/data fedora sh -c 'echo "Thank You For
+Attending!" &gt;&gt; /data/file1.txt'</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">cat data/file1.txt</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_docker_selinux_security_policy">DOCKER SELINUX SECURITY POLICY</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Docker SELinux security policy is similar to the libvirt security policy
+and is based on the libvirt security policy.</p>
+</div>
+<div class="paragraph">
+<p>The libvirt security policy is a series of SELinux policies that defines two
+ways of isolating virtual machines. Generally, virtual machines are prevented
+from accessing parts of the network. Specifically, individual virtual machines
+are denied access to one another’s resources.</p>
+</div>
+<div class="paragraph">
+<p>Red Hat extends the libvirt-SELinux model to Docker. The Docker SELinux role
+and Docker SELinux types are based on libvirt. For example, by default, Docker
+has access to /usr/var/ and some other locations, but it has complete access to
+things that are labeled with svirt_sandbox_file_t.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.mankier.com/8/docker_selinux" class="bare">https://www.mankier.com/8/docker_selinux</a> - this explains the entire Docker
+SELinux policy. It is not in layman’s terms, but it is complete.</p>
+</div>
+<div class="paragraph">
+<p><code>svirt_sandbox_file_t</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">system_u:system_r:svirt_lxc_net_t:s0:c186,c641
+^      ^           ^          ^     ^--- unique category
+|      |           |          |----  secret-level 0
+|      |           |--- a shared type
+|      |---SELinux role
+|------ SELinux user</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If a file is labeled <code>svirt_sandbox_file_t</code>, then by default all containers can
+read it. But if the containers write into a directory that has
+<code>svirt_sandbox_file_t</code> ownership, they write using their own category (which in
+this case is <code>c186</code> , <code>c641</code>). If you start the same container twice, it will
+get a new category the second time ( a different category than it had the first
+time). The category system isolates containers from one another.</p>
+</div>
+<div class="paragraph">
+<p>Types can be applied to processes and to files.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_selinux_coloring_book">SELinux Coloring Book</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<div class="panel-group">
+  
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" href="#collapse18837bf4cc4411285f561fa946afce91" class="collapsed">
+        SELinux Coloring Book
+      </a>
+    </h4>
+  </div>
+  <div id="collapse18837bf4cc4411285f561fa946afce91" class="panel-collapse collapse">
+    <div class="panel-body">
+       <div class="paragraph">
+<p>Imagine a system where we define types on objects like cats and dogs. A cat and
+dog are process types:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Cat</p>
+</li>
+<li>
+<p>Dog</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/workshops/security_containers/images/selinux1.png" alt="Processes">
+</div>
+</div>
+<div class="paragraph">
+<p>We have a class of objects that they want to interact with which we call food.
+And I want to add types to the food;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>cat_food</p>
+</li>
+<li>
+<p>dog_food</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/workshops/security_containers/images/selinux2.png" alt="Objects">
+</div>
+</div>
+<div class="paragraph">
+<p>As a policy writer, we would define that a dog has permission to eat dog_chow
+food and a cat has permission to eat cat_chow food. In SELinux we would write
+this rule in policy.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>allow cat cat_chow:food eat;</p>
+</li>
+<li>
+<p>allow dog dog_chow:food eat;</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/workshops/security_containers/images/selinux3.png" alt="Objects">
+</div>
+</div>
+<div class="paragraph">
+<p>With these rules the kernel would allow the cat process to eat food labeled
+cat_chow and the dog to eat food labeled dog_chow.</p>
+</div>
+<div class="paragraph">
+<p>And processes and objects are happy.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/workshops/security_containers/images/selinux4.png" alt="Objects">
+</div>
+</div>
+<div class="paragraph">
+<p>But in a SELinux system everything is denied by default. This means that if the
+dog process tried to eat the cat_chow, the kernel would prevent it.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/workshops/security_containers/images/selinux7.png" alt="Stopped by Kernel">
+</div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_selinux_resources">SELinux Resources</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://stopdisablingselinux.com/">Seriously, stop disabling SELinux.</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=cNoVgDqqJmM&amp;feature=youtu.be">Security-enhanced
+Linux for mere mortals - 2015 Red Hat Summit</a></p>
+</li>
+<li>
+<p><a href="https://www.nsa.gov/what-we-do/research/selinux/mailing-list.shtml">SELinux NSA
+Mailing List</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/security_containers/exercise1.7/">&larr; Previous: Exercise 1.7 - Seccomp</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/security_containers/exercise1.9/">Next: Exercise 1.9 - Linux Kernel Capabilities &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/security_containers">Return to Workshop</a>
+    </p>
+  </div>
+</div>
+
+    <div id="page-footer" class="container">
+      <p class="text-center">
+        Copyright &copy; 2017 Red Hat, Inc.
+      </p>
+    </div>
+  </body>
+</html>
+

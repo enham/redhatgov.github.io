@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Hugo Shortcodes | Red Hat | Public Sector</title>
+
+    
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly.min.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly-additions.min.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/highlight.js/styles/darkula.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/css/main.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/css/asciidoc.css" />
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery/dist/jquery.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/c3/c3.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/d3/d3.min.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/drmonty-datatables-colvis/js/dataTables.colVis.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables.net-colreorder/js/dataTables.colReorder.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/dist/js/patternfly.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-combobox/js/bootstrap-combobox.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/moment/min/moment.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/google-code-prettify/bin/prettify.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/highlight.js/lib/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body class="">
+    
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top " role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="http://redhatgov.io/img/brand.png" alt="Red Hat | Public Sector" />
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+          
+            <li>
+              <a href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/contact/">Contact</a>
+            </li>
+          
+        
+          
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Workshops <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                
+                  <li>
+                    <a href="/workshops/ansible_tower/">Ansible Tower Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/cloudforms41/">CloudForms Workshops</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_containers/">Container Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/containers_101/">Containers 101 Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/example/">Example Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/strangling_the_monolith/">Microservices Workshop - Strangling the Monolith</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/openshift_101_dcmetromap/">OpenShift 101 - DC Metro Map Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_openshift/">OpenShift Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/rhosp_101/">Red Hat OpenStack Platform 101</a>
+                  </li>
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="jumbotron jumbotron-page text-center">
+  <h1>Hugo Shortcodes</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/example">Return to Workshop</a>
+    </p>
+    
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/example/workshop_content/">&larr; Previous: Workshop Content</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/example/ideas/">Next: Content Ideas &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    
+
+<p>Hugo uses Markdown for its simple content format. However, there are a lot
+of things that Markdown doesn’t support well.</p>
+
+<p>We are unwilling to accept being constrained by our simple format. Also
+unacceptable is writing raw HTML in our Markdown every time we want to include
+unsupported content such as a video. To do so is in complete opposition to the
+intent of using a bare-bones format for our content and utilizing templates to
+apply styling for display.</p>
+
+<p>To avoid both of these limitations, Hugo created shortcodes.</p>
+
+<p>A shortcode is a simple snippet inside a content file that Hugo will render
+using a predefined template. Note that shortcodes will not work in template
+files---if you need a functionality like that in a template, you most likely
+want a <a href="/templates/partials/">partial template</a> instead.</p>
+
+<p>Another benefit is, you can update your shortcode with any related new classes or
+techniques, and upon generation, Hugo will easily merge in your changes. You
+avoid a possibly complicated search and replace operation.</p>
+
+<h2 id="using-a-shortcode">Using a shortcode</h2>
+
+<p>In your content files, a shortcode can be called by using the <code>{{% name parameters
+%}}</code> form. Shortcode parameters are space delimited.  Parameters with spaces
+can be quoted.</p>
+
+<p>The first word is always the name of the shortcode. Parameters follow the name.
+Depending upon how the shortcode is defined, the parameters may be named,
+positional or both (although you can't mix parameter types in a single call).
+The format for named parameters models that of HTML with the format
+<code>name=&quot;value&quot;</code>.</p>
+
+<p>Some shortcodes use or require closing shortcodes. Like HTML, the opening and closing
+shortcodes match (name only), the closing being prepended with a slash.</p>
+
+<p>Example of a paired shortcode:</p>
+
+<pre><code class="language-bash">{{&lt; highlight go &gt;}} A bunch of code here {{&lt; /highlight &gt;}}
+</code></pre>
+
+<p>The examples above use two different delimiters, the difference being the <code>%</code> and the <code>&lt;</code> character:</p>
+
+<h3 id="shortcodes-with-markdown">Shortcodes with Markdown</h3>
+
+<p>The <code>%</code> characters indicates that the shortcode's inner content needs further processing by the page's rendering processor (i.e. Markdown), needed to get the <strong>bold</strong> text in the example below:</p>
+
+<pre><code class="language-bash">{{% myshortcode %}}Hello **World!**{{% /myshortcode %}}
+</code></pre>
+
+<h3 id="shortcodes-without-markdown">Shortcodes without Markdown</h3>
+
+<p>The <code>&lt;</code> character indicates that the shortcode's inner content doesn't need any further rendering, this will typically be pure HTML:</p>
+
+<pre><code class="language-bash">{{&lt; myshortcode &gt;}}&lt;p&gt;Hello &lt;strong&gt;World!&lt;/strong&gt;&lt;/p&gt;{{&lt; /myshortcode &gt;}}
+</code></pre>
+
+<h2 id="built-in-shortcodes">Built-in Shortcodes</h2>
+
+<p>Hugo ships with a set of predefined shortcodes.</p>
+
+<h3 id="highlight">Highlight</h3>
+
+<p>This shortcode will convert the source code provided into syntax highlighted HTML.</p>
+
+<h4 id="dependencies">Dependencies</h4>
+
+<ol>
+<li>Install Python from python.org. Version 2.7.x is already sufficient.</li>
+<li>Run <code>pip install Pygments</code> in order to install Pygments. Once installed, Pygments gives you a command pygmentize. Make sure it sits in your PATH, otherwise Hugo cannot find it.</li>
+</ol>
+
+<h4 id="usage">Usage</h4>
+
+<p><code>highlight</code> takes exactly one required parameter of <em>language</em> and requires a
+closing shortcode.</p>
+
+<h4 id="example">Example</h4>
+
+<pre><code class="language-bash">{{&lt; highlight javascript &gt;}}
+//  OpenShift sample Node application
+var express = require('express'),
+    fs      = require('fs'),
+    app     = express(),
+    eps     = require('ejs'),
+    morgan  = require('morgan');
+    
+Object.assign=require('object-assign')
+
+app.engine('html', require('ejs').renderFile);
+app.use(morgan('combined'))
+
+var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
+    ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0',
+    mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL,
+    mongoURLLabel = &quot;&quot;;
+{{&lt; /highlight &gt;}}
+</code></pre>
+
+<h4 id="example-output">Example Output</h4>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">//  OpenShift sample Node application</span>
+<span style="color: #66d9ef">var</span> <span style="color: #a6e22e">express</span> <span style="color: #f92672">=</span> <span style="color: #a6e22e">require</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;express&#39;</span><span style="color: #f8f8f2">),</span>
+    <span style="color: #a6e22e">fs</span>      <span style="color: #f92672">=</span> <span style="color: #a6e22e">require</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;fs&#39;</span><span style="color: #f8f8f2">),</span>
+    <span style="color: #a6e22e">app</span>     <span style="color: #f92672">=</span> <span style="color: #a6e22e">express</span><span style="color: #f8f8f2">(),</span>
+    <span style="color: #a6e22e">eps</span>     <span style="color: #f92672">=</span> <span style="color: #a6e22e">require</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;ejs&#39;</span><span style="color: #f8f8f2">),</span>
+    <span style="color: #a6e22e">morgan</span>  <span style="color: #f92672">=</span> <span style="color: #a6e22e">require</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;morgan&#39;</span><span style="color: #f8f8f2">);</span>
+    
+<span style="color: #f8f8f2">Object.</span><span style="color: #a6e22e">assign</span><span style="color: #f92672">=</span><span style="color: #a6e22e">require</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;object-assign&#39;</span><span style="color: #f8f8f2">)</span>
+
+<span style="color: #a6e22e">app</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">engine</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;html&#39;</span><span style="color: #f8f8f2">,</span> <span style="color: #a6e22e">require</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;ejs&#39;</span><span style="color: #f8f8f2">).</span><span style="color: #a6e22e">renderFile</span><span style="color: #f8f8f2">);</span>
+<span style="color: #a6e22e">app</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">use</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">morgan</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;combined&#39;</span><span style="color: #f8f8f2">))</span>
+
+<span style="color: #66d9ef">var</span> <span style="color: #a6e22e">port</span> <span style="color: #f92672">=</span> <span style="color: #a6e22e">process</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">env</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">PORT</span> <span style="color: #f92672">||</span> <span style="color: #a6e22e">process</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">env</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">OPENSHIFT_NODEJS_PORT</span> <span style="color: #f92672">||</span> <span style="color: #ae81ff">8080</span><span style="color: #f8f8f2">,</span>
+    <span style="color: #a6e22e">ip</span>   <span style="color: #f92672">=</span> <span style="color: #a6e22e">process</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">env</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">IP</span>   <span style="color: #f92672">||</span> <span style="color: #a6e22e">process</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">env</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">OPENSHIFT_NODEJS_IP</span> <span style="color: #f92672">||</span> <span style="color: #e6db74">&#39;0.0.0.0&#39;</span><span style="color: #f8f8f2">,</span>
+    <span style="color: #a6e22e">mongoURL</span> <span style="color: #f92672">=</span> <span style="color: #a6e22e">process</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">env</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">OPENSHIFT_MONGODB_DB_URL</span> <span style="color: #f92672">||</span> <span style="color: #a6e22e">process</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">env</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">MONGO_URL</span><span style="color: #f8f8f2">,</span>
+    <span style="color: #a6e22e">mongoURLLabel</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;&quot;</span><span style="color: #f8f8f2">;</span>
+</pre></div>
+
+
+<h3 id="figure">Figure</h3>
+
+<p><code>figure</code> is simply an extension of the image capabilities present with Markdown.
+<code>figure</code> provides the ability to add captions, CSS classes, alt text, links etc.</p>
+
+<h4 id="usage-1">Usage</h4>
+
+<p><code>figure</code> can use the following named parameters:</p>
+
+<ul>
+<li>src</li>
+<li>link</li>
+<li>title</li>
+<li>caption</li>
+<li>class</li>
+<li>attr (attribution)</li>
+<li>attrlink</li>
+<li>alt</li>
+</ul>
+
+<h4 id="example-1">Example</h4>
+
+<pre><code class="language-bash">{{&lt; figure src=&quot;../images/lab1_oc_coolstore_dev1.png&quot; title=&quot;OpenShift Coolstore&quot; &gt;}}
+</code></pre>
+
+<h4 id="example-output-1">Example output</h4>
+
+
+<figure >
+    
+        <img src="../images/lab1_oc_coolstore_dev1.png" />
+    
+    
+    <figcaption>
+        <h4>OpenShift Coolstore</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<h3 id="twitter">Twitter</h3>
+
+<p>You want to include a single tweet into your blog post? Everything you need is the URL of the tweet, e.g.:</p>
+
+<ul>
+<li><a href="https://twitter.com/rhatdan/status/870339796383805440">https://twitter.com/rhatdan/status/870339796383805440</a></li>
+</ul>
+
+<p>Pass the tweet's ID from the URL as parameter to the shortcode as shown below:</p>
+
+<pre><code class="language-bash">{{&lt; tweet 870339796383805440 &gt;}}
+</code></pre>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Imagine using <a href="https://twitter.com/kubernetesio">@kubernetesio</a> kublet without <a href="https://twitter.com/Docker">@docker</a>😍 Now u can with <a href="https://twitter.com/hashtag/cri?src=hash">#cri</a>-o.  Here&#39;s how.  <a href="https://twitter.com/ProjectAtomic">@projectatomic</a> <a href="https://twitter.com/RedHatNews">@redhatnews</a> <a href="https://t.co/ymtZ0qF3OQ">https://t.co/ymtZ0qF3OQ</a></p>&mdash; Daniel Walsh (@rhatdan) <a href="https://twitter.com/rhatdan/status/870339796383805440">June 1, 2017</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<h3 id="youtube">YouTube</h3>
+
+<p>This shortcode embeds a responsive video player for <a href="https://www.youtube.com/">YouTube</a> videos. Only the ID of the video is required, e.g.:</p>
+
+<ul>
+<li><a href="https://www.youtube.com/watch?v=kDJveLN5UOs">https://www.youtube.com/watch?v=kDJveLN5UOs</a></li>
+</ul>
+
+<p>Copy the ID from behind <code>v=</code> and pass it to the shortcode:</p>
+
+<pre><code class="language-bash">{{&lt; youtube kDJveLN5UOs &gt;}}
+</code></pre>
+
+
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/kDJveLN5UOs" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen frameborder="0"></iframe>
+ </div>
+
+
+<p>Furthermore, you can autostart the embedded video by setting the <code>autostart</code> parameter to true. Remember that you can't mix named an unamed parameters. Assign the yet unamed video id to the parameter <code>id</code> like below too.</p>
+
+<pre><code class="language-bash">{{&lt; youtube id=&quot;kDJveLN5UOs&quot; autoplay=&quot;true&quot; &gt;}}
+</code></pre>
+
+<h3 id="vimeo">Vimeo</h3>
+
+<p>Adding a video from <a href="https://vimeo.com/">Vimeo</a> is equivalent to the YouTube shortcode above. Extract the ID from the URL, e.g.:</p>
+
+<ul>
+<li><a href="https://vimeo.com/channels/staffpicks/164267733">https://vimeo.com/channels/staffpicks/164267733</a></li>
+</ul>
+
+<p>and pass it to the shortcode:</p>
+
+<pre><code class="language-bash">{{&lt; vimeo 164267733 &gt;}}
+</code></pre>
+
+
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe src="//player.vimeo.com/video/164267733" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+ </div>
+
+
+<h3 id="github-gists">GitHub gists</h3>
+
+<p>Including code snippets with GitHub gists while writing a tutorial is common situation bloggers face. With a given URL of the gist, e.g.:</p>
+
+<ul>
+<li><a href="https://gist.github.com/christian-posta/04303c08625a7cc39b2626e964a49d79">https://gist.github.com/christian-posta/04303c08625a7cc39b2626e964a49d79</a></li>
+</ul>
+
+<p>pass the owner and the ID of the gist to the shortcode:</p>
+
+<pre><code class="language-bash">{{&lt; gist dischord01 f43dbb1b2cdfc4c3802f &gt;}}
+</code></pre>
+
+<p>If the gist contains several files and you want to quote just one of them, you can pass the filename (quoted) as an optional third argument.</p>
+
+<pre><code class="language-bash">{{&lt; gist dischord01 f43dbb1b2cdfc4c3802f &quot;img.html&quot; &gt;}}
+</code></pre>
+
+<script src="//gist.github.com/dischord01/f43dbb1b2cdfc4c3802f.js"></script>
+
+<h3 id="speaker-deck">Speaker Deck</h3>
+
+<p>To embed slides from <a href="https://speakerdeck.com/">Speaker Deck</a>, click on &quot;&lt;&#8239;/&gt;&nbsp;Embed&quot; (under Share right next to the template on Speaker Deck) and copy the URL, e.g.:</p>
+
+<pre><code class="language-html">&lt;script async class=&quot;speakerdeck-embed&quot; data-id=&quot;d1900e50eb564917a49200bf690d1644&quot; data-ratio=&quot;1.33333333333333&quot; src=&quot;//speakerdeck.com/assets/embed.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p>Extract the value from the field <code>data-id</code> and pass it to the shortcode:</p>
+
+<pre><code class="language-bash">{{&lt; speakerdeck d1900e50eb564917a49200bf690d1644 &gt;}}
+</code></pre>
+
+<script async class='speakerdeck-embed' data-id='d1900e50eb564917a49200bf690d1644' data-ratio='1.33333333333333' src='//speakerdeck.com/assets/embed.js'></script>
+
+<h3 id="instagram">Instagram</h3>
+
+<p>If you'd like to embed photo from <a href="https://www.instagram.com/">Instagram</a>, all you need is photo ID from the URL, e. g.:</p>
+
+<ul>
+<li><a href="https://www.instagram.com/p/BTonNFFA7QJ/">https://www.instagram.com/p/BTonNFFA7QJ/</a></li>
+</ul>
+
+<p>Pass it to the shortcode:</p>
+
+<pre><code>{{&lt; instagram BTonNFFA7QJ &gt;}}
+</code></pre>
+
+<p>Optionally, hide caption:</p>
+
+<pre><code>{{&lt; instagram BTonNFFA7QJ hidecaption &gt;}}
+</code></pre>
+
+<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="7" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div> <p style=" margin:8px 0 0 0; padding:0 4px;"> <a href="https://www.instagram.com/p/BTonNFFA7QJ/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_blank">Inspiring morning at #rhsummit! Jim Whitehurst&#39;s keynote featured customers, partners and more on yesterday&#39;s news! #RedHat #innovation #AWS</a></p> <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">A post shared by Red Hat (@redhatinc) on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2017-05-03T15:04:56+00:00">May 3, 2017 at 8:04am PDT</time></p></div></blockquote>
+<script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
+
+<h2 id="creating-your-own-shortcodes">Creating your own shortcodes</h2>
+
+<p>To create a shortcode, place a template in the layouts/shortcodes directory. The
+template name will be the name of the shortcode.</p>
+
+<p>In creating a shortcode, you can choose if the shortcode will use <em>positional
+parameters</em>, or <em>named parameters</em>, or <em>both</em>. A good rule of thumb is that if a
+shortcode has a single required value in the case of the <code>youtube</code> example below,
+then positional works very well. For more complex layouts with optional
+parameters, named parameters work best.  Allowing both types of parameters is
+useful for complex layouts where you want to set default values that can be
+overridden.</p>
+
+<p><strong>Inside the template</strong></p>
+
+<p>To access a parameter by position, the <code>.Get</code> method can be used:</p>
+
+<pre><code class="language-bash">{{ .Get 0 }}
+</code></pre>
+
+<p>To access a parameter by name, the <code>.Get</code> method should be utilized:</p>
+
+<pre><code class="language-bash">{{ .Get &quot;class&quot; }}
+</code></pre>
+
+<p><code>with</code> is great when the output depends on a parameter being set:</p>
+
+<pre><code class="language-bash">{{ with .Get &quot;class&quot;}} class=&quot;{{.}}&quot;{{ end }}
+</code></pre>
+
+<p><code>.Get</code> can also be used to check if a parameter has been provided. This is
+most helpful when the condition depends on either one value or another...
+or both:</p>
+
+<pre><code class="language-bash">{{ or .Get &quot;title&quot; | .Get &quot;alt&quot; | if }} alt=&quot;{{ with .Get &quot;alt&quot;}}{{.}}{{else}}{{.Get &quot;title&quot;}}{{end}}&quot;{{ end }}
+</code></pre>
+
+<p>If a closing shortcode is used, the variable <code>.Inner</code> will be populated with all
+of the content between the opening and closing shortcodes. If a closing
+shortcode is required, you can check the length of <code>.Inner</code> and provide a warning
+to the user.</p>
+
+<p>A shortcode with <code>.Inner</code> content can be used without the inline content, and without the closing shortcode, by using the self-closing syntax:</p>
+
+<pre><code class="language-bash">{{&lt; innershortcode /&gt;}}
+</code></pre>
+
+<p>The variable <code>.Params</code> contains the list of parameters in case you need to do
+more complicated things than <code>.Get</code>.  It is sometimes useful to provide a
+flexible shortcode that can take named or positional parameters.  To meet this
+need, Hugo shortcodes have a <code>.IsNamedParams</code> boolean available that can be used
+such as <code>{{ if .IsNamedParams }}...{{ else }}...{{ end }}</code>.  See the
+<code>Single Flexible Example</code> below for an example.</p>
+
+<p>You can also use the variable <code>.Page</code> to access all the normal <a href="/templates/variables/">Page Variables</a>.</p>
+
+<p>A shortcodes can be nested. In a nested shortcode you can access the parent shortcode context with <code>.Parent</code>. This can be very useful for inheritance of common shortcode parameters from the root.</p>
+
+<h2 id="single-positional-example-youtube">Single Positional Example: youtube</h2>
+
+<pre><code class="language-bash">{{&lt; youtube 09jf3ow9jfw &gt;}}
+</code></pre>
+
+<p>Would load the template /layouts/shortcodes/youtube.html</p>
+
+<pre><code class="language-bash">&lt;div class=&quot;embed video-player&quot;&gt;
+&lt;iframe class=&quot;youtube-player&quot; type=&quot;text/html&quot; width=&quot;640&quot; height=&quot;385&quot; src=&quot;httwww.youtube.com/embed/{{ index .Params 0 }}&quot; allowfullscreen frameborder=&quot;0&quot;&gt;
+&lt;/iframe&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>This would be rendered as:</p>
+
+<pre><code class="language-bash">&lt;div class=&quot;embed video-player&quot;&gt;
+&lt;iframe class=&quot;youtube-player&quot; type=&quot;text/html&quot;
+    width=&quot;640&quot; height=&quot;385&quot;
+    src=&quot;http://www.youtube.com/embed/09jf3ow9jfw&quot;
+    allowfullscreen frameborder=&quot;0&quot;&gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h2 id="single-named-example-image-with-caption">Single Named Example: image with caption</h2>
+
+<pre><code class="language-bash">{{&lt; img src=&quot;/media/spf13.jpg&quot; title=&quot;Steve Francia&quot; &gt;}}
+</code></pre>
+
+<p>Would load the template /layouts/shortcodes/img.html</p>
+
+<pre><code class="language-bash">&lt;!-- image --&gt;
+&lt;figure {{ with .Get &quot;class&quot; }}class=&quot;{{.}}&quot;{{ end }}&gt;
+    {{ with .Get &quot;link&quot;}}&lt;a href=&quot;{{.}}&quot;&gt;{{ end }}
+        &lt;img src=&quot;{{ .Get &quot;src&quot; }}&quot; {{ if or (.Get &quot;alt&quot;) (.Get &quot;caption&quot;) }}alt=with .Get &quot;alt&quot;}}{{.}}{{else}}{{ .Get &quot;caption&quot; }}{{ end }}&quot;{{ end }} /&gt;
+    {{ if .Get &quot;link&quot;}}&lt;/a&gt;{{ end }}
+    {{ if or (or (.Get &quot;title&quot;) (.Get &quot;caption&quot;)) (.Get &quot;attr&quot;)}}
+    &lt;figcaption&gt;{{ if isset .Params &quot;title&quot; }}
+        &lt;h4&gt;{{ .Get &quot;title&quot; }}&lt;/h4&gt;{{ end }}
+        {{ if or (.Get &quot;caption&quot;) (.Get &quot;attr&quot;)}}&lt;p&gt;
+        {{ .Get &quot;caption&quot; }}
+        {{ with .Get &quot;attrlink&quot;}}&lt;a href=&quot;{{.}}&quot;&gt; {{ end }}
+            {{ .Get &quot;attr&quot; }}
+        {{ if .Get &quot;attrlink&quot;}}&lt;/a&gt; {{ end }}
+        &lt;/p&gt; {{ end }}
+    &lt;/figcaption&gt;
+    {{ end }}
+&lt;/figure&gt;
+&lt;!-- image --&gt;
+</code></pre>
+
+<p>Would be rendered as:</p>
+
+<pre><code class="language-bash">&lt;figure &gt;
+    &lt;img src=&quot;/media/spf13.jpg&quot;  /&gt;
+    &lt;figcaption&gt;
+        &lt;h4&gt;Steve Francia&lt;/h4&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
+</code></pre>
+
+<h2 id="single-flexible-example-vimeo-with-defaults">Single Flexible Example: vimeo with defaults</h2>
+
+<pre><code class="language-bash">{{&lt; vimeo 49718712 &gt;}}
+{{&lt; vimeo id=&quot;49718712&quot; class=&quot;flex-video&quot; &gt;}}
+</code></pre>
+
+<p>Would load the template /layouts/shortcodes/vimeo.html</p>
+
+<pre><code class="language-bash">{{ if .IsNamedParams }}
+  &lt;div class=&quot;{{ if .Get &quot;class&quot; }}{{ .Get &quot;class&quot; }}{{ else }}vimeo-container{{ }}&quot;&gt;
+    &lt;iframe src=&quot;//player.vimeo.com/video/{{ .Get &quot;id&quot; }}&quot; allowfullscreen&gt;&lt;/iframe&gt;
+  &lt;/div&gt;
+{{ else }}
+  &lt;div class=&quot;{{ if len .Params | eq 2 }}{{ .Get 1 }}{{ else }}vimeo-container{{ }}&quot;&gt;
+    &lt;iframe src=&quot;//player.vimeo.com/video/{{ .Get 0 }}&quot; allowfullscreen&gt;&lt;/iframe&gt;
+  &lt;/div&gt;
+{{ end }}
+</code></pre>
+
+<p>Would be rendered as:</p>
+
+<pre><code class="language-bash">&lt;div class=&quot;vimeo-container&quot;&gt;
+  &lt;iframe src=&quot;//player.vimeo.com/video/49718712&quot; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;div class=&quot;flex-video&quot;&gt;
+  &lt;iframe src=&quot;//player.vimeo.com/video/49718712&quot; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h2 id="paired-example-highlight">Paired Example: Highlight</h2>
+
+<p><em>Hugo already ships with the <code>highlight</code> shortcode</em></p>
+
+<pre><code class="language-bash">{{&lt; highlight html &gt;}}
+&lt;html&gt;
+    &lt;body&gt; This HTML &lt;/body&gt;
+&lt;/html&gt;
+{{&lt; /highlight &gt;}}
+</code></pre>
+
+<p>The template for this utilizes the following code (already included in Hugo)</p>
+
+<pre><code class="language-bash">{{ .Get 0 | highlight .Inner  }}
+</code></pre>
+
+<p>And will be rendered as:</p>
+
+<pre><code class="language-bash">&lt;div class=&quot;highlight&quot; style=&quot;background: #272822&quot;&gt;&lt;pre style=&quot;line-height: 125%&quot;&gt;&lt;sstyle=&quot;color: #f92672&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+    &lt;span style=&quot;color: #f92672&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt; This HTML &lt;span style=&quot;col#f92672&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span style=&quot;color: #f92672&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+</code></pre>
+
+<p>Please notice that this template makes use of a Hugo-specific template function
+called <code>highlight</code> which uses Pygments to add the highlighting code.</p>
+
+<h2 id="simple-single-word-example-year">Simple Single-word Example: Year</h2>
+
+<p>Let's assume you would like to have a shortcode to be replaced by the current year in your Markdown content files, for a license or copyright statement. Calling a shortcode like this:</p>
+
+<pre><code class="language-bash">{{&lt; year &gt;}}
+</code></pre>
+
+<p>... would load your one-line template <code>/layouts/shortcodes/year.html</code>, which contains:</p>
+
+<pre><code class="language-bash">{{ .Page.Now.Year }}
+</code></pre>
+
+<p>More shortcode examples can be found at <a href="https://github.com/spf13/spf13.com/tree/master/layouts/shortcodes">spf13.com</a>.</p>
+
+
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/example/workshop_content/">&larr; Previous: Workshop Content</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/example/ideas/">Next: Content Ideas &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/example">Return to Workshop</a>
+    </p>
+  </div>
+</div>
+
+    <div id="page-footer" class="container">
+      <p class="text-center">
+        Copyright &copy; 2017 Red Hat, Inc.
+      </p>
+    </div>
+  </body>
+</html>
+

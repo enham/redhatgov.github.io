@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Exercise 1.3 - Discovering VM Systems | Red Hat | Public Sector</title>
+
+    
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly.min.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly-additions.min.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/highlight.js/styles/darkula.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/css/main.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/css/asciidoc.css" />
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery/dist/jquery.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/c3/c3.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/d3/d3.min.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/drmonty-datatables-colvis/js/dataTables.colVis.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables.net-colreorder/js/dataTables.colReorder.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/dist/js/patternfly.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-combobox/js/bootstrap-combobox.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/moment/min/moment.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/google-code-prettify/bin/prettify.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/highlight.js/lib/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body class="">
+    
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top " role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="http://redhatgov.io/img/brand.png" alt="Red Hat | Public Sector" />
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+          
+            <li>
+              <a href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/contact/">Contact</a>
+            </li>
+          
+        
+          
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Workshops <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                
+                  <li>
+                    <a href="/workshops/ansible_tower/">Ansible Tower Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/cloudforms41/">CloudForms Workshops</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_containers/">Container Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/containers_101/">Containers 101 Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/example/">Example Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/strangling_the_monolith/">Microservices Workshop - Strangling the Monolith</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/openshift_101_dcmetromap/">OpenShift 101 - DC Metro Map Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_openshift/">OpenShift Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/rhosp_101/">Red Hat OpenStack Platform 101</a>
+                  </li>
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="jumbotron jumbotron-page text-center">
+  <h1>Exercise 1.3 - Discovering VM Systems</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/cloudforms41">Return to Workshop</a>
+    </p>
+    
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/cloudforms41/exercise1.2/">&larr; Previous: Exercise 1.2 - Discovering Virtualization Host Systems</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/cloudforms41/exercise1.4/">Next: Exercise 1.4 - Explore Reports &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    
+
+<h1 id="what-s-an-infrastructure-vm">What's An Infrastructure VM?</h1>
+
+<p>In Red Hat CloudForms, infrastructure VMs are operating systems running under a hypervisor.</p>
+
+<h1 id="explore-infrastructure-vms">Explore Infrastructure VMs</h1>
+
+<blockquote>
+<p>Select <strong>Compute</strong> → <strong>Infrastructure</strong> → <strong>Virtual Machines</strong>.</p>
+</blockquote>
+
+<p><img title="CloudForms Infrastructure VMs" src="../images/cfme-nav-compute-infra-vms.png" width="1000"/><br/>
+<em>Infrastructure VMs</em></p>
+
+<p>A list of your private datacenter’s infrastructure virtual machines appears.</p>
+
+<h1 id="explore-the-virtual-thumbnail-for-infrastructure-vms">Explore the Virtual Thumbnail for Infrastructure VMs</h1>
+
+<p>The web interface uses virtual thumbnails to represent providers. Each thumbnail contains four quadrants by default, which display basic information about each provider.</p>
+
+<p><img title="CloudForms Example Virtual Thumbnail" src="../images/cfme-virt-thumbnail-vms.png"/><br/>
+<em>Example Virtual Thumbnail</em></p>
+
+<ul>
+<li>The top left quadrant shows the operating system running on the VM.</li>
+<li>The top right quadrant shows the status of the VM.</li>
+<li>The image in the bottom left quadrant represents the type of host the VM is running on, such as ESXi or Red Hat Enterprise Virtualization.</li>
+<li>The bottom right quadrant shows the number of snapshots of this VM.</li>
+<li>A <i class="fa fa-shield fa-lg" aria-hidden="true"></i> (<strong>Policy</strong>) in the center indicates that this host has one or more policies applied.</li>
+</ul>
+
+<blockquote>
+<p>In the top right corner of the window, click <i class="fa fa-th fa-lg" aria-hidden="true"></i> <i class="fa fa-th-large fa-lg" aria-hidden="true"></i> <i class="fa fa-list fa-lg" aria-hidden="true"></i> to toggle between <strong>Grid</strong>, <strong>Tile</strong>, and <strong>List</strong> views.</p>
+</blockquote>
+
+<p><img title="CloudForms Top Window Navigation VM Providers" src="../images/cfme-nav-grid-title-list-infra-vms.png" width="1000"/><br/>
+<em>Top Window Navigation VM Providers</em></p>
+
+<blockquote>
+<p>Click <i class="fa fa-download fa-lg" aria-hidden="true"></i> (<strong>Download</strong>) to download a list of VMs.</p>
+</blockquote>
+
+<p><img title="CloudForms Download VM Providers" src="../images/cfme-nav-download-infra-vm.png" width="1000"/><br/>
+<em>Download VM Providers</em></p>
+
+<blockquote>
+<p>Select the VM named <strong>CF41_OpenStack1</strong>, and examine the following details:</p>
+</blockquote>
+
+<p><img title="CloudForms Dashboard CF41_OpenStack1 VM" src="../images/cfme-dashboard-infra-vms.png" width="1000"/><br/>
+<em>CF41_OpenStack1 VM Dashboard</em></p>
+
+<ol>
+<li>The <strong>Properties</strong> section shows detailed information about the VM.</li>
+<li>The <strong>Lifecycle</strong> section shows when this VM was discovered, when it was most recently analyzed, and when it is scheduled for retirement.</li>
+<li>The <strong>Relationships</strong> section shows the related infrastructure provider, cluster, host, datastore, resource pool, parent VM, and drift and analysis histories for this VM.</li>
+<li>The <strong>Normal Operating Ranges</strong> section shows the VM’s average CPU and memory utilization.</li>
+<li>The <strong>Compliance</strong> section shows whether the VM is compliant with its applied policies.</li>
+<li>The <strong>Power Management</strong> section shows the VM’s current power state, last boot time, and date of its most recent change in power state.</li>
+<li>The <strong>Security</strong> section lists users, groups, patches, firewall rules, and other operating system security-related information.</li>
+<li>The <strong>Configuration</strong> section lists applications/packages, services, and other operating system configuration information.</li>
+<li>The <strong>Datastore Allocation</strong> section shows the number of virtual disks in this VM—if the disks are aligned and if it is thin-provisioned—as well as the amount of space allocated.</li>
+<li>The <strong>Datastore Actual Usage Summary</strong> section shows how much actual disk space the VM is using.</li>
+<li>The <strong>Diagnostics</strong> section shows running processes and event logs for the VM.</li>
+<li>The <strong>Smart Management</strong> section shows that this host is tagged as existing at a specific location, as well as other tags that you can use in policies and other functions within CloudForms.</li>
+</ol>
+
+<blockquote>
+<p>Click <strong>Users</strong> (under the <strong>Security</strong> section) to see a detailed list of user information.</p>
+</blockquote>
+
+<p><img title="CloudForms Dashboard CF41_OpenStack1 VM" src="../images/cfme-dashboard-infra-vms-users.png" width="1000"/><br/>
+<em>CF41_OpenStack1 VM Dashboard Users</em></p>
+
+<blockquote>
+<p>Click <strong>Packages</strong> (under the <strong>Configuration</strong> section) to view details of packages installed on this VM.</p>
+</blockquote>
+
+<p><img title="CloudForms Dashboard CF41_OpenStack1 VM" src="../images/cfme-dashboard-infra-vms-packages.png" width="1000"/><br/>
+<em>CF41_OpenStack1 VM Dashboard Packages</em></p>
+
+<h1 id="explore-infrastructure-vm-utilization">Explore Infrastructure VM Utilization</h1>
+
+<p>We will continue using the <strong>CF41_OpenStack1</strong> VM.  If needed, find it by returning to the list of all VMs  (eg, Compute → Infrastructure → Virtual Machines → VMs → All VMs &amp; Templates).</p>
+
+<blockquote>
+<p>Click <img title="CloudForms Monitor Icon" src="../images/cfme-nav-monitor-icon.png"/> (<strong>Monitor</strong>) and then select <img title="CloudForms Utilization Icon" src="../images/cfme-nav-utilization-icon.png"/> (<strong>Utilization</strong>).</p>
+</blockquote>
+
+<p><img title="CloudForms Dashboard VMs Monitor" src="../images/cfme-nav-monitor-infra-vms.png" width="1000"/><br/>
+<em>Navigate VMs Monitor Utilization</em></p>
+
+<blockquote>
+<p>Try changing the <strong>Interval</strong> to <strong>Daily</strong>.</p>
+</blockquote>
+
+<p><img title="CloudForms Dashboard Monitor VM Utilization Interval" src="../images/cfme-nav-infra-vms-util-interval.png" width="1000"/><br/>
+<em>Monitor VM Utilization Interval</em></p>
+
+<p>Examine the screen that appears, showing a detailed report of CPU, memory, disk I/O, and network.</p>
+
+<ul>
+<li>To see a specific data point, hover over any chart.</li>
+<li>To zoom in on a chart, click <i class="fa fa-search-plus fa-lg" aria-hidden="true"></i> (Zoom In) in the lower left corner of the chart.</li>
+<li>To modify the timeframe displayed in the report, select the date range at the top of the screen.</li>
+</ul>
+
+
+
+
+  <div class="alert alert-warning">
+    
+    <span class="pficon pficon-warning-triangle-o"></span>
+    The data in this demo is stagnant, so do not go beyond August 7, 2013.
+  </div>
+
+
+
+
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/cloudforms41/exercise1.2/">&larr; Previous: Exercise 1.2 - Discovering Virtualization Host Systems</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/cloudforms41/exercise1.4/">Next: Exercise 1.4 - Explore Reports &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/cloudforms41">Return to Workshop</a>
+    </p>
+  </div>
+</div>
+
+    <div id="page-footer" class="container">
+      <p class="text-center">
+        Copyright &copy; 2017 Red Hat, Inc.
+      </p>
+    </div>
+  </body>
+</html>
+

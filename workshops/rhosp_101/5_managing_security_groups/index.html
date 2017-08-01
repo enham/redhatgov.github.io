@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Lab 4 - Managing Security Groups | Red Hat | Public Sector</title>
+
+    
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly.min.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly-additions.min.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/highlight.js/styles/darkula.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/css/main.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/css/asciidoc.css" />
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery/dist/jquery.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/c3/c3.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/d3/d3.min.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/drmonty-datatables-colvis/js/dataTables.colVis.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables.net-colreorder/js/dataTables.colReorder.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/dist/js/patternfly.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-combobox/js/bootstrap-combobox.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/moment/min/moment.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/google-code-prettify/bin/prettify.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/highlight.js/lib/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body class="">
+    
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top " role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="http://redhatgov.io/img/brand.png" alt="Red Hat | Public Sector" />
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+          
+            <li>
+              <a href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/contact/">Contact</a>
+            </li>
+          
+        
+          
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Workshops <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                
+                  <li>
+                    <a href="/workshops/ansible_tower/">Ansible Tower Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/cloudforms41/">CloudForms Workshops</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_containers/">Container Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/containers_101/">Containers 101 Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/example/">Example Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/strangling_the_monolith/">Microservices Workshop - Strangling the Monolith</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/openshift_101_dcmetromap/">OpenShift 101 - DC Metro Map Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_openshift/">OpenShift Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/rhosp_101/">Red Hat OpenStack Platform 101</a>
+                  </li>
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="jumbotron jumbotron-page text-center">
+  <h1>Lab 4 - Managing Security Groups</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/rhosp_101">Return to Workshop</a>
+    </p>
+    
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/rhosp_101/4_managing_floating_ip_addresses/">&larr; Previous: Lab 3 - Managing Floating IP Addresses</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/rhosp_101/6_managing_images/">Next: Lab 5 - Managing Images &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    
+
+<h1 id="security-groups-in-openstack">Security Groups in OpenStack</h1>
+
+<p>A security group is a named collection of network access rules that are used to limit the types of traffic that have access to instances. When you launch an instance, you can assign one or more security groups to it. If you do not create security groups, new instances are automatically assigned to the default security group, unless you explicitly specify a different security group.</p>
+
+<p>The associated rules in each security group control the traffic to instances in the group. Any incoming traffic that is not matched by a rule is denied access by default. You can add rules to or remove rules from a security group, and you can modify rules for the default and any other security group.</p>
+
+<p>You can modify the rules in a security group to allow access to instances through different ports and protocols. For example, you can modify rules to allow access to instances through SSH, to ping instances, or to allow UDP traffic; for example, for a DNS server running on an instance. You specify the following parameters for rules:</p>
+
+<p><strong>Source of traffic</strong> - Enable traffic to instances from either IP addresses inside the cloud from other group members or from all IP addresses.<br />
+<strong>Protocol</strong> - Choose TCP for SSH, ICMP for pings, or UDP.<br />
+<strong>Destination port on virtual machine</strong> - Define a port range. To open a single port only, enter the same value twice. ICMP does not support ports; instead, you enter values to define the codes and types of ICMP traffic to be allowed.<br />
+<strong>Rules</strong> - automatically enforced as soon as you create or modify them.</p>
+
+
+
+
+  <div class="alert alert-info">
+    
+    <span class="pficon pficon-info"></span>
+    <p>You cannot delete the default security group for a project. Also, you cannot delete a security group that is assigned to a running instance.</p>
+
+  </div>
+
+
+
+<h1 id="let-s-look-at-the-default-security-group">Let's Look at the Default Security Group</h1>
+
+<blockquote>
+<p>Navigate to Network -&gt; Security Groups using the second level navigation tabs</p>
+</blockquote>
+
+
+<figure >
+    
+        <img src="../images/lab4-security-groups-1.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 4 Figure 1: Security Group Listing</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<blockquote>
+<p>Click <strong>Manage Rules</strong> on the right hand side of the row for default security group</p>
+</blockquote>
+
+
+<figure >
+    
+        <img src="../images/lab4-security-groups-2.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 4 Figure 2: Viewing Rules for default Security Group</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<h2 id="now-let-s-add-two-rules-to-the-default-security-group-for-icmp-and-ssh">Now Let's Add Two Rules to the default Security Group for ICMP and SSH</h2>
+
+<blockquote>
+<p>On the <strong>Manage Rules</strong> screen for default security group, click <strong>Add Rule</strong><br />
+Select <strong>All ICMP</strong> for <strong>Rule</strong><br />
+Leave <strong>Direction</strong> set to <strong>Ingress</strong><br />
+Leave <strong>Remote</strong> set to <strong>CIDR</strong>
+Enter <strong>192.168.0.0/23</strong> for <strong>CIDR</strong> (this is our external network)<br />
+Click <strong>Add</strong></p>
+</blockquote>
+
+
+<figure >
+    
+        <img src="../images/lab4-security-groups-3.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 4 Figure 3: Add ICMP Rule to default Security Group</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+
+
+
+  <div class="alert alert-success">
+    
+    <span class="pficon pficon-ok"></span>
+    <p>You should see a green box appear in the upper right corner of the screen that says &quot;Success: Successfully added rule: ALLOW IPv4 icmp from 192.168.0.0/23&quot;</p>
+
+<p>If you did not see a success message, let the intstructor know now</p>
+
+  </div>
+
+
+
+<blockquote>
+<p>On the <strong>Manage Rules</strong> screen for default security group, click <strong>Add Rule</strong><br />
+Select <strong>SSH</strong> for <strong>Rule</strong><br />
+Leave <strong>Remote</strong> set to <strong>CIDR</strong>
+Enter <strong>192.168.0.0/23</strong> for <strong>CIDR</strong> (this is our external network)<br />
+Click <strong>Add</strong></p>
+</blockquote>
+
+
+<figure >
+    
+        <img src="../images/lab4-security-groups-4.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 4 Figure 4: Add SSH Rule to default Security Group</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+
+
+
+  <div class="alert alert-success">
+    
+    <span class="pficon pficon-ok"></span>
+    <p>You should see a green box appear in the upper right corner of the screen that says &quot;Success: Successfully added rule: ALLOW IPv4 22/tcp from 192.168.0.0/23&quot;</p>
+
+<p>If you did not see a success message, let the intstructor know now</p>
+
+  </div>
+
+
+
+<p>If we now look at the Manage Rules screen for the default security group, we will see our two new rules for ICMP and SSH ingress traffic allowed only from 192.168.0.0/23 CIDR.</p>
+
+
+<figure >
+    
+        <img src="../images/lab4-security-groups-5.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 4 Figure 5: Manage Rules Screen Showing Two New Rules for ICMP and SSH in the default Security Group</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<h1 id="now-we-will-create-a-new-security-group-for-web-servers">Now We will Create a New Security Group for Web Servers</h1>
+
+<blockquote>
+<p>Navigate to Network -&gt; Security Groups using the second level navigation tabs</p>
+</blockquote>
+
+
+<figure >
+    
+        <img src="../images/lab4-security-groups-1.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 4 Figure 1: Security Group Listing</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<blockquote>
+<p>Click <strong>Create Security Group</strong> next to the filter search box<br />
+Enter <strong>web-server</strong> for the <strong>Name</strong><br />
+<strong>Description</strong> is optional, but as you can see below, I used it to describe the purpose of this security group<br />
+Click <strong>Create Security Group</strong></p>
+</blockquote>
+
+
+<figure >
+    
+        <img src="../images/lab4-security-groups-6.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 4 Figure 6: Create a New Security Group</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+
+
+
+  <div class="alert alert-success">
+    
+    <span class="pficon pficon-ok"></span>
+    <p>You should see a green box appear in the upper right corner of the screen that says &quot;Success: Successfully created security group: web-server&quot;</p>
+
+<p>If you did not see a success message, let the intstructor know now</p>
+
+  </div>
+
+
+
+
+<figure >
+    
+        <img src="../images/lab4-security-groups-7.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 4 Figure 7: Security Group Listing Showing New web-server Group</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<h2 id="now-let-s-add-two-rules-to-the-web-server-security-group-for-http-and-https">Now Let's Add Two Rules to the web-server Security Group for HTTP and HTTPS</h2>
+
+<blockquote>
+<p>Click <strong>Manage Rules</strong> in the row for the web-server security group<br />
+click <strong>Add Rule</strong><br />
+Select <strong>HTTP</strong> for <strong>Rule</strong><br />
+Leave <strong>Remote</strong> set to <strong>CIDR</strong>
+Leave <strong>0.0.0.0/0</strong> for <strong>CIDR</strong><br />
+Click <strong>Add</strong></p>
+</blockquote>
+
+
+<figure >
+    
+        <img src="../images/lab4-security-groups-8.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 4 Figure 8: Add HTTP Rule to web-server Security Group</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+
+
+
+  <div class="alert alert-success">
+    
+    <span class="pficon pficon-ok"></span>
+    <p>You should see a green box appear in the upper right corner of the screen that says &quot;Success: Successfully added rule: ALLOW IPv4 80/tcp from 0.0.0.0/0&quot;</p>
+
+<p>If you did not see a success message, let the intstructor know now</p>
+
+  </div>
+
+
+
+<blockquote>
+<p>On the <strong>Manage Rules</strong> screen for web-server security group, click <strong>Add Rule</strong><br />
+Select <strong>HTTPS</strong> for <strong>Rule</strong><br />
+Leave <strong>Remote</strong> set to <strong>CIDR</strong>
+Enter <strong>0.0.0.0/0</strong> for <strong>CIDR</strong><br />
+Click <strong>Add</strong></p>
+</blockquote>
+
+
+<figure >
+    
+        <img src="../images/lab4-security-groups-9.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 4 Figure 9: Add HTTPS Rule to web-server Security Group</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+
+
+
+  <div class="alert alert-success">
+    
+    <span class="pficon pficon-ok"></span>
+    <p>You should see a green box appear in the upper right corner of the screen that says &quot;Success: Successfully added rule: ALLOW IPv4 443/tcp from 0.0.0.0/0&quot;</p>
+
+<p>If you did not see a success message, let the intstructor know now</p>
+
+  </div>
+
+
+
+<p>If we now look at the Manage Rules screen for the web-server security group, we will see our two new rules for HTTP and HTTPS ingress traffic allowed from all sources.</p>
+
+
+<figure >
+    
+        <img src="../images/lab4-security-groups-10.png" />
+    
+    
+    <figcaption>
+        <h4>Lab 4 Figure 10: Manage Rules Screen Showing Two New Rules for HTTP and HTTPS in the web-server Security Group</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<h1 id="summary">Summary</h1>
+
+<p>We have now learned how to create and modify security groups in our project. We can utilize these to build up firewall sets for our resources.</p>
+
+<p>Note that security groups can be combined together on instances to build up a set of rules depening on the instance role in your applications.</p>
+
+<p>In our next lab, we will start working with images.</p>
+
+
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/rhosp_101/4_managing_floating_ip_addresses/">&larr; Previous: Lab 3 - Managing Floating IP Addresses</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/rhosp_101/6_managing_images/">Next: Lab 5 - Managing Images &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/rhosp_101">Return to Workshop</a>
+    </p>
+  </div>
+</div>
+
+    <div id="page-footer" class="container">
+      <p class="text-center">
+        Copyright &copy; 2017 Red Hat, Inc.
+      </p>
+    </div>
+  </body>
+</html>
+

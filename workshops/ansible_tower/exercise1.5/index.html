@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Exercise 1.5 - Roles: Making your playbooks reusable | Red Hat | Public Sector</title>
+
+    
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly.min.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly-additions.min.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/highlight.js/styles/darkula.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/css/main.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/css/asciidoc.css" />
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery/dist/jquery.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/c3/c3.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/d3/d3.min.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/drmonty-datatables-colvis/js/dataTables.colVis.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables.net-colreorder/js/dataTables.colReorder.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/dist/js/patternfly.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-combobox/js/bootstrap-combobox.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/moment/min/moment.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/google-code-prettify/bin/prettify.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/highlight.js/lib/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body class="">
+    
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top " role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="http://redhatgov.io/img/brand.png" alt="Red Hat | Public Sector" />
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+          
+            <li>
+              <a href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/contact/">Contact</a>
+            </li>
+          
+        
+          
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Workshops <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                
+                  <li>
+                    <a href="/workshops/ansible_tower/">Ansible Tower Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/cloudforms41/">CloudForms Workshops</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_containers/">Container Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/containers_101/">Containers 101 Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/example/">Example Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/strangling_the_monolith/">Microservices Workshop - Strangling the Monolith</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/openshift_101_dcmetromap/">OpenShift 101 - DC Metro Map Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_openshift/">OpenShift Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/rhosp_101/">Red Hat OpenStack Platform 101</a>
+                  </li>
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="jumbotron jumbotron-page text-center">
+  <h1>Exercise 1.5 - Roles: Making your playbooks reusable</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/ansible_tower">Return to Workshop</a>
+    </p>
+    
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/ansible_tower/exercise1.4/">&larr; Previous: Exercise 1.4 - Running the apache-basic-playbook</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/ansible_tower/exercise2.0/">Next: Exercise 2.0 - Installing Ansible Tower &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>While it is possible to write a playbook in one file as we&#8217;ve done throughout this workshop, eventually you’ll want to reuse files and start to organize things.</p>
+</div>
+<div class="paragraph">
+<p>Ansible Roles is the way we do this.  When you create a role, you deconstruct your playbook into parts and those parts sit in a directory structure.  "Wha??  You mean that seemingly useless <a href="{dir_url}">best practice</a> you mentioned in exercise 1.2?".  Yep, that one.</p>
+</div>
+<div class="paragraph">
+<p>For this exercise, you are going to take the playbook you just wrote and refactor it into a role.  In addition, you&#8217;ll learn to use Ansible Galaxy.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s begin with seeing how your apache-basic-playbook will break down into a role.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/workshops/ansible_tower/images/roledir_1.png" alt="apache-basic-playbook role directory structure">
+</div>
+</div>
+<div class="paragraph">
+<p>Fortunately, you don&#8217;t have to create all of these directories and files by hand.  That&#8217;s where Ansible Galaxy comes in.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_section_1_using_ansible_galaxy_to_initialize_a_new_role">Section 1: Using Ansible Galaxy to initialize a new role</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ansible Galaxy is a free site for finding, downloading, and sharing roles.  It&#8217;s also pretty handy for creating them which is what we are about to do here.</p>
+</div>
+<div class="sect2">
+<h3 id="_step_1">Step 1:</h3>
+<div class="paragraph">
+<p>Navigate to your <code>apache-basic-playbook</code> project.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">cd ~/apache-basic-playbook</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_2">Step 2:</h3>
+<div class="paragraph">
+<p>Create a directory called <code>roles</code> and <code>cd</code> into it.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">mkdir roles
+cd roles</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_3">Step 3:</h3>
+<div class="paragraph">
+<p>Use the <code>ansible-galaxy</code> command to initialize a new role called <code>apache-simple</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">ansible-galaxy init apache-simple</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Take a look around the structure you just created.  It should look a lot like Figure 1 above.  However, we need to complete one more step before moving onto section 2.  It is Ansible best practice to clean out role directories and files you won&#8217;t be using.  For this role, we won&#8217;t be using anything from <code>files</code>, <code>tests</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_4">Step 4:</h3>
+<div class="paragraph">
+<p>Remove the <code>files</code> and <code>tests</code> directories</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">cd ~/apache-basic-playbook/roles/apache-simple/
+rm -rf files tests</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_section_2_breaking_your_code_site_yml_code_playbook_into_the_newly_created_code_apache_simple_code_role">Section 2: Breaking Your <code>site.yml</code> Playbook into the Newly Created <code>apache-simple</code> Role</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this section, we will separate out the major parts of your playbook including <code>vars:</code>, <code>tasks:</code>, <code>template:</code>, and <code>handlers:</code>.</p>
+</div>
+<div class="sect2">
+<h3 id="_step_1_2">Step 1:</h3>
+<div class="paragraph">
+<p>Make a backup copy of <code>site.yml</code>, then create a new <code>site.yml</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">cd ~/apache-basic-playbook
+mv site.yml site.yml.bkup
+vim site.yml</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_2_2">Step 2:</h3>
+<div class="paragraph">
+<p>Add the play definition and the invocation of a single role.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">---
+- hosts: web
+  name: This is my role-based playbook
+  become: yes
+
+  roles:
+    - apache-simple</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_3_2">Step 3:</h3>
+<div class="paragraph">
+<p>Add some default variables to your role in <code>roles/apache-simple/defaults/main.yml</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">---
+# defaults file for apache-simple
+apache_test_message: This is a test message
+apache_max_keep_alive_requests: 115</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_4_2">Step 4:</h3>
+<div class="paragraph">
+<p>Add some role-specific variables to your role in <code>roles/apache-simple/vars/main.yml</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">---
+# vars file for apache-simple
+httpd_packages:
+  - httpd
+  - mod_wsgi</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><strong>Hey, wait just a minute there buster&#8230;&#8203; did you just have us put variables in two seperate places?</strong><br></p>
+</div>
+<div class="paragraph">
+<p>Yes&#8230;&#8203; yes we did.  Variables can live in quite a few places.  Just to name a few:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>vars directory</p>
+</li>
+<li>
+<p>defaults directory</p>
+</li>
+<li>
+<p>group_vars directory</p>
+</li>
+<li>
+<p>In the playbook under the <code>vars:</code> section</p>
+</li>
+<li>
+<p>In any file which can be specified on the command line using the <code>--extra_vars</code> option</p>
+</li>
+<li>
+<p>On a boat, in a moat, with a goat  <em>(disclaimer:  this is a complete lie)</em></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Bottom line, you need to read up on <a href="{var_prec_url}">variable precedence</a> to understand both where to define variables and which locations take precedence.  In this exercise, we are using role defaults to define a couple of variables and these are the most malleable.  After that, we defined some variables in <code>/vars</code>
+which have a higher precedence than defaults and can&#8217;t be overridden as a default variable.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_5">Step 5:</h3>
+<div class="paragraph">
+<p>Create your role handler in <code>roles/apache-simple/handlers/main.yml</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">---
+# handlers file for apache-simple
+- name: restart apache service
+  service:
+    name: httpd
+    state: restarted
+    enabled: yes</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_6">Step 6:</h3>
+<div class="paragraph">
+<p>Add tasks to your role in <code>roles/apache-simple/tasks/main.yml</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">---
+# tasks file for apache-simple
+- name: install httpd packages
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ httpd_packages }}"
+  notify: restart apache service
+
+- name: create site-enabled directory
+  file:
+    name: /etc/httpd/conf/sites-enabled
+    state: directory
+
+- name: copy httpd.conf
+  template:
+    src: templates/httpd.conf.j2
+    dest: /etc/httpd/conf/httpd.conf
+  notify: restart apache service
+
+- name: copy index.html
+  template:
+    src: templates/index.html.j2
+    dest: /var/www/html/index.html
+
+- name: start httpd
+  service:
+    name: httpd
+    state: started
+    enabled: yes</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_7">Step 7:</h3>
+<div class="paragraph">
+<p>Download a couple of templates into <code>roles/apache-simple/templates/</code>.  And right after that, let&#8217;s clean up from exercise 2.1 by removing the old templates directory.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">mkdir -p ~/apache-basic-playbook/roles/apache-simple/templates/
+cd ~/apache-basic-playbook/roles/apache-simple/templates/
+curl -O http://ansible-workshop.redhatgov.io/workshop-files/httpd.conf.j2
+curl -O http://ansible-workshop.redhatgov.io/workshop-files/index.html.j2
+rm -rf ~/apache-basic-playbook/templates/</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_section_3_running_your_new_role_based_playbook">Section 3: Running your new role-based playbook</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now that you&#8217;ve successfully separated your original playbook into a role,
+let&#8217;s run it and see how it works.</p>
+</div>
+<div class="sect2">
+<h3 id="_step_1_3">Step 1:</h3>
+<div class="paragraph">
+<p>Run the playbook.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">ansible-playbook --private-key=~/.ssh/workshopname-tower -i ../hosts site.yml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If successful, your standard output should look similar to the figure below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/workshops/ansible_tower/images/stdout_3.png" alt="ansible-basic-playbook role-based stdout">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_section_4_review">Section 4: Review</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You should now have a completed playbook, <code>site.yml</code> with a single role called <code>apache-simple</code>.  The advantage of structuring your playbook into roles is that you can now add new roles to the playbook using Ansible Galaxy or simply writing your own.  In addition, roles simplify changes to variables, tasks, templates, etc.</p>
+</div>
+</div>
+</div>
+
+
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/ansible_tower/exercise1.4/">&larr; Previous: Exercise 1.4 - Running the apache-basic-playbook</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/ansible_tower/exercise2.0/">Next: Exercise 2.0 - Installing Ansible Tower &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/ansible_tower">Return to Workshop</a>
+    </p>
+  </div>
+</div>
+
+    <div id="page-footer" class="container">
+      <p class="text-center">
+        Copyright &copy; 2017 Red Hat, Inc.
+      </p>
+    </div>
+  </body>
+</html>
+

@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Exercise 1.6 - SCC &amp; Seccomp | Red Hat | Public Sector</title>
+
+    
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly.min.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly-additions.min.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/highlight.js/styles/darkula.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/css/main.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/css/asciidoc.css" />
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery/dist/jquery.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/c3/c3.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/d3/d3.min.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/drmonty-datatables-colvis/js/dataTables.colVis.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables.net-colreorder/js/dataTables.colReorder.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/dist/js/patternfly.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-combobox/js/bootstrap-combobox.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/moment/min/moment.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/google-code-prettify/bin/prettify.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/highlight.js/lib/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body class="">
+    
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top " role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="http://redhatgov.io/img/brand.png" alt="Red Hat | Public Sector" />
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+          
+            <li>
+              <a href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/contact/">Contact</a>
+            </li>
+          
+        
+          
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Workshops <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                
+                  <li>
+                    <a href="/workshops/ansible_tower/">Ansible Tower Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/cloudforms41/">CloudForms Workshops</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_containers/">Container Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/containers_101/">Containers 101 Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/example/">Example Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/strangling_the_monolith/">Microservices Workshop - Strangling the Monolith</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/openshift_101_dcmetromap/">OpenShift 101 - DC Metro Map Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_openshift/">OpenShift Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/rhosp_101/">Red Hat OpenStack Platform 101</a>
+                  </li>
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="jumbotron jumbotron-page text-center">
+  <h1>Exercise 1.6 - SCC &amp; Seccomp</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/security_openshift">Return to Workshop</a>
+    </p>
+    
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/security_openshift/exercise1.5/">&larr; Previous: Exercise 1.5 - Atomic Scanner</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/security_openshift/exercise1.7/">Next: Exercise 1.7 - Red Hat Security API &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>In addition to authorization policies that control what a user can do,
+OpenShift Container Platform provides security context constraints (SCC) that
+control the actions that a pod can perform and what it has the ability to
+access. Administrators can manage SCCs using the CLI.</p>
+</div>
+<div class="paragraph">
+<p>SCCs are objects that define a set of conditions that a pod must run with in
+order to be accepted into the system. They allow an administrator to control
+the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Running of privileged containers.</p>
+</li>
+<li>
+<p>Capabilities a container can request to be added.</p>
+</li>
+<li>
+<p>Use of host directories as volumes.</p>
+</li>
+<li>
+<p>The SELinux context of the container.</p>
+</li>
+<li>
+<p>The user ID.</p>
+</li>
+<li>
+<p>The use of host namespaces and networking.</p>
+</li>
+<li>
+<p>Allocating an FSGroup that owns the pod’s volumes</p>
+</li>
+<li>
+<p>Configuring allowable supplemental groups</p>
+</li>
+<li>
+<p>Requiring the use of a read only root file system</p>
+</li>
+<li>
+<p>Controlling the usage of volume types</p>
+</li>
+<li>
+<p>Configuring allowable seccomp profiles</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_scc">SCC</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_step_1">Step 1:</h3>
+<div class="paragraph">
+<p>Change to <code>root</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>sudo -i</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_2">Step 2:</h3>
+<div class="listingblock">
+<div class="title">get a current list of SCCs</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc get scc</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">closer look at the <code>restricted</code> SCC</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc describe scc restricted</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_3">Step 3:</h3>
+<div class="paragraph">
+<p><strong>Create a SCC</strong></p>
+</div>
+<div class="paragraph">
+<p>As most people at this workshop are security minded people we will skip over
+<strong>adding</strong> permissions and capabilities to containers, let&#8217;s look at how tighten
+things up. We will look at <strong>dropping</strong> certain Linux Capabilities in this SCC
+file.</p>
+</div>
+<div class="listingblock">
+<div class="title">dc17-drop-capabilities.yml</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">kind: SecurityContextConstraints
+apiVersion: v1
+metadata:
+  name: dc17-drop
+allowPrivilegedContainer: false
+runAsUser:
+  type: RunAsAny
+seLinuxContext:
+  type: RunAsAny
+fsGroup:
+  type: RunAsAny
+supplementalGroups:
+  type: RunAsAny
+users:
+- dc17-user
+groups:
+- dc17-group
+requiredDropCapabilities:
+- KILL
+- MKNOD
+- SYS_CHROOT
+- SETPCAP
+- NET_BIND_SERVICE
+- NET_RAW
+- SYS_CHROOT
+- MKNOD
+- AUDIT_WRITE
+- SETFCAP</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Copy the text above. Type <code>vim dc17-drop-capabilities.yml</code>, Press <code>i</code> for
+Insert, then cut and paste <code>control + v</code>, then escape and write the file <code>esc</code>,
+<code>:wq</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc create -f dc17-drop-capabilities.yml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Step 4:</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Add SCC to a service account</strong></p>
+</div>
+<div class="paragraph">
+<p>Create <code>Service Account</code></p>
+</div>
+<div class="paragraph">
+<div class="title">create service account</div>
+<p><a href="https://en.wikipedia.org/wiki/Public_Security_Section_9">Section9</a></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc create serviceaccount section9</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">describe service account</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc describe serviceaccount section9</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Add to service account</p>
+</div>
+<div class="listingblock">
+<div class="title">add the policy to the service account</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc adm policy add-scc-to-user dc17-drop  \
+    system:serviceaccount:sso:section9</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now lets view the policy again and see that our service account was added.</p>
+</div>
+<div class="paragraph">
+<p>Under:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc describe scc dc17-drop
+
+...
+
+Access:
+  Users: dc17-user,system:serviceaccount:sso:section9</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_seccomp">Seccomp</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Seccomp (secure computing mode) is used to restrict the set of system calls
+applications can make, allowing cluster administrators greater control over the
+security of workloads running in OpenShift Container Platform. Seccomp support
+is achieved via two annotations in the pod configuration:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>seccomp.security.alpha.kubernetes.io/pod: profile applies to all containers
+in the pod that do not override</p>
+</li>
+<li>
+<p>container.seccomp.security.alpha.kubernetes.io/&lt;container_name&gt;:
+container-specific profile override</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Applications use <code>seccomp</code> to restrict the set of system calls they can make.
+Recently, container runtimes have begun adding features to allow the runtime to
+interact with <code>seccomp</code> on behalf of the application, which eliminates the need
+for applications to link against <code>libseccomp</code> directly. Adding support in the
+Kubernetes API for describing <code>seccomp</code> <code>profiles</code> will allow administrators
+greater control over the security of workloads running in Kubernetes.</p>
+</div>
+<div class="paragraph">
+<p>The systemd seccomp facility is based on a whitelist of system calls that can
+be made, rather than a full filter specification.</p>
+</div>
+<div class="paragraph">
+<p><strong>Containers are run with unconfined seccomp settings by default.</strong></p>
+</div>
+<div class="listingblock">
+<div class="title">check to see if seccomp is enabled</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cat /boot/config-`uname -r` | grep CONFIG_SECCOMP=</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Policy Examples:</p>
+</div>
+<div class="paragraph">
+<p><strong>Unconfined profile</strong></p>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s an example of a pod that uses the unconfined profile:</p>
+</div>
+<div class="listingblock">
+<div class="title">unconfined</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">apiVersion: v1
+kind: Pod
+metadata:
+  name: trustworthy-pod
+  annotations:
+    seccomp.security.alpha.kubernetes.io/pod: unconfined
+spec:
+  containers:
+    - name: trustworthy-container
+      image: sotrustworthy:latest</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Custom profile</strong></p>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s an example of a pod that uses a profile called example-explorer profile
+using the container-level annotation:</p>
+</div>
+<div class="listingblock">
+<div class="title">custom</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">apiVersion: v1
+kind: Pod
+metadata:
+  name: explorer
+  annotations:
+    container.seccomp.security.alpha.kubernetes.io/explorer:
+localhost/example-explorer-profile <b class="conum">(1)</b>
+spec:
+  containers:
+    - name: explorer
+      image: gcr.io/google_containers/explorer:1.0
+      args: ["-port=8080"]
+      ports:
+        - containerPort: 8080
+          protocol: TCP
+      volumeMounts:
+        - mountPath: "/mount/test-volume"
+          name: test-volume
+  volumes:
+    - name: test-volume
+      emptyDir: {}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>This refers to a custom file policy that resides on the localhost. If you
+would like to see what the default <code>seccomp</code> profile is for OpenShift look
+<a href="https://github.com/docker/docker/blob/master/profiles/seccomp/default.json">here</a>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/docker/docker/blob/master/profiles/seccomp/default.json">Docker
+Default Seccomp</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/kubernetes/kubernetes/blob/release-1.4/docs/design/seccomp.md">Seccomp
+Design</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/seccomp/libseccomp">libseccomp</a></p>
+</div>
+</div>
+</div>
+
+
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/security_openshift/exercise1.5/">&larr; Previous: Exercise 1.5 - Atomic Scanner</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/security_openshift/exercise1.7/">Next: Exercise 1.7 - Red Hat Security API &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/security_openshift">Return to Workshop</a>
+    </p>
+  </div>
+</div>
+
+    <div id="page-footer" class="container">
+      <p class="text-center">
+        Copyright &copy; 2017 Red Hat, Inc.
+      </p>
+    </div>
+  </body>
+</html>
+

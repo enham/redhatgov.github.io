@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Exercise 2.1 - Configuring Ansible Tower | Red Hat | Public Sector</title>
+
+    
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly.min.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly-additions.min.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/highlight.js/styles/darkula.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/css/main.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/css/asciidoc.css" />
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery/dist/jquery.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/c3/c3.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/d3/d3.min.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/drmonty-datatables-colvis/js/dataTables.colVis.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables.net-colreorder/js/dataTables.colReorder.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/dist/js/patternfly.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-combobox/js/bootstrap-combobox.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/moment/min/moment.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/google-code-prettify/bin/prettify.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/highlight.js/lib/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body class="">
+    
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top " role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="http://redhatgov.io/img/brand.png" alt="Red Hat | Public Sector" />
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+          
+            <li>
+              <a href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/contact/">Contact</a>
+            </li>
+          
+        
+          
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Workshops <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                
+                  <li>
+                    <a href="/workshops/ansible_tower/">Ansible Tower Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/cloudforms41/">CloudForms Workshops</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_containers/">Container Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/containers_101/">Containers 101 Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/example/">Example Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/strangling_the_monolith/">Microservices Workshop - Strangling the Monolith</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/openshift_101_dcmetromap/">OpenShift 101 - DC Metro Map Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_openshift/">OpenShift Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/rhosp_101/">Red Hat OpenStack Platform 101</a>
+                  </li>
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="jumbotron jumbotron-page text-center">
+  <h1>Exercise 2.1 - Configuring Ansible Tower</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/ansible_tower">Return to Workshop</a>
+    </p>
+    
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/ansible_tower/exercise2.0/">&larr; Previous: Exercise 2.0 - Installing Ansible Tower</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/ansible_tower/exercise2.2/">Next: Exercise 2.2 - Creating and Running a Job Template &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this exercise, we are going to configure Tower so that we can run a playbook.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuring_ansible_tower">Configuring Ansible Tower</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are a number of contructs in the Ansible Tower UI that enable multi-tenancy, notifications, scheduling, etc.
+However, we are only going to focus on a few of the key contructs that are required for this workshop today.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Credentials</p>
+</li>
+<li>
+<p>Projects</p>
+</li>
+<li>
+<p>Inventory</p>
+</li>
+<li>
+<p>Job Template</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_logging_into_tower_and_installing_the_license_key">Logging into Tower and Installing the License Key</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_step_1">Step 1:</h3>
+<div class="paragraph">
+<p>To log in, use the username <code>admin</code> and and the password <code>ansibleWS</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/workshops/ansible_tower/images/ansible-lab-figure01-logon-screen.png" alt="ansible lab figure01 logon screen">
+</div>
+<div class="title">Figure 3: Ansible Tower Login Screen</div>
+</div>
+<div class="paragraph">
+<p>As soon as you login, you will prompted to request a license or browse for an existing license file</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/workshops/ansible_tower/images/at_lic_prompt.png" alt="at lic prompt">
+</div>
+<div class="title">Figure 4: Uploading a License</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_2">Step 2:</h3>
+<div class="paragraph">
+<p>At the commandline in you Tower instance download the encrypted license file via the curl command.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">curl -O https://s3.amazonaws.com/ansible-tower-workshop-license/license</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then Decrypt the license file via Ansible Vault.   <strong>The instructor should provide the password</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">ansible-vault decrypt license
+
+...
+
+Vault password:</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now use curl to POST the license to the Tower API endpoint. Please edit this command to the use the <code>workshop_prefix</code> for your workshop. This command exports your workshop prefix so that the next command can use that data in the curl command.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">export WORKSHOP_PREFIX=" "</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now send the <code>license</code> to Tower via the API.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">curl -k https://$WORKSHOP_PREFIX.0.redhatgov.io/api/v1/config/ \
+     -H 'Content-Type: application/json' \
+     -X POST \
+     --data @license \
+     --user admin:ansibleWS</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_creating_a_credential">Creating a Credential</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Credentials are utilized by Tower for authentication when launching jobs against machines,
+synchronizing with inventory sources, and importing project content from a version control system.</p>
+</div>
+<div class="paragraph">
+<p>There are many <a href="http://docs.ansible.com/ansible-tower/latest/html/userguide/credentials.html#credential-types">types of credentials</a> including machine, network, and various cloud providers.  In this
+workshop, we are using a <strong>machine</strong> credential.</p>
+</div>
+<div class="sect2">
+<h3 id="_step_1_2">Step 1:</h3>
+<div class="paragraph">
+<p>Select the gear icon     <span class="image"><img src="/workshops/ansible_tower/images/at_gear.png" alt="Gear" width="20" height="20"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_2_2">Step 2:</h3>
+<div class="paragraph">
+<p>Select CREDENTIALS</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_3">Step 3:</h3>
+<div class="paragraph">
+<p>Click on ADD     <span class="image"><img src="/workshops/ansible_tower/images/at_add.png" alt="Add" width="35" height="25"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_4">Step 4:</h3>
+<div class="paragraph">
+<p>Complete the form using the following entries, by cating out your private SSH key to place into Tower.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>cat ~/.ssh/workshop-tower</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NAME</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ansible Workshop Credential</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DESCRIPTION</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Machine credential for run job templates during workshop</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ORGANIZATION</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TYPE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Machine</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">USERNAME</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ec2-user</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PRIVILEGE ESCALATION</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sudo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PRIVATE KEY</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">paste in secret key</p></td>
+</tr>
+</tbody>
+</table>
+<div class="imageblock">
+<div class="content">
+<img src="/workshops/ansible_tower/images/at_cred_detail.png" alt="Cred_Detail" width="900">
+</div>
+<div class="title">Figure 5: Adding a Credential</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_5">Step 5:</h3>
+<div class="paragraph">
+<p>Select SAVE     <span class="image"><img src="/workshops/ansible_tower/images/at_save.png" alt="Save" width="35" height="25"></span><br></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_creating_a_project">Creating a Project</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A Project is a logical collection of Ansible playbooks, represented in Tower.
+You can manage playbooks and playbook directories by either placing them manually
+under the Project Base Path on your Tower server, or by placing your playbooks into
+a source code management (SCM) system supported by Tower, including Git, Subversion, and Mercurial.</p>
+</div>
+<div class="sect2">
+<h3 id="_step_1_3">Step 1:</h3>
+<div class="paragraph">
+<p>Click on PROJECTS</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_2_3">Step 2:</h3>
+<div class="paragraph">
+<p>Select ADD     <span class="image"><img src="/workshops/ansible_tower/images/at_add.png" alt="Add" width="35" height="25"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_3_2">Step 3:</h3>
+<div class="paragraph">
+<p>Complete the form using the following entries</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NAME</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ansible Workshop Project</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DESCRIPTION</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">workshop playbooks</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ORGANIZATION</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SCM TYPE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Git</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SCM URL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/ansible/lightbulb" class="bare">https://github.com/ansible/lightbulb</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SCM BRANCH</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SCM UPDATE OPTIONS</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p><i class="fa fa-check-square-o"></i> Clean</p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> Delete on Update</p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> Update on Launch</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="imageblock">
+<div class="content">
+<img src="/workshops/ansible_tower/images/at_project_detail.png" alt="Cred_Detail" width="900">
+</div>
+<div class="title">Figure 6: Defining a Project</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_4_2">Step 4:</h3>
+<div class="paragraph">
+<p>Select SAVE     <span class="image"><img src="/workshops/ansible_tower/images/at_save.png" alt="Save" width="35" height="25"></span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_creating_a_inventory">Creating a Inventory</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An inventory is a collection of hosts against which jobs may be launched.
+Inventories are divided into groups and these groups contain the actual hosts.
+Groups may be sourced manually, by entering host names into Tower, or from one
+of Ansible Tower’s supported cloud providers.</p>
+</div>
+<div class="paragraph">
+<p>An Inventory can also be imported into Tower using the <code>tower-manage</code> command
+and this is how we are going to add an inventory for this workshop.</p>
+</div>
+<div class="sect2">
+<h3 id="_step_1_4">Step 1:</h3>
+<div class="paragraph">
+<p>Click on INVENTORIES</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_2_4">Step 2:</h3>
+<div class="paragraph">
+<p>Select ADD     <span class="image"><img src="/workshops/ansible_tower/images/at_add.png" alt="Add" width="35" height="25"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_3_3">Step 3:</h3>
+<div class="paragraph">
+<p>Complete the form using the following entries</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NAME</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ansible Workshop Inventory</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DESCRIPTION</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">workshop hosts</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ORGANIZATION</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default</p></td>
+</tr>
+</tbody>
+</table>
+<div class="imageblock">
+<div class="content">
+<img src="/workshops/ansible_tower/images/at_inv_create.png" alt="Cred_Detail" width="900">
+</div>
+<div class="title">Figure 7: Create an Inventory</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_4_3">Step 4:</h3>
+<div class="paragraph">
+<p>Select SAVE     <span class="image"><img src="/workshops/ansible_tower/images/at_save.png" alt="Save" width="35" height="25"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_5_2">Step 5:</h3>
+<div class="paragraph">
+<p>Using ssh, login to your control node, if by any chance you closed the wetty browser window.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">https://workshopname.tower.0.redhatgov.io:8888/wetty/ssh/ec2-user</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_6">Step 6:</h3>
+<div class="paragraph">
+<p>Use the <code>tower-manage</code> command to import an existing inventory.  (<em>Be sure to replace &lt;username&gt; with your actual username</em>)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>sudo tower-manage inventory_import --source=/home/ec2-user/hosts --inventory-name="Ansible Workshop Inventory"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You should see output similar to the following:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/workshops/ansible_tower/images/at_tm_stdout.png" alt="Cred_Detail" width="900">
+</div>
+<div class="title">Figure 8: Importing an inventory with tower-manage</div>
+</div>
+<div class="paragraph">
+<p>Feel free to browse your inventory in Tower.  You should now notice that the inventory has been populated with Groups and that
+each of those groups contain hosts.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/workshops/ansible_tower/images/at_inv_group.png" alt="Cred_Detail" width="900">
+</div>
+<div class="title">Figure 9: Inventory with Groups</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_end_result">End Result</h3>
+<div class="paragraph">
+<p>At this point, we are doing with our basic configuration of Ansible Tower.  In exercise 2.2, we will be soley focused on creating and running a job template so you can see Tower in action.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/ansible_tower/exercise2.0/">&larr; Previous: Exercise 2.0 - Installing Ansible Tower</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/ansible_tower/exercise2.2/">Next: Exercise 2.2 - Creating and Running a Job Template &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/ansible_tower">Return to Workshop</a>
+    </p>
+  </div>
+</div>
+
+    <div id="page-footer" class="container">
+      <p class="text-center">
+        Copyright &copy; 2017 Red Hat, Inc.
+      </p>
+    </div>
+  </body>
+</html>
+

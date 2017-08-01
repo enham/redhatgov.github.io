@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Exercise 1.3 - Using Variables, Loops, and Handlers | Red Hat | Public Sector</title>
+
+    
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly.min.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly-additions.min.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/highlight.js/styles/darkula.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/css/main.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/css/asciidoc.css" />
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery/dist/jquery.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/c3/c3.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/d3/d3.min.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/drmonty-datatables-colvis/js/dataTables.colVis.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables.net-colreorder/js/dataTables.colReorder.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/dist/js/patternfly.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-combobox/js/bootstrap-combobox.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/moment/min/moment.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/google-code-prettify/bin/prettify.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/highlight.js/lib/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body class="">
+    
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top " role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="http://redhatgov.io/img/brand.png" alt="Red Hat | Public Sector" />
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+          
+            <li>
+              <a href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/contact/">Contact</a>
+            </li>
+          
+        
+          
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Workshops <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                
+                  <li>
+                    <a href="/workshops/ansible_tower/">Ansible Tower Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/cloudforms41/">CloudForms Workshops</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_containers/">Container Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/containers_101/">Containers 101 Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/example/">Example Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/strangling_the_monolith/">Microservices Workshop - Strangling the Monolith</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/openshift_101_dcmetromap/">OpenShift 101 - DC Metro Map Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_openshift/">OpenShift Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/rhosp_101/">Red Hat OpenStack Platform 101</a>
+                  </li>
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="jumbotron jumbotron-page text-center">
+  <h1>Exercise 1.3 - Using Variables, Loops, and Handlers</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/ansible_tower">Return to Workshop</a>
+    </p>
+    
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/ansible_tower/exercise1.2/">&larr; Previous: Exercise 1.2 - Running Your Playbook</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/ansible_tower/exercise1.4/">Next: Exercise 1.4 - Running the apache-basic-playbook &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Previous exercises showed you the basics of Ansible Core.  In the next few exercises, we are going
+to teach some more advanced ansible skills that will add flexibility and power to your playbooks.</p>
+</div>
+<div class="paragraph">
+<p>Ansible exists to make tasks simple and repeatable.  We also know that not all systems are exactly alike and often require
+some slight change to the way an Ansible playbook is run.  Enter variables.</p>
+</div>
+<div class="paragraph">
+<p>Variables are how we deal with differences between your systems, allowing you to account for a change in port, IP address
+or directory.</p>
+</div>
+<div class="paragraph">
+<p>Loops enable us to repeat the same task over and over again.  For example, lets say you want to install 10 packages.
+By using an ansible loop, you can do that in a single task.</p>
+</div>
+<div class="paragraph">
+<p>Handlers are the way in which we restart services.  Did you just deploy a new config file, install a new package?
+If so, you may need to restart a service for those changes to take effect.  We do that with a handler.</p>
+</div>
+<div class="paragraph">
+<p>For a full understanding of variables, loops, and handlers; check out our Ansible documentation on these subjects.<br>
+<a href="{var_url}">Ansible Variables</a><br>
+<a href="{loop_url}">Ansible Loops</a><br>
+<a href="{handler_url}">Ansible Handlers</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_section_1_running_the_playbook">Section 1: Running the Playbook</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To begin, we are going to create a new playbook, but it should look very familiar to the one you created in exercise 1.2</p>
+</div>
+<div class="paragraph">
+<p>We are now going to run you&#8217;re brand spankin' new playbook on your two web nodes.  To do this, you are going to use the <code>ansible-playbook</code> command.</p>
+</div>
+<div class="sect2">
+<h3 id="_step_1">Step 1:</h3>
+<div class="paragraph">
+<p>Navigate to your home directory create a new project and playbook.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">cd
+mkdir apache-basic-playbook
+cd apache-basic-playbook
+vim site.yml</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_2">Step 2:</h3>
+<div class="paragraph">
+<p>Add a play definition and some variables to your playbook.  These include addtional packages your playbook will install on your web servers, plus some web server specific configurations.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">---
+- hosts: web
+  name: This is a play within a playbook
+  become: yes
+  vars:
+    httpd_packages:
+      - httpd
+      - mod_wsgi
+    apache_test_message: This is a test message
+    apache_max_keep_alive_requests: 115</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_3">Step 3:</h3>
+<div class="paragraph">
+<p>Add a new task called <strong>install httpd packages</strong>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">  tasks:
+    - name: install httpd packages
+      yum:
+        name: "{{ item }}"
+        state: present
+      with_items: "{{ httpd_packages }}"
+      notify: restart apache service</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><strong>What the Helsinki is happening here!?</strong><br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>vars:</code> You&#8217;ve told Ansible the next thing it sees will be a variable name<br></p>
+</li>
+<li>
+<p><code>httpd_packages</code> You are defining a list-type variable called httpd_packages.  What follows
+is a list of those packages<br></p>
+</li>
+<li>
+<p><code>{{ item }}</code> You are telling Ansible that this will expand into a list item like <code>httpd</code> and <code>mod_wsgi</code>.<br></p>
+</li>
+<li>
+<p><code>with_items: "{{ httpd_packages }}</code> This is your loop which is instructing Ansible to perform this task on
+every <code>item</code> in <code>httpd_packages</code></p>
+</li>
+<li>
+<p><code>notify: restart apache service</code> This statement is a <code>handler</code>, so we&#8217;ll come back to it in Section 3.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_section_2_deploying_files_and_starting_a_service">Section 2: Deploying Files and Starting a Service</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When you need to do pretty much anything with files and directories, use one of the <a href="{file_url}">Ansible Files</a> modules.  In this case, we&#8217;ll leverage the <code>file</code> and <code>template</code> modules.</p>
+</div>
+<div class="paragraph">
+<p>After that, you will define a task to start the start the apache service.</p>
+</div>
+<div class="sect2">
+<h3 id="_step_1_2">Step 1:</h3>
+<div class="paragraph">
+<p>Create a <code>templates</code> directory in your project directory and download two files.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">mkdir templates
+cd templates
+curl -O http://ansible-workshop.redhatgov.io/workshop-files/httpd.conf.j2
+curl -O http://ansible-workshop.redhatgov.io/workshop-files/index.html.j2</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_2_2">Step 2:</h3>
+<div class="paragraph">
+<p>Add some file tasks and a service task to your playbook.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">    - name: create site-enabled directory
+      file:
+        name: /etc/httpd/conf/sites-enabled
+        state: directory
+
+    - name: copy httpd.conf
+      template:
+        src: templates/httpd.conf.j2
+        dest: /etc/httpd/conf/httpd.conf
+      notify: restart apache service
+
+    - name: copy index.html
+      template:
+        src: templates/index.html.j2
+        dest: /var/www/html/index.html
+
+    - name: start httpd
+      service:
+        name: httpd
+        state: started
+        enabled: yes</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><strong>So&#8230;&#8203; what did I just write?</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>file:</code> This module is used to create, modify, delete files, directories, and symlinks.</p>
+</li>
+<li>
+<p><code>template:</code> This module specifies that a jinja2 template is being used and deployed. <code>template</code> is part of the <code>Files</code>
+module family and we encourage you to check out all of the other <a href="{file_url}">file-management modules here</a>.</p>
+</li>
+<li>
+<p><strong>jinja-who?</strong> - Not to be confused with 2013&#8217;s blockbuster "Ninja II - Shadow of a Tear", <a href="{jinja2_url}">jinja2</a> is
+used in Ansible to transform data inside a template expression, i.e. filters.</p>
+</li>
+<li>
+<p><strong>service</strong> - The Service module starts/stops/restarts services.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_section_3_defining_and_using_handlers">Section 3: Defining and Using Handlers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are any number of reasons we often need to restart a service/process including the deployment of a configuration file, installing a new package, etc.  There are really two parts to this Section; adding a handler to the playbook and calling the handler after the a task.  We will start with the former.</p>
+</div>
+<div class="sect2">
+<h3 id="_step_1_3">Step 1:</h3>
+<div class="paragraph">
+<p>Define a handler.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">  handlers:
+    - name: restart apache service
+      service:
+        name: httpd
+        state: restarted
+        enabled: yes</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><strong>You can&#8217;t have a former if you don&#8217;t mention the latter</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>handler:</code> This is telling the <strong>play</strong> that the <code>tasks:</code> are over, and now we are defining <code>handlers:</code>.
+Everything below that looks the same as any other task, i.e. you give it a name, a module, and the options for that
+module.  This is the definition of a handler.</p>
+</li>
+<li>
+<p><code>notify: restart apache service</code> &#8230;&#8203;and here is your latter. Finally!  The <code>nofify</code> statement is the invocation of a handler by
+name.  Quite the reveal, we know.   You already noticed that you&#8217;ve added a <code>notify</code> statement to the <code>copy httpd.conf</code>
+task, now you know why.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_section_4_review">Section 4: Review</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Your new, improved playbook is done! But don&#8217;t run it just yet, we&#8217;ll do that in our next exercise.  For now, let&#8217;s take a second look to make sure everything
+looks the way you intended.  If not, now is the time for us to fix it up. The figure below shows line counts and spacing.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">---
+- hosts: web
+  name: This is a play within a playbook
+  become: yes
+  vars:
+    httpd_packages:
+      - httpd
+      - mod_wsgi
+    apache_test_message: This is a test message
+    apache_max_keep_alive_requests: 115
+
+  tasks:
+    - name: httpd packages are present
+      yum:
+        name: "{{ item }}"
+        state: present
+      with_items: "{{ httpd_packages }}"
+      notify: restart apache service
+
+    - name: site-enabled directory is present
+      file:
+        name: /etc/httpd/conf/sites-enabled
+        state: directory
+
+    - name: latest httpd.conf is present
+      template:
+        src: templates/httpd.conf.j2
+        dest: /etc/httpd/conf/httpd.conf
+      notify: restart apache service
+
+    - name: latest index.html is present
+      template:
+        src: templates/index.html.j2
+        dest: /var/www/html/index.html
+
+    - name: httpd is started and enabled
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+
+  handlers:
+    - name: restart apache service
+      service:
+        name: httpd
+        state: restarted</code></pre>
+</div>
+</div>
+</div>
+</div>
+
+
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/ansible_tower/exercise1.2/">&larr; Previous: Exercise 1.2 - Running Your Playbook</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/ansible_tower/exercise1.4/">Next: Exercise 1.4 - Running the apache-basic-playbook &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/ansible_tower">Return to Workshop</a>
+    </p>
+  </div>
+</div>
+
+    <div id="page-footer" class="container">
+      <p class="text-center">
+        Copyright &copy; 2017 Red Hat, Inc.
+      </p>
+    </div>
+  </body>
+</html>
+

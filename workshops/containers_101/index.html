@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Containers 101 Workshop | Red Hat | Public Sector</title>
+
+    
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly.min.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly-additions.min.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/highlight.js/styles/darkula.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/css/main.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/css/asciidoc.css" />
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery/dist/jquery.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/c3/c3.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/d3/d3.min.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/drmonty-datatables-colvis/js/dataTables.colVis.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables.net-colreorder/js/dataTables.colReorder.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/dist/js/patternfly.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-combobox/js/bootstrap-combobox.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/moment/min/moment.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/google-code-prettify/bin/prettify.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/highlight.js/lib/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body class="">
+    
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top " role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="http://redhatgov.io/img/brand.png" alt="Red Hat | Public Sector" />
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+          
+            <li>
+              <a href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/contact/">Contact</a>
+            </li>
+          
+        
+          
+            <li class="dropdown active">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Workshops <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                
+                  <li>
+                    <a href="/workshops/ansible_tower/">Ansible Tower Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/cloudforms41/">CloudForms Workshops</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_containers/">Container Security Workshop</a>
+                  </li>
+                
+                  <li class="active">
+                    <a href="/workshops/containers_101/">Containers 101 Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/example/">Example Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/strangling_the_monolith/">Microservices Workshop - Strangling the Monolith</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/openshift_101_dcmetromap/">OpenShift 101 - DC Metro Map Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_openshift/">OpenShift Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/rhosp_101/">Red Hat OpenStack Platform 101</a>
+                  </li>
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="jumbotron jumbotron-page text-center">
+  <h1>Containers 101 Workshop</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="sect1">
+<h2 id="_today_s_agenda">Today&#8217;s Agenda</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Arrivals</p>
+</li>
+<li>
+<p>Introductions / Agenda</p>
+</li>
+<li>
+<p>Presentation</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+
+
+
+
+<ul>
+  <li>
+    <a href="http://redhatgov.io/workshops/containers_101/setup/">Setup</a>
+  </li>
+</ul>
+
+<ul>
+  <li>
+    <a href="http://redhatgov.io/workshops/containers_101/exercise1.0/">Exercise 1.0 - Install Docker</a>
+  </li>
+</ul>
+
+<ul>
+  <li>
+    <a href="http://redhatgov.io/workshops/containers_101/exercise1.1/">Exercise 1.1 - Pulling Docker Images</a>
+  </li>
+</ul>
+
+<ul>
+  <li>
+    <a href="http://redhatgov.io/workshops/containers_101/exercise1.2/">Exercise 1.2 - Working with Docker Images</a>
+  </li>
+</ul>
+
+<ul>
+  <li>
+    <a href="http://redhatgov.io/workshops/containers_101/exercise1.3/">Exercise 1.3 - Working with the Dockerfile</a>
+  </li>
+</ul>
+
+<ul>
+  <li>
+    <a href="http://redhatgov.io/workshops/containers_101/exercise1.4/">Exercise 1.4 - Working with Docker Registry</a>
+  </li>
+</ul>
+
+<ul>
+  <li>
+    <a href="http://redhatgov.io/workshops/containers_101/wrapup/">Wrapup</a>
+  </li>
+</ul>
+
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_before_we_get_started">Before We Get Started</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_overview">Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Today is meant for anyone who has any exposure to Containers, whether you have used it or not. We are going to start with a short overview (yes, slideware) and then we&#8217;ll get into the lab as soon as possible. That is where we will spend most of our time.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_your_responsibilities">Your Responsibilities</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Have a discussion. This will be boring if it&#8217;s just us up here talking for over 2 hours.</p>
+</li>
+<li>
+<p>Participate. Have questions. Have opinions.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Hopefully you have your laptop with you. If not, please find a shoulder-surfing buddy.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_special_thanks_to">Special Thanks to:</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Jamie Duncan</p>
+</li>
+<li>
+<p>Jason Callaway</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_workshop_deployment">Workshop Deployment</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Here is the link to deploy this workshop in AWS via Ansible.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/RedHatGov/redhatgov.workshops/tree/master/containers_101">GitHub Repo</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_document_copyright">Document Copyright</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document was created by and for Red Hat, Inc. It is being released under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons License 4.0</a>. You are free to re-use it in whole or in part.</p>
+</div>
+<div class="paragraph">
+<p>You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</p>
+</div>
+</div>
+</div>
+
+  </div>
+</div>
+
+    <div id="page-footer" class="container">
+      <p class="text-center">
+        Copyright &copy; 2017 Red Hat, Inc.
+      </p>
+    </div>
+  </body>
+</html>
+

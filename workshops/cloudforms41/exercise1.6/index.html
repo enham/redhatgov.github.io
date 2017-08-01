@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Exercise 1.6 - Explore Cloud Providers | Red Hat | Public Sector</title>
+
+    
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly.min.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/patternfly/dist/css/patternfly-additions.min.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/node_modules/highlight.js/styles/darkula.css" />
+
+    
+    <link rel="stylesheet" href="http://redhatgov.io/css/main.css" />
+    <link rel="stylesheet" href="http://redhatgov.io/css/asciidoc.css" />
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery/dist/jquery.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/c3/c3.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/d3/d3.min.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/drmonty-datatables-colvis/js/dataTables.colVis.js"></script>
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/datatables.net-colreorder/js/dataTables.colReorder.js"></script>
+
+    
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/dist/js/patternfly.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-combobox/js/bootstrap-combobox.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/moment/min/moment.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/google-code-prettify/bin/prettify.min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/patternfly/node_modules/jquery-match-height/dist/jquery.matchHeight-min.js"></script>
+
+    
+    <script src="http://redhatgov.io/node_modules/highlight.js/lib/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body class="">
+    
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top " role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="http://redhatgov.io/img/brand.png" alt="Red Hat | Public Sector" />
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+          
+            <li>
+              <a href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/contact/">Contact</a>
+            </li>
+          
+        
+          
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Workshops <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                
+                  <li>
+                    <a href="/workshops/ansible_tower/">Ansible Tower Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/cloudforms41/">CloudForms Workshops</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_containers/">Container Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/containers_101/">Containers 101 Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/example/">Example Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/strangling_the_monolith/">Microservices Workshop - Strangling the Monolith</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/openshift_101_dcmetromap/">OpenShift 101 - DC Metro Map Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/security_openshift/">OpenShift Security Workshop</a>
+                  </li>
+                
+                  <li>
+                    <a href="/workshops/rhosp_101/">Red Hat OpenStack Platform 101</a>
+                  </li>
+                
+              </ul>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="jumbotron jumbotron-page text-center">
+  <h1>Exercise 1.6 - Explore Cloud Providers</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/cloudforms41">Return to Workshop</a>
+    </p>
+    
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/cloudforms41/exercise1.5/">&larr; Previous: Exercise 1.5 - Examine Infrastructure Provisioning</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/cloudforms41/exercise1.7/">Next: Exercise 1.7 - Explore Cloud Instances &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    
+
+<h1 id="what-s-a-cloud-provider">What's A Cloud Provider?</h1>
+
+<p>In Red Hat CloudForms, a cloud provider is a computing platform that manages instances and allows building of multi-tenant infrastructure services independent from underlying hypervisors.</p>
+
+<h1 id="explore-cloud-providers">Explore Cloud Providers</h1>
+
+<blockquote>
+<p>Select <strong>Compute</strong> → <strong>Clouds</strong> → <strong>Providers</strong>.</p>
+</blockquote>
+
+<p><img title="CloudForms Infrastructure VMs" src="../images/cfme-nav-compute-cloud-providers.png" width="1000"/><br/>
+<em>Cloud Providers</em></p>
+
+<p>A list of your private and public cloud providers, such as OpenStack and Amazon EC2, appears.</p>
+
+<p>To add Amazon EC2 or Microsoft Azure as a provider, use either <i class="fa fa-cog fa-lg" aria-hidden="true"></i> (<strong>Configuration</strong>) and <i class="fa fa-search fa-lg" aria-hidden="true"></i>
+ (<strong>Discover</strong>) or <i class="fa fa-cog fa-lg" aria-hidden="true"></i> (<strong>Configuration</strong>) and <i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i> (Add).</p>
+
+<p>To add OpenStack or Google Compute Engine as a provider, you must use  (Configuration) and (Add).</p>
+
+<h1 id="explore-the-virtual-thumbnail-for-cloud-providers">Explore the Virtual Thumbnail for Cloud Providers</h1>
+
+<p>The web interface uses virtual thumbnails to represent providers. Each thumbnail contains four quadrants by default, which display basic information about each provider.</p>
+
+<p><img title="CloudForms Example Virtual Thumbnail" src="../images/cfme-virt-thumbnail-cloud.png" /><br/>
+<em>Example Virtual Thumbnail</em></p>
+
+<ul>
+<li>The top left quadrant shows the number of instances defined in the provider.</li>
+<li>The top right quadrant shows the number of images available in the provider.</li>
+<li>The image in the bottom left quadrant represents the type of provider (only Amazon EC2 or OpenStack are shown).</li>
+<li>The bottom right quadrant shows the status of the provider.</li>
+<li>A <i class="fa fa-shield fa-lg" aria-hidden="true"></i> (<strong>Policy</strong>) in the center indicates that this host has one or more policies applied.</li>
+</ul>
+
+<blockquote>
+<p>In the top right corner of the window, click <i class="fa fa-th fa-lg" aria-hidden="true"></i> <i class="fa fa-th-large fa-lg" aria-hidden="true"></i> <i class="fa fa-list fa-lg" aria-hidden="true"></i> to toggle between <strong>Grid</strong>, <strong>Tile</strong>, and <strong>List</strong> views.</p>
+</blockquote>
+
+<p><img title="CloudForms Top Window Navigation VM Providers" src="../images/cfme-nav-grid-title-list-infra-cloud.png" width="1000"/><br/>
+<em>Top Window Navigation</em></p>
+
+<blockquote>
+<p>Click <i class="fa fa-download fa-lg" aria-hidden="true"></i> (<strong>Download</strong>) to download a list of Cloud Proviers.</p>
+</blockquote>
+
+<p><img title="CloudForms Download VM Providers" src="../images/cfme-nav-download-infra-cloud.png" width="1000"/><br/>
+<em>Download Cloud</em></p>
+
+<blockquote>
+<p>Select the <strong>Amazon (US West 2)</strong> Amazon EC2 cloud provider.</p>
+</blockquote>
+
+<p><img title="CloudForms Dashboard CF41_OpenStack1 VM" src="../images/cfme-dashboard-infra-cloud.png" width="1000"/><br/>
+<em>Cloud Dashboard</em></p>
+
+<blockquote>
+<p>Click the <strong>Relationships</strong> tab and review the kind of information CloudForms gathers from a provider.</p>
+</blockquote>
+
+<p><img title="CloudForms Dashboard CF41_OpenStack1 VM" src="../images/cfme-dashboard-infra-cloud-relation.png" width="1000"/><br/>
+<em>Cloud Relationships</em></p>
+
+
+
+
+  <div class="alert alert-info">
+    
+    <span class="pficon pficon-info"></span>
+    The screen shows this provider’s relationships with its components, such as availability zones, flavors, security groups, instances, and images.
+  </div>
+
+
+
+<p>Return to the list of <strong>Cloud Providers…</strong>  Select the <strong>OpenStack</strong> cloud provider and click the relationships to review the gathered information.</p>
+
+
+    
+
+
+
+
+
+
+
+<nav>
+  <ul class="pager">
+    
+      <li class="previous">
+        <a href="http://redhatgov.io/workshops/cloudforms41/exercise1.5/">&larr; Previous: Exercise 1.5 - Examine Infrastructure Provisioning</a>
+      </li>
+    
+    
+      <li class="next">
+        <a href="http://redhatgov.io/workshops/cloudforms41/exercise1.7/">Next: Exercise 1.7 - Explore Cloud Instances &rarr;</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+    <p class="text-center">
+      
+      <a href="http://redhatgov.io/workshops/cloudforms41">Return to Workshop</a>
+    </p>
+  </div>
+</div>
+
+    <div id="page-footer" class="container">
+      <p class="text-center">
+        Copyright &copy; 2017 Red Hat, Inc.
+      </p>
+    </div>
+  </body>
+</html>
+
