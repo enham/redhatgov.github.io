@@ -7,7 +7,7 @@ layout: lab
 
 # What is JBoss EAP?
 
-Red Hat JBoss Enterprise Application Platform 7 (JBoss EAP) is the market-leading open source Java EE certified platform for modern application development on any target environment, from bare metal to public cloud to container. JBoss EAP’s architecture is lightweight, innovative, modular, and cloud ready. The platform offers powerful management and automation for greater developer productivity. It is based on the popular open source Wildfly project (formerly known as
+Red Hat JBoss Enterprise Application Platform 7 ([JBoss EAP][eap]) is the market-leading open source Java EE certified platform for modern application development on any target environment, from bare metal to public cloud to container. JBoss EAP’s architecture is lightweight, innovative, modular, and cloud ready. The platform offers powerful management and automation for greater developer productivity. It is based on the popular open source Wildfly project (formerly known as
 JBoss Application Server) but the product JBoss EAP is complete with bug fixes, security enhancements, industry certifications, and a long lifecycle of up to 13 years of support.
 
 JBoss EAP 7's features include:
@@ -29,12 +29,20 @@ JBoss EAP is part of the Red Hat JBoss Middleware product family, which includes
 
 ## More Information
 
-The following links...
+For more information on [JBoss EAP][eap], please see the following resources:
+* [Component Details][components]
+* [Supported Configurations][configs]
+* [Support Policy][support]
+* [Government Standards][standards]
 
-
+[eap]: https://www.redhat.com/en/technologies/jboss-middleware/application-platform
 [fuse]: https://www.redhat.com/en/technologies/jboss-middleware/fuse
 [amq]: https://www.redhat.com/en/technologies/jboss-middleware/amq
 [datavirt]: https://www.redhat.com/en/technologies/jboss-middleware/data-virtualization
 [3scale]: https://www.3scale.net/
 [brms]: https://www.redhat.com/en/technologies/jboss-middleware/business-rules
 [bpms]: https://www.redhat.com/en/technologies/jboss-middleware/bpm
+[components]: https://access.redhat.com/articles/112673
+[configs]: https://access.redhat.com/articles/2026253
+[support]: https://access.redhat.com/support/policy/updates/jboss_notes
+[standards]: https://access.redhat.com/articles/2918071
