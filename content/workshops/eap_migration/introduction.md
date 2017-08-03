@@ -36,5 +36,5 @@ The following links...
 [amq]: https://www.redhat.com/en/technologies/jboss-middleware/amq
 [datavirt]: https://www.redhat.com/en/technologies/jboss-middleware/data-virtualization
 [3scale]: https://www.3scale.net/
-[brms]: 
-[bpms]: 
+[brms]: https://www.redhat.com/en/technologies/jboss-middleware/business-rules
+[bpms]: https://www.redhat.com/en/technologies/jboss-middleware/bpm
