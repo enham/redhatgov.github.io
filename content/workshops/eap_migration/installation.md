@@ -20,6 +20,8 @@ There are several different ways to install JBoss EAP. Each method is best used 
 JBoss EAP is also available as a Docker container for deployment on [OpenShift][xpaas].
 
 ### Installing JBoss EAP
+
+#### Using the Graphical Installer
 To install EAP, enter the following command:
 
 ```
@@ -27,8 +29,7 @@ $ java -jar jboss-eap-7.0.0-installer.jar
 ```
 The following screenshot shows the welcome screen for the EAP installer in GUI mode:
 
-
-#### Using the Graphical Installer
+{{< figure src="../images/installer_license.jpg" title="JBoss EAP 7 GUI Installer" >}}
 
 #### Staring and Stopping JBoss EAP
 
