@@ -21,6 +21,8 @@ JBoss EAP is also available as a Docker container for deployment on [OpenShift][
 
 ### Installing JBoss EAP
 
+For the purposes of this workshop, we will be using the graphical installer.
+
 #### Using the Graphical Installer
 To install EAP, enter the following command:
 
