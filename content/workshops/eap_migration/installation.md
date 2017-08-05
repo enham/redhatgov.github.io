@@ -38,6 +38,13 @@ Please follow the wizard accordingly:
 1. License Agreement: Accept the License Agreement.
 2. Installation Path: Accept the default installation path of `/home/student/EAP-7.0.0`.
 3. Component Selection: Accept the defaults.
+4. Create an Administrative User: Accept the default username of `admin`, for the purposes of this lab use the password `Redhat1!`.
+5. Installation Overview: Review installation details.
+6. Component Installation: Wait for completion.
+7. Configure Runtime Environment: Accept the `Perform default configuration` option.
+8. Configure Server: Wait for completion.
+9. Shortcut Configuration: Accept the defaults.
+10. Installation Complete!
 
 #### Staring and Stopping JBoss EAP
 
