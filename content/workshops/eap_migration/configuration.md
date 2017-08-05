@@ -29,3 +29,7 @@ The purpose of this lab is to review the different management modes for JBoss EA
 
 #### XML File
 
+### Logging into the Administrative Console
+
+#### Changing a Configuration
+
