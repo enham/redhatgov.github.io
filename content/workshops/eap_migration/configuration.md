@@ -7,6 +7,12 @@ layout: lab
 
 ## Configuring JBoss EAP
 
-The purpose of this lab is...
+The purpose of this lab is to review the different management modes for JBoss EAP (standalone vs. domain) as well as the modular architecture of JBoss EAP.
 
 ### Management Modes: Standalone vs. Domain
+
+#### Standalone
+
+#### Domain
+
+### Modules in JBoss EAP 
