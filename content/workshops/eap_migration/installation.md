@@ -29,9 +29,15 @@ To install EAP, enter the following command:
 ```
 $ java -jar jboss-eap-7.0.0-installer.jar
 ```
-The following screenshot shows the welcome screen for the EAP installer in GUI mode:
+The following screenshot shows the EAP installer in GUI mode:
 
 {{< figure src="../images/installer_license.jpg" title="JBoss EAP 7 GUI Installer" >}}
+
+Please follow the wizard accordingly:
+
+1. License Agreement: Accept the License Agreement.
+2. Installation Path: Accept the default installation path of `/home/student/EAP-7.0.0`.
+3. Component Selection: Accept the defaults.
 
 #### Staring and Stopping JBoss EAP
 
