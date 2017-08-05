@@ -16,3 +16,16 @@ The purpose of this lab is to review the different management modes for JBoss EA
 #### Domain
 
 ### Modules in JBoss EAP 
+
+#### Modules
+
+#### Subsystems and Profiles
+
+### Managing JBoss EAP
+
+#### Administrative Console
+
+#### Command Line Interface 
+
+#### XML File
+
