@@ -24,7 +24,7 @@ There are two steps to installing a JDBC driver:
 1. Deploying a JDBC Driver as a module.
 2. Configuring a driver in the data source subsystem.
 
-#### Adding the Module
+#### Deploying a JDBC Driver as a Module
 
 A JDBC driver is a component that Java applications use to communicate with a database. A JDBC driver is packaged in a JAR (Java Archive) file, and contains a class file that contains the driver definition. JDBC drivers are available from database vendors, such as from MySQL or PostgreSQL. In order to use a JDBC driver in JBoss EAP 7, it first needs to be installed as a module on
 the server.
@@ -62,4 +62,26 @@ The following `module.xml` file defines a module for the MySQL JDBC driver:
         <module name="javax.transaction.api"/>
     </dependencies>
 </module>
+```
+#### Adding the Driver Definition
+
+After adding the driver as a module, the next step is to create a `<driver>` definition in the `<drivers>` section of the data source subsystem in the EAP configuration file.
+
+A CLI operation can be used to create it easily, without touching the XML file. The following command can be executed on a standalone server:
+
+```
+/subsystem=datasources/jdbc-driver=<driver_name>:add\
+(driver-module-name=<module_name>,driver-name=<unique_driver_name>)
+```
+
+In the driver definition command, the following fields are required:
+- driver-name: A unique name for the driver.
+- driver-module-name: The unique name from the module installed at `$JBOSS_HOME/modules` directory.
+
+For example, the CLI command to define the MySQL driver looks like the following:
+
+```
+/subsystem=datasources/jdbc-driver=mysql:add\
+(driver-module-name=com.mysql,driver-name=mysql)
+)
 ```
