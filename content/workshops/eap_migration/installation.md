@@ -46,7 +46,34 @@ Please follow the wizard accordingly:
 9. Shortcut Configuration: Accept the defaults.
 10. Installation Complete!
 
-#### Staring Boss EAP
+#### Setting JBOSS_HOME
+
+You need to set an environment variable called `JBOSS_HOME` pointing to the JBoss EAP
+installation directory. It will be used by various scripts to locate where JBoss EAP is installed.
+
+Similarly, change the `PATH` variable to run JBoss EAP scripts in the `JBOSS_HOME/bin` folder
+from any directory. In order to set these variables, open `/home/student/.bashrc`
+with your preferred text editor and add the following lines at the end of the file:
+
+```
+JBOSS_HOME=/opt/jboss-eap-7.0
+PATH=$PATH:$JBOSS_HOME/bin
+export JBOSS_HOME PATH
+```
+
+### Navigating your JBoss EAP Installation
+
+A default JBoss EAP installtation has the following folders in `JBOSS_HOME`:
+
+{{< figure src="../images/eap_installation.jpg" title="JBoss EAP 7 Installation Directories" >}}
+
+Some of the main folders include:
+- `bin`: Contains scripts used for starting EAP in managed domain and standalone server, start
+the management CLI and other utility functions for developers
+- `standalone` and `domain`: Contains configuration and data files for running JBoss EAP in either operational mode
+- `modules`: Contains most of the code that implement Java EE services in JBoss EAP.
+
+### Staring JBoss EAP
 Shell scripts and Windows batch scripts are provided to start JBoss EAP 7 as either a standalone
 server or in domain mode. They are `standalone.sh` and `domain.sh` and are found under the
 `bin` folder in the JBoss EAP installation directory (`JBOSS_HOME`). A description of the two operating modes can be found in the next lab.
@@ -58,9 +85,11 @@ $ ${JBOSS_HOME}/bin/standalone.sh
 ```
 Once the startup is complete, you should see the following message:
 
-{{< figure src="../images/jboss_startup.png" title="JBoss EAP 7 GUI Installer" >}}
+{{< figure src="../images/jboss_startup.png" title="JBoss EAP Startup Console" >}}
 
-#### Verifying the Installation
+JBoss EAP 7 starts up very fast! This should happen in only a few seconds.
+
+### Verifying the Installation
 
 [zip]: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html/installation_guide/installing_jboss_eap#zip_installation
 [jar]: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html/installation_guide/installing_jboss_eap#installer_installation
