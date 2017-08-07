@@ -91,6 +91,12 @@ JBoss EAP 7 starts up very fast! This should happen in only a few seconds.
 
 ### Verifying the Installation
 
+To verify the JBoss EAP installation, open up any browser and navigate to `http://localhost:8080`. You should see the following landing page:
+
+{{< figure src="../images/landing_page.jpg" title="JBoss EAP Landing Page" >}}
+
+### Stopping JBoss EAP
+
 [zip]: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html/installation_guide/installing_jboss_eap#zip_installation
 [jar]: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html/installation_guide/installing_jboss_eap#installer_installation
 [rpm]: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html/installation_guide/installing_jboss_eap#rpm_installation
