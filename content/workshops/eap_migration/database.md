@@ -21,8 +21,8 @@ Data sources are configured through the Data Source Subsystem. Declaring a new d
 
 There are two steps to installing a JDBC driver:
 
-1. Adding the module
-2. Adding the driver definition
+1. Deploying a JDBC Driver as a module.
+2. Configuring a driver in the data source subsystem.
 
 #### Adding the Module
 
