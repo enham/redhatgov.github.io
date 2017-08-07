@@ -65,6 +65,14 @@ No matter which technique is used to modify a configuration setting, all changes
 
 #### Administrative Console
 
+To access the JBoss EAP 7 management console, launch the web browser and navigate to `http://localhost:9990`. Login using the credentials you created during the installation process (u: `admin`, pw: `Redhat1!`). The welcome screen should look like:
+
+{{< figure src="../images/admin_console.jpg" title="JBoss EAP Administrative Console" >}}
+
+Next, navigate to the JVM Status page. The JVM (Java Virtual Machine) is responsible for managing the amount of memory used by the application server and deployed applications, as well as to manage classloading. In this step, you will read the metrics obtained from the JVM, using the EAP management console. View the JVM Status page of the EAP management console. Navigate to `Runtime > Standalone Server > JVM` and click the View button to view the JVM details.
+
+{{< figure src="../images/jvm_status.jpg" title="JBoss EAP JVM Status Page" >}}
+
 #### Command Line Interface 
 
 #### XML File
