@@ -30,8 +30,7 @@ Adding the JDBC driver module can be done either manually or much more simply wi
 The syntax for the module add command is:
 
 ```
-module add --name=<module_name> --resources=<JDBC_Driver> --
-dependencies=<library1>,< library2>,...
+module add --name=<module_name> --resources=<JDBC_Driver> --dependencies=<library1>,< library2>,...
 ```
 
 For example, to add a JDBC MySQL 5.5 module by using the file `mysql-connector-java.jar`, the command would be:
@@ -40,4 +39,20 @@ For example, to add a JDBC MySQL 5.5 module by using the file `mysql-connector-j
 module add --name=com.mysql \
 --resources=/opt/jboss-eap-7.0/bin/mysql-connector-java.jar \
 --dependencies=javax.api,javax.transaction.api
+```
+After executing this command, a new directory is created at `$JBOSS_HOME/modules/com/mysql/main`. The new directory contains the provided JAR file as well as a `module.xml` that is generated based on the driver's given dependencies.
+
+The following `module.xml` file defines a module for the MySQL JDBC driver:
+
+```
+<?xml version="1.0" ?>
+    <module xmlns="urn:jboss:module:1.1" name="com.mysql">
+    <resources>
+        <resource-root path="mysql-connector-java.jar"/>
+    </resources>
+    <dependencies>
+        <module name="javax.api"/>
+        <module name="javax.transaction.api"/>
+    </dependencies>
+</module>
 ```
