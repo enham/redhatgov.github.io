@@ -97,7 +97,14 @@ To verify the JBoss EAP installation, open up any browser and navigate to `http:
 
 ### Stopping JBoss EAP
 
+Press `Control-C` on your terminal window to stop JBoss EAP.
+
+#### Configuring JBoss EAP as a Service
+
+Although out of scope for the purposes of this workshop, please note the directions to configure JBoss EAP as a service are available in the [documentation][service].
+
 [zip]: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html/installation_guide/installing_jboss_eap#zip_installation
 [jar]: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html/installation_guide/installing_jboss_eap#installer_installation
 [rpm]: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html/installation_guide/installing_jboss_eap#rpm_installation
 [xpaas]: https://www.openshift.com/container-platform/middleware-services.html
+[service]: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html/installation_guide/configuring_jboss_eap_to_run_as_a_service
