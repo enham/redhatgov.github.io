@@ -46,7 +46,7 @@ Please follow the wizard accordingly:
 9. Shortcut Configuration: Accept the defaults.
 10. Installation Complete!
 
-#### Staring and Stopping JBoss EAP
+#### Staring Boss EAP
 Shell scripts and Windows batch scripts are provided to start JBoss EAP 7 as either a standalone
 server or in domain mode. They are `standalone.sh` and `domain.sh` and are found under the
 `bin` folder in the JBoss EAP installation directory (`JBOSS_HOME`). A description of the two operating modes can be found in the next lab.
@@ -56,6 +56,9 @@ For the purposes of this workshop, we will be using standalone mode. To start JB
 ```
 $ ${JBOSS_HOME}/bin/standalone.sh
 ```
+Once the startup is complete, you should see the following message:
+
+{{< figure src="../images/jboss_startup.png" title="JBoss EAP 7 GUI Installer" >}}
 
 #### Verifying the Installation
 
