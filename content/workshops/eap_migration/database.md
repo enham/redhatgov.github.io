@@ -83,5 +83,4 @@ For example, the CLI command to define the MySQL driver looks like the following
 ```
 /subsystem=datasources/jdbc-driver=mysql:add\
 (driver-module-name=com.mysql,driver-name=mysql)
-)
 ```
