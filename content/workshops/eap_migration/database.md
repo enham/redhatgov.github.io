@@ -19,6 +19,13 @@ Data sources are configured through the Data Source Subsystem. Declaring a new d
 
 ### Configuring a JDBC Driver
 
+There are two steps to installing a JDBC driver:
+
+1. Adding the module
+2. Adding the driver definition
+
+#### Adding the Module
+
 A JDBC driver is a component that Java applications use to communicate with a database. A JDBC driver is packaged in a JAR (Java Archive) file, and contains a class file that contains the driver definition. JDBC drivers are available from database vendors, such as from MySQL or PostgreSQL. In order to use a JDBC driver in JBoss EAP 7, it first needs to be installed as a module on
 the server.
 
