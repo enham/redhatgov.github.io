@@ -84,3 +84,33 @@ For example, the CLI command to define the MySQL driver looks like the following
 /subsystem=datasources/jdbc-driver=mysql:add\
 (driver-module-name=com.mysql,driver-name=mysql)
 ```
+
+#### Verifying the Driver Details
+
+To verify the driver installation, execute the following command:
+
+```
+/subsystem=datasources/jdbc-driver=mysql:read-resource
+```
+
+The output should be as follows:
+
+```
+{
+"outcome" => "success",
+"result" => {
+"deployment-name" => undefined,
+"driver-class-name" => undefined,
+"driver-datasource-class-name" => undefined,
+"driver-major-version" => undefined,
+"driver-minor-version" => undefined,
+"driver-module-name" => "com.mysql",
+"driver-name" => "mysql",
+"driver-xa-datasource-class-name" => undefined,
+"jdbc-compliant" => undefined,
+"module-slot" => undefined,
+"profile" => undefined,
+"xa-datasource-class" => undefined
+}
+}
+```
