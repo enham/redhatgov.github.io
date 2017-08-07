@@ -46,6 +46,13 @@ Subsystems can be grouped into profiles, which provide a set of functionality gi
 
 {{< figure src="../images/eap_profiles.jpg" title="JBoss EAP Profiles" >}}
 
+A high-level description of the profiles follows:
+
+1. default: The most commonly used subsystems, including logging, security, datasources, infinispan, weld, webservices, and ejb3. The default implements not only the Java EE Web Profile, but also most of the Java EE Full Profile.
+2. ha: Contains the exact same subsystems as the default profile, with the addition of clustering capabilities, provided mainly by the jgroups subsystem.
+3. full: Similar to the default profile, but notably adds the messaging (messaging-activemq) and a few other less used subsystems.
+4. full-ha: Same as the full profile, but with the addition of clustering capabilities.
+
 ### Managing JBoss EAP
 
 #### Administrative Console
