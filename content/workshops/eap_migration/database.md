@@ -97,20 +97,20 @@ The output should be as follows:
 
 ```
 {
-"outcome" => "success",
-"result" => {
-"deployment-name" => undefined,
-"driver-class-name" => undefined,
-"driver-datasource-class-name" => undefined,
-"driver-major-version" => undefined,
-"driver-minor-version" => undefined,
-"driver-module-name" => "com.mysql",
-"driver-name" => "mysql",
-"driver-xa-datasource-class-name" => undefined,
-"jdbc-compliant" => undefined,
-"module-slot" => undefined,
-"profile" => undefined,
-"xa-datasource-class" => undefined
-}
+  "outcome" => "success",
+  "result" => {
+    "deployment-name" => undefined,
+    "driver-class-name" => undefined,
+    "driver-datasource-class-name" => undefined,
+    "driver-major-version" => undefined,
+    "driver-minor-version" => undefined,
+    "driver-module-name" => "com.mysql",
+    "driver-name" => "mysql",
+    "driver-xa-datasource-class-name" => undefined,
+    "jdbc-compliant" => undefined,
+    "module-slot" => undefined,
+    "profile" => undefined,
+    "xa-datasource-class" => undefined
+  
 }
 ```
