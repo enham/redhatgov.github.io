@@ -5,6 +5,6 @@ workshop_weight: 50
 layout: lab
 ---
 
-## Connecting to a 
+## Connecting to a Database
 
 The purpose of this lab is to
