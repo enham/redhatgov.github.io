@@ -29,10 +29,22 @@ Each host in a domain has a host controller. Exactly one of the host controllers
 Standalone server mode represents a single server instance with a single configuration file named `standalone.xml`. It has the full operational capability of JBoss EAP 7 that domain mode has (including clustering, etc.) but lacks centralized management. 
 
 ### Modules in JBoss EAP 
+JBoss EAP 7 is based on a core infrastructure provided by the WildFly project that, among other tasks, manages the loading and activation of modules, following the architecture provided by the JBoss Modules project. A module basically provides code (Java Classes) to be used by JBoss EAP services and/or by applications.
 
-#### Modules
+The following figure shows the main components inside EAP 7. It shows, on the upper half, components that are part of the WildFly Core project (the EAP core), most of them modules themselves. The lower half shows modules provided by other JBoss community projects, that are integrated into the WildFly Full project and then productized and supported by Red Hat as JBoss
+EAP 7.
 
-#### Subsystems and Profiles
+{{< figure src="../images/eap_modules.jpg" title="JBoss EAP Modular Architecture" >}}
+
+#### Modules/Extensions and Subsystems
+
+A module that provides features and capabilities to the application server is called an extension. An extension does not simply provide code, but also provides a way of managing that functionality, consisting of one or mode subsystems, that allows the extension to be configured by the core.
+
+#### Profiles
+
+Subsystems can be grouped into profiles, which provide a set of functionality given a target use case. The out-of-the-box profiles are described in the image below:
+
+{{< figure src="../images/eap_profiles.jpg" title="JBoss EAP Profiles" >}}
 
 ### Managing JBoss EAP
 
