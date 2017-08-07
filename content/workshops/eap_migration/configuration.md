@@ -48,12 +48,20 @@ Subsystems can be grouped into profiles, which provide a set of functionality gi
 
 A high-level description of the profiles follows:
 
-1. default: The most commonly used subsystems, including logging, security, datasources, infinispan, weld, webservices, and ejb3. The default implements not only the Java EE Web Profile, but also most of the Java EE Full Profile.
-2. ha: Contains the exact same subsystems as the default profile, with the addition of clustering capabilities, provided mainly by the jgroups subsystem.
-3. full: Similar to the default profile, but notably adds the messaging (messaging-activemq) and a few other less used subsystems.
-4. full-ha: Same as the full profile, but with the addition of clustering capabilities.
+1. `default`: The most commonly used subsystems, including logging, security, datasources, infinispan, weld, webservices, and ejb3. The default implements not only the Java EE Web Profile, but also most of the Java EE Full Profile.
+2. `ha`: Contains the exact same subsystems as the default profile, with the addition of clustering capabilities, provided mainly by the jgroups subsystem.
+3. `full`: Similar to the default profile, but notably adds the messaging (messaging-activemq) and a few other less used subsystems.
+4. `full-ha`: Same as the full profile, but with the addition of clustering capabilities.
 
 ### Managing JBoss EAP
+
+There are three ways of managing JBoss EAP:
+
+1. Administrative Console: Using a browser, this web-based application allows a System Administrator to manage most of the capabilities of your standalone or managed domain deployments.
+2. Command Line Interface (CLI): Using a terminal window, the CLI offers a management model for viewing and modifying attributes and for performing operations, including batch operations, on a standalone server or a managed domain. The CLI includes user-friendly features like contextual auto-complete, built-in documentation of server configuration attributes, and command execution history.
+3. XML File: The settings of a standalone server or a managed domain are maintained in XML-based configuration files which can be modified directly.
+
+No matter which technique is used to modify a configuration setting, all changes are synchronized to the XML configuration files.
 
 #### Administrative Console
 
