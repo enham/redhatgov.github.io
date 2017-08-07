@@ -36,7 +36,7 @@ The following screenshot shows the EAP installer in GUI mode:
 Please follow the wizard accordingly:
 
 1. License Agreement: Accept the License Agreement.
-2. Installation Path: Accept the default installation path of `/home/student/EAP-7.0.0`.
+2. Installation Path: Accept the default installation path of `/home/student/EAP-7.0.0` (henceforth in this workshop referred to as `JBOSS_HOME`).
 3. Component Selection: Accept the defaults.
 4. Create an Administrative User: Accept the default username of `admin`, for the purposes of this lab use the password `Redhat1!`.
 5. Installation Overview: Review installation details.
@@ -47,8 +47,17 @@ Please follow the wizard accordingly:
 10. Installation Complete!
 
 #### Staring and Stopping JBoss EAP
+Shell scripts and Windows batch scripts are provided to start JBoss EAP 7 as either a standalone
+server or in domain mode. They are `standalone.sh` and `domain.sh` and are found under the
+`bin` folder in the JBoss EAP installation directory (`JBOSS_HOME`). A description of the two operating modes can be found in the next lab.
 
-#### Logging into the Administrative Console
+For the purposes of this workshop, we will be using standalone mode. To start JBoss EAP in standalone mode, run the following command:
+
+```
+$ ${JBOSS_HOME}/bin/standalone.sh
+```
+
+#### Verifying the Installation
 
 [zip]: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html/installation_guide/installing_jboss_eap#zip_installation
 [jar]: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html/installation_guide/installing_jboss_eap#installer_installation
