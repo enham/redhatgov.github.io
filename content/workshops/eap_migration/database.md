@@ -15,14 +15,14 @@ Most Java EE applications involve a database that contains the information users
 
 Data sources are configured through the Data Source Subsystem. Declaring a new data source consists of two separate steps:
 1. Installing the JDBC driver for a particular database server.
-2. Define a data source within the datasource subsystem of the configuration file.
+2. Configure a data source within the data source subsystem of the configuration file.
 
 ### Installing a JDBC Driver
 
 There are two steps to installing a JDBC driver:
 
 1. Deploying a JDBC Driver as a module.
-2. Configuring a driver in the data source subsystem.
+2. Adding a driver definition in the data source subsystem.
 
 #### Deploying a JDBC Driver as a Module
 
@@ -114,3 +114,44 @@ The output should be as follows:
   
 }
 ```
+
+### Configuring a Data Source
+
+Now that your driver is available in JBoss EAP, you can now configure a data source.
+
+#### Data Source Definition
+
+In JBoss EAP 7, a data source is configured in the server's configuration file (`domain.xml` or `standalone.xml`) within the data source subsystem.
+
+The structure of the data source subsystem is as follows (Note: we will not be editing the XML directly):
+
+```
+TODO
+```
+
+A quick description of the different elements is below.
+
+#### Creating a Data Source Using the Web Console
+
+The JBoss EAP Management Console provides an easy way to create a data source using templates that are preconfigured for different database vendors. The following steps can be used to create a Non-XA data source with the management console in a standalone server.
+
+1. Select Configuration from the top of the management console and select Subsystems and then Datasources to access the data source subsystem.
+2. Click Non-XA and then click Add in order to open the Create Datasource wizard.
+3. Select the database that should be used by the Java application and click Next. If none of them are valid, then select the Custom option and look for the JDBC driver documentation to complete the following steps.
+4. After entering the Datasource Attributes, click Next to select the driver.
+5. Click the Detected Driver option and select the mysql driver that was installed as a module and select Next.
+6. On the final step, notice that the connection URL is formatted for the correct MySQL syntax. Click Done to finish creating the data source.
+
+### Testing the Connection
+
+The management console provides a Test Connection button to check that the connections from
+a connection pool can access the database. It can be accessed clicking the data source name and
+accessing the Test Connection button.
+
+Likewise, the CLI can be used to test if the data source was correctly configured. To check it use
+the following command:
+
+```
+/subsystem=datasources/data-source=[datasource_name]:test-connection-in-pool
+```
+
