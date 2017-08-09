@@ -73,7 +73,21 @@ Next, navigate to the JVM Status page. The JVM (Java Virtual Machine) is respons
 
 {{< figure src="../images/jvm_status.jpg" title="JBoss EAP JVM Status Page" >}}
 
+Next, try viewing the logs. The JBoss EAP server logs are stored in the local filesystem, but sometimes due to filesystem
+access restrictions, the administrator may need to access it via a web console.
+
+Click the blue <<Back link on the top left corner of the JVM Status page to go back and navigate to (Runtime > Standalone Server > Log Files) and click the View button to view the log viewer.
+
+Select the server.log entry in the table displayed and click the View button to view the server logs.
+
 #### Command Line Interface 
+
+The Command Line Interface, or CLI for short, to manage and configure JBoss EAP instances remotely from a command line, including writing scripts for repetitive tasks.
+
+Some of the benefits of using the CLI include:
+- Manage servers without the need of a GUI, which introduces the possibility of automation.
+- Commands can be written in a separate file and executed as a batch, allowing you to write scripts for common tasks.
+- The Management Console has limitations, but the CLI configures almost every aspect of the XML configuration files.
 
 #### XML File
 
