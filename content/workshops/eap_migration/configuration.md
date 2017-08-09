@@ -89,6 +89,21 @@ Some of the benefits of using the CLI include:
 - Commands can be written in a separate file and executed as a batch, allowing you to write scripts for common tasks.
 - The Management Console has limitations, but the CLI configures almost every aspect of the XML configuration files.
 
+The CLI is started by running the `jboss-cli.sh` script in the bin folder of the JBoss EAP installation. This script does not require any arguments and if arguments are not provided, it will start in disconnected mode:
+
+```
+# $JBOSS_HOME/bin/jboss-cli.sh
+[disconnected /]
+```
+
+The connect command is responsible for connecting to the server. If no argument is provided, it will try to connect to the default host (localhost) using the default port (9990).
+
+```
+[disconnected /] connect localhost:9990
+```
+
+TO DO...
+
 #### XML File
 
 ### Logging into the Administrative Console
