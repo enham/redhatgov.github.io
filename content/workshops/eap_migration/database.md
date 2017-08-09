@@ -11,7 +11,7 @@ The purpose of this lab is to learn about JBoss EAP's database subsystem and cre
 
 ### Data Sources in JBoss EAP
 
-Most Java EE applications involve a database that contains the information users need to access. A data source is a facility provided by an application server that is responsible for accessing databases without providing sensitive information, such as credentials and the database location, to an application. To connect to a database, the application uses a name bound to the data source via the application server. For a Java EE application server, the name is defined by the Java Naming and Directory Interface (JNDI) specification.
+Most Java EE applications involve a database that contains the information users need to access. A data source is a facility provided by an application server that is responsible for accessing databases without providing sensitive information, such as credentials and the database location, to an application. There are also additional benefits like the ability to pool connections. To connect to a database, the application uses a name bound to the data source via the application server. For a Java EE application server, the name is defined by the Java Naming and Directory Interface (JNDI) specification.
 
 Data sources are configured through the Data Source Subsystem. Declaring a new data source consists of two separate steps:
 1. Installing the JDBC driver for a particular database server.
