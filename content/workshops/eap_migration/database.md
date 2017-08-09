@@ -17,7 +17,7 @@ Data sources are configured through the Data Source Subsystem. Declaring a new d
 1. Installing the JDBC driver for a particular database server.
 2. Define a data source within the datasource subsystem of the configuration file.
 
-### Configuring a JDBC Driver
+### Installing a JDBC Driver
 
 There are two steps to installing a JDBC driver:
 
